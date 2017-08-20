@@ -1,4 +1,4 @@
-# <img src="https://github.com/mkulesh/molecularDynamics/blob/master/images/icon.png" align="center" height="48" width="48"> "Molecular Dynamics - Classical molecular dynamics method combined with HD live wallpaper"
+# <img src="https://github.com/mkulesh/molecularDynamics/blob/master/images/ic_launcher.png" align="center" height="48" width="48"> "Molecular Dynamics - Classical molecular dynamics method combined with HD live wallpaper"
 
 MMD is a classical molecular dynamics code implemented as an App for Android. MMD is acronym for Method of Molecular Dynamics, which is a computer simulation of particles (atoms, molecules) motion. This simulation is done with respect to the given initial and boundary conditions and a potential that describes the particle interaction.
 
