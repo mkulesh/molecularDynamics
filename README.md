@@ -22,6 +22,9 @@ In physics, MMD is used to examine the dynamics of atomic-level phenomena that c
 
 Note: since the application implements a numerical integration method, it generates a significant CPU load. Therefore, the live wallpaper mode is not suitable for low-power devices.
 
+
+<a href='https://play.google.com/store/apps/details?id=com.mkulesh.mmd&hl=en'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width=323 height=125/></a>
+
 ## Languages
 * English
 * Russian
