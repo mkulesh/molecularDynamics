@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General settings -->
+    <string name="app_name">Molecular Dynamics</string>
+    <string name="wallpaper_name">Molecular Dynamics Wallpaper</string>
+    <string name="wallpaper_description">Particles under the microscope</string>
+    
+    <string-array name="activity_titles">
+        <item>Experiment</item>
+        <item>Potential</item>
+        <item>About method</item>
+    </string-array>
+    <string-array name="activity_subtitles">
+        <item>View particles</item>
+        <item>View potentials</item>
+        <item>View wikipedia article</item>
+    </string-array>
+    
+    <string name="button_cancel">Cancel</string>
+    
+    <!-- Main menu -->
+    <string name="action_help">Touch instructions</string>
+    <string name="action_play">Play</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_zoom">Zoom</string>
+    <string name="action_drag">Drag</string>
+    
+    <!-- Experiment view -->
+    <string name="gravity_change_dialog">Gravity\nchange</string>
+    <string name="thermal_change_dialog">Thermal\nchange</string>
+    <string name="timestep_change_dialog">Time step</string>
+    <string name="conditions_change_dialog">Conditions</string>
+    <string name="energy_norm_fullenergy">Full energy will be constant</string>
+    <string name="energy_norm_temperature">Temperature will be constant</string>
+    <string name="energy_norm_none">No temperature or full energy constraint</string>
+    
+    <!-- Potential view -->
+    <string name="potential_activity_name">Potential</string>
+    <string name="potential_domain_name">r, Å</string>
+    <string name="potential_value_name">f(r), eV</string>
+    <string name="potential_derivative_name">f\'(r)</string>
+    <string name="potential_select_dialog">Select potential\nto be used</string>
+    
+    <!-- About method -->
+    <string name="wiki_about_method">http://en.wikipedia.org/wiki/Molecular_dynamics</string>
+    
+    <!-- Preferences: Initial layout -->
+    <string name="settings_activity_name">Experiment settings</string>
+    <string name="pref_category_initial_layout">Initial layout</string>
+    <string name="pref_rebuild_title">Rebuild initial layout</string>
+    <string name="pref_rebuild_summary">If set, all existing particles will be deleted and new layout will be created</string>
+    <string name="pref_fill_methods_title">Fill method</string>
+    <string-array name="pref_fill_methods_list">
+        <item>Diagonal Grid</item>
+        <item>Square Grid</item>
+    </string-array>
+    
+    <string name="pref_grid_hor_dimension">Horizontal grid dimension</string>
+    <string name="pref_grid_hor_dimension_valuetype">How many particles will be generated in horizontal direction</string>
+    <string name="pref_grid_ver_dimension">Vertical grid dimension</string>
+    <string name="pref_grid_ver_dimension_valuetype">How many particles will be generated in vertical direction</string>
+    <string name="pref_area_zoom">Area zoom</string>
+    <string name="pref_area_zoom_valuetype">Zoom value, between 1 and 20</string>
+    
+    <!-- Preferences: Physical area -->
+    <string name="pref_category_physical_area">Physical area</string>
+    <string name="pref_area_min_x">Minimal horizontal coordinate</string>
+    <string name="pref_area_max_x">Maximal horizontal coordinate</string>
+    <string name="pref_area_min_y">Minimal vertical coordinate</string>
+    <string name="pref_area_max_y">Maximal vertical coordinate</string>
+    <string name="pref_area_valuetype">In angstrom, 1 Å is equal to 10E-10 m or 0.1 nm</string>
+
+    <!-- Preferences: Boundary conditions -->
+    <string name="pref_category_boundary_conditions">Boundary conditions</string>
+    <string name="pref_bound_gravity">Gravity coefficient</string>
+    <string name="pref_bound_gravity_valuetype">Dimensionless, between 0 and 1. Will be scaled with respect to the used potential</string>
+    <string name="pref_bound_thermal_change">Thermal change coefficient</string>
+    <string name="pref_bound_thermal_change_valuetype">In percent, between -1.0% and 1.0%</string>
+    <string name="pref_init_temperature">Initial temperature</string>
+    <string name="pref_init_temperature_valuetype">Kelvin scale, °K = °C + 273.15 = (°F + 459.67) × 5⁄9</string>
+    <string name="pref_energy_norm">Energy norm type</string>
+    <string-array name="pref_energy_norm_names">
+        <item>Full energy</item>
+        <item>Temperature</item>
+        <item>None</item>
+    </string-array>
+    
+    <!-- Preferences: Particle parameters -->
+    <string name="pref_category_atom_parameters">Particle parameters</string>
+    <string name="pref_potential">Type of used potential</string>
+    <string-array name="pref_potential_names">
+        <item>Lennard-Jones potential</item>
+        <item>Morse potential</item>
+        <item>Born-Mayer potential</item>
+    </string-array>
+    <string name="pref_atom_radius">Particle radius</string>
+    <string name="pref_atom_mass">Particle mass</string>
+    <string name="pref_atom_mass_valuetype">In atomic mass unit, 1 u is equal to 1.660538921E-27 kg</string>
+    <string name="pref_atom_skin">Particle image</string>
+    <string-array name="pref_atom_skin_names">
+        <item>Blue-gray atom</item>
+        <item>Blue-red atom</item>
+        <item>Red-gelb atom</item>
+        <item>Autumn leaf 1</item>
+        <item>Autumn leaf 2</item>
+        <item>Soccer ball</item>
+        <item>Tennis ball</item>
+        <item>Volley ball</item>
+        <item>Blue ball</item>
+        <item>Waves sketch</item>
+        <item>Green water drop</item>
+        <item>Blue water drop</item>
+        <item>Six-atoms molecule</item>
+        <item>Three-atoms molecule</item>
+        <item>Snow flake</item>
+        <item>Anonymous amibe</item>
+        <item>Cartoon-style UFO</item>
+        <item>Cartoon-style bird</item>
+        <item>Planet Earth 1</item>
+        <item>Planet Earth 1</item>
+        <item>Red planet</item>
+        <item>Saturn</item>
+        <item>Whirlpool</item>
+    </string-array>
+    
+    <!-- Preferences: Calculation parameters -->
+    <string name="pref_category_calc_parameters">Calculation parameters</string>
+    <string name="pref_calc_time_step">Time step</string>
+    <string name="pref_calc_time_step_valuetype">In femtosecond, 1 fs is equal to 10E-15 of a second. Between 0.1 and 10.</string>
+
+    <!-- Preferences: application design -->
+    <string name="pref_category_app_design">Application design</string>
+    <string name="pref_system_wallpaper_title">Use system wallpaper</string>
+    <string name="pref_system_wallpaper_summary">If set, the system wallpaper will be used instead of build-in background image (for live wallpaper only)</string>
+    
+</resources>

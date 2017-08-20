@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:mmd="http://schemas.android.com/apk/res-auto">
+
+    <!-- Start -->
+    <item
+        android:id="@+id/action_play"
+        android:icon="@drawable/ic_action_play"
+        android:orderInCategory="100"
+        mmd:showAsAction="ifRoom"
+        android:title="@string/action_play"/>
+
+    <!-- Stop -->
+    <item
+        android:id="@+id/action_pause"
+        android:icon="@drawable/ic_action_pause"
+        android:orderInCategory="200"
+        mmd:showAsAction="ifRoom"
+        android:title="@string/action_pause"/>
+
+    <!-- Settings -->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_action_settings"
+        android:orderInCategory="300"
+        mmd:showAsAction="ifRoom"
+        android:title="@string/action_settings"/>
+
+    <!-- Help -->
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_action_help"
+        android:orderInCategory="400"
+        mmd:showAsAction="ifRoom"
+        android:title="@string/action_help"/>
+    
+    <!-- Exit -->
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="500"
+        mmd:showAsAction="never"
+        android:title="@string/action_exit">
+    </item>
+
+</menu>

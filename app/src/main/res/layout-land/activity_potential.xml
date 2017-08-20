@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:mmd="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aluminium_texture"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".PotentialActivity" >
+
+    <TextView
+        android:id="@+id/activity_potential_name"
+        style="@style/InfoTextStyle"
+        android:textSize="14sp"
+        android:text="@string/potential_activity_name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <com.mkulesh.mmd.widgets.FunctionView
+            android:id="@+id/activity_potential_value"
+            style="@style/PotentialViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            mmd:domainName="@string/potential_domain_name"
+            mmd:valueName="@string/potential_value_name" />
+
+        <com.mkulesh.mmd.widgets.FunctionView
+            android:id="@+id/activity_potential_derivative"
+            style="@style/PotentialViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            mmd:domainName="@string/potential_domain_name"
+            mmd:valueName="@string/potential_derivative_name" />
+    </LinearLayout>
+
+</LinearLayout>

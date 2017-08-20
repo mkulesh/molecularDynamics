@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:mmd="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_select"
+        android:icon="@drawable/ic_action_view_as_list"
+        android:orderInCategory="100"
+        mmd:showAsAction="ifRoom"
+        android:title="@string/pref_potential"/>
+    
+    <!-- Exit -->
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="400"
+        mmd:showAsAction="never"
+        android:title="@string/action_exit">
+    </item>
+
+</menu>

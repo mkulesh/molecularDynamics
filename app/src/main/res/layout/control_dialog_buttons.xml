@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ControlDialogBgStyle" >
+
+    <LinearLayout style="@style/ControlDialogStrokeStyle" >
+
+        <TextView
+            android:id="@+id/control_dialog_title"
+            style="@style/ControlDialogTextStyle" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/button_norm_fullenergy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/energy_norm_fullenergy"
+                android:src="@drawable/ic_norm_fullenergy" />
+
+            <ImageButton
+                android:id="@+id/button_norm_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/energy_norm_temperature"
+                android:src="@drawable/ic_norm_temperature" />
+
+            <ImageButton
+                android:id="@+id/button_norm_none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/energy_norm_none"
+                android:src="@drawable/ic_norm_none" />
+            
+            </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

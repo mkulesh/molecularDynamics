@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ControlDialogBgStyle" >
+
+    <LinearLayout style="@style/ControlDialogStrokeStyle" >
+
+        <TextView
+            android:id="@+id/control_dialog_title"
+            style="@style/ControlDialogTextStyle" />
+
+        <LinearLayout
+            android:id="@+id/control_dialog_seekbar_sbarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/control_dialog_seekbar_value"
+            style="@style/ControlDialogTextStyle" />
+    </LinearLayout>
+
+</LinearLayout>

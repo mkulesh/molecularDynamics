@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <array name="pref_fill_methods_values">
+        <item>@raw/ic_grid_diagonal</item>
+        <item>@raw/ic_grid_square</item>
+    </array>
+    <string name="pref_fill_methods_default" translatable="false">@raw/ic_grid_diagonal</string>
+    
+    <string format="integer" name="pref_grid_hor_dimension_default" translatable="false">10</string>
+    <string format="integer" name="pref_grid_ver_dimension_default" translatable="false">10</string>
+    
+    <string format="float" name="pref_area_min_x_default" translatable="false">-20.0</string>
+    <string format="float" name="pref_area_max_x_default" translatable="false">20.0</string>
+    <string format="float" name="pref_area_min_y_default" translatable="false">-20.0</string>
+    <string format="float" name="pref_area_max_y_default" translatable="false">20.0</string>
+    <string format="float" name="pref_area_zoom_default" translatable="false">1.5</string>
+    <string format="float" name="pref_area_zoom_min" translatable="false">1.0</string>
+    <string format="float" name="pref_area_zoom_max" translatable="false">20.0</string>
+    <string name="pref_area_zoom_format" translatable="false">0.0</string>
+    
+    <string format="float" name="pref_bound_gravity_default" translatable="false">0.0</string>
+    <string format="float" name="pref_bound_gravity_min" translatable="false">0.0</string>
+    <string format="float" name="pref_bound_gravity_max" translatable="false">1.0</string>
+    <string name="pref_bound_gravity_value_format" translatable="false">0.000</string>
+    
+    <string format="float" name="pref_bound_thermal_change_default" translatable="false">0.00</string>
+    <string format="float" name="pref_bound_thermal_change_min" translatable="false">-1.0</string>
+    <string format="float" name="pref_bound_thermal_change_max" translatable="false">1.0</string>
+    <string name="pref_bound_thermal_change_value_format" translatable="false">0.00</string>
+    
+    <string format="float" name="pref_init_temperature_default" translatable="false">1000.0</string>
+    
+    <array name="pref_energy_norm_values">
+        <item>@raw/ic_norm_fullenergy</item>
+        <item>@raw/ic_norm_temperature</item>
+        <item>@raw/ic_norm_none</item>
+    </array>
+    <string name="pref_energy_norm_default" translatable="false">@raw/ic_norm_fullenergy</string>
+    
+    <array name="pref_potential_values">
+        <item>LENNARD_JONES</item>
+        <item>MORSE</item>
+        <item>BORN_MAYER</item>
+    </array>
+    <string name="pref_potential_default" translatable="false">BORN_MAYER</string>
+    <string format="float" name="pref_atom_radius_default" translatable="false">1.5</string>
+    <string format="float" name="pref_atom_mass_default" translatable="false">55.84</string>
+    <array name="pref_atom_skin_values">
+        <item>@raw/atom_blue_gray</item>
+        <item>@raw/atom_blue_red</item>
+        <item>@raw/atom_gelb</item>
+        <item>@raw/autumn_leaf_01</item>
+        <item>@raw/autumn_leaf_02</item>
+        <item>@raw/ball_soccer</item>
+        <item>@raw/ball_tennis</item>
+        <item>@raw/ball_volley_ball</item>
+        <item>@raw/ball_blue_ball</item>
+        <item>@raw/ball_waves_sketch</item>
+        <item>@raw/drop_water_green</item>
+        <item>@raw/drop_water_blue</item>
+        <item>@raw/molecule_6atoms</item>
+        <item>@raw/molecule_water</item>
+        <item>@raw/snow_flake</item>
+        <item>@raw/anonymous_amibe</item>
+        <item>@raw/ufo_cartoon_style</item>
+        <item>@raw/bird_carton_style</item>
+        <item>@raw/planet_earth_01</item>
+        <item>@raw/planet_earth_02</item>
+        <item>@raw/planet_red_planet</item>
+        <item>@raw/planet_saturn</item>
+        <item>@raw/whirlpool</item>
+    </array>
+    <string name="pref_atom_skin_default" translatable="false">@raw/atom_blue_red</string>
+    
+    <string format="float" name="pref_calc_time_step_default" translatable="false">4.00</string>
+    <string format="float" name="pref_calc_time_step_min" translatable="false">0.1</string>
+    <string format="float" name="pref_calc_time_step_max" translatable="false">10.0</string>
+    <string name="pref_calc_time_step_value_format" translatable="false">0.00</string>
+    <bool name="pref_system_wallpaper_default" translatable="false">true</bool>
+    
+</resources>

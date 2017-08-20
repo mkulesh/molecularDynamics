@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="svg8754">
+  <defs
+     id="defs8756">
+    <linearGradient
+       id="linearGradient3819">
+      <stop
+         id="stop3821"
+         style="stop-color:#0d99ff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3823"
+         style="stop-color:#0079c1;stop-opacity:1"
+         offset="0.26613733" />
+      <stop
+         id="stop3825"
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3666">
+      <feBlend
+         in2="BackgroundImage"
+         mode="multiply"
+         id="feBlend3668" />
+    </filter>
+    <radialGradient
+       cx="2564.4341"
+       cy="267.4379"
+       r="131.46156"
+       fx="2569.6763"
+       fy="310.05957"
+       id="radialGradient2876"
+       xlink:href="#linearGradient3819"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.801251,-5.12658e-8,-1.499e-8,-1.09834,2184.91,565.592)" />
+  </defs>
+  <g
+     transform="matrix(0.04813835,0.03133051,-0.02960902,0.05093715,-8.6762658,14.010231)"
+     id="g3949">
+    <use
+       transform="matrix(1.1492,0,0,1.1492,-86.5389,21.6678)"
+       id="use3951"
+       x="0"
+       y="0"
+       width="405.05228"
+       height="313.37378"
+       xlink:href="#swirl" />
+  </g>
+  <g
+     transform="matrix(0.13319337,0,0,0.14093733,-53.252091,46.356419)"
+     id="layer1">
+    <g
+       transform="matrix(0,-1.59631,1.59631,0,-27.9748,31.3349)"
+       id="swirl">
+      <path
+         d="M 151.07329,398.56806 C 166.20842,285.24391 51.806188,318.10286 0.49502313,399.77713 27.197191,205.1425 227.59394,329.1348 151.07329,398.56806 z"
+         id="path2596"
+         style="fill:url(#radialGradient2876);fill-opacity:1;stroke:none" />
+      <use
+         transform="matrix(0.707107,0.707107,-0.707107,0.707107,304.165,27.4063)"
+         id="use2602"
+         x="0"
+         y="0"
+         width="396.78284"
+         height="368.40176"
+         xlink:href="#path2596" />
+      <use
+         transform="matrix(0,1,-1,0,499.862,261.862)"
+         id="use2604"
+         x="0"
+         y="0"
+         width="396.78284"
+         height="368.40176"
+         xlink:href="#path2596" />
+      <use
+         transform="matrix(-0.707107,0.707107,-0.707107,-0.707107,472.456,566.027)"
+         id="use2606"
+         x="0"
+         y="0"
+         width="396.78284"
+         height="368.40176"
+         xlink:href="#path2596" />
+      <use
+         transform="matrix(-1,0,0,-1,238,761.724)"
+         id="use2608"
+         x="0"
+         y="0"
+         width="396.78284"
+         height="368.40176"
+         xlink:href="#path2596" />
+      <use
+         transform="matrix(-0.707107,-0.707107,0.707107,-0.707107,-66.1645,734.318)"
+         id="use2610"
+         x="0"
+         y="0"
+         width="396.78284"
+         height="368.40176"
+         xlink:href="#path2596" />
+      <use
+         transform="matrix(0,-1,1,0,-261.862,499.862)"
+         id="use2612"
+         x="0"
+         y="0"
+         width="396.78284"
+         height="368.40176"
+         xlink:href="#path2596" />
+      <use
+         transform="matrix(0.707107,-0.707107,0.707107,0.707107,-234.456,195.698)"
+         id="use2614"
+         x="0"
+         y="0"
+         width="396.78284"
+         height="368.40176"
+         xlink:href="#path2596" />
+    </g>
+  </g>
+  <g
+     transform="matrix(0.02549974,-0.1006993,0.09516626,0.02698231,24.496342,86.739756)"
+     id="layer2"
+     style="filter:url(#filter3666)">
+    <use
+       transform="matrix(1.1492,0,0,1.1492,-86.5389,21.6678)"
+       id="use3663"
+       x="0"
+       y="0"
+       width="405.05228"
+       height="313.37378"
+       xlink:href="#swirl" />
+  </g>
+  <g
+     transform="matrix(0.05623544,0.03660044,-0.03458939,0.05950501,-14.17249,12.329891)"
+     id="g3410"
+     style="filter:url(#filter3666)">
+    <use
+       transform="matrix(1.1492,0,0,1.1492,-86.5389,21.6678)"
+       id="use3412"
+       x="0"
+       y="0"
+       width="405.05228"
+       height="313.37378"
+       xlink:href="#swirl" />
+  </g>
+  <g
+     transform="matrix(0.03246815,0.05334224,-0.05041129,0.03435587,-2.9289186,-1.41994)"
+     id="g2567"
+     style="filter:url(#filter3666)">
+    <use
+       transform="matrix(1.1492,0,0,1.1492,-86.5389,21.6678)"
+       id="use2569"
+       x="0"
+       y="0"
+       width="405.05228"
+       height="313.37378"
+       xlink:href="#swirl" />
+  </g>
+</svg>

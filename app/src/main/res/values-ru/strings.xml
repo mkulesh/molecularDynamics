@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General settings -->
+    <string name="app_name">Молекулярная динамика</string>
+    <string name="wallpaper_name">Молекулярная динамика</string>
+    <string name="wallpaper_description">Микромир под микроскопом</string>
+    
+    <string-array name="activity_titles">
+        <item>Эксперимент</item>
+        <item>Потенциал</item>
+        <item>О методе</item>
+    </string-array>
+    <string-array name="activity_subtitles">
+        <item>Частицы</item>
+        <item>Смена потенциала</item>
+        <item>Просмотр статьи из энциклопедии</item>
+    </string-array>
+    
+    <string name="button_cancel">Отмена</string>
+    
+    <!-- Main menu -->
+    <string name="action_help">Справка по управлению</string>
+    <string name="action_play">Запуск</string>
+    <string name="action_pause">Остановка</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_exit">Выход</string>
+    <string name="action_zoom">Приближение</string>
+    <string name="action_drag">Перемещение</string>
+    
+    <!-- Experiment view -->
+    <string name="gravity_change_dialog">Изменение\nгравитации</string>
+    <string name="thermal_change_dialog">Изменение\nтемпературы</string>
+    <string name="timestep_change_dialog">Шаг по времени</string>
+    <string name="conditions_change_dialog">Граничные условия</string>
+    <string name="energy_norm_fullenergy">Постоянство полной энергии</string>
+    <string name="energy_norm_temperature">Постоянство температуры</string>
+    <string name="energy_norm_none">Нет ограничений на энергию</string>
+    
+    <!-- Potential view -->
+    <string name="potential_activity_name">Потенциал</string>
+    <string name="potential_domain_name">r, Å</string>
+    <string name="potential_value_name">f(r), eV</string>
+    <string name="potential_derivative_name">f\'(r)</string>
+    <string name="potential_select_dialog">Выбор потенциала</string>
+    
+    <!-- About method -->
+    <string name="wiki_about_method">http://dic.academic.ru/dic.nsf/enc_physics/3947</string>
+    
+    <!-- Preferences: Initial layout -->
+    <string name="settings_activity_name">Настройки</string>
+    <string name="pref_category_initial_layout">Начальная конфигурация</string>
+    <string name="pref_rebuild_title">Генерировать заново</string>
+    <string name="pref_rebuild_summary">Если установлен, существующая конфигурация будет заменена на новую</string>
+    <string name="pref_fill_methods_title">Метод заполнения</string>
+    <string-array name="pref_fill_methods_list">
+        <item>Диагональная сетка</item>
+        <item>Прямоугольная сетка</item>
+    </string-array>
+    
+    <string name="pref_grid_hor_dimension">Количество по горизонтали</string>
+    <string name="pref_grid_hor_dimension_valuetype">Количество частиц генерируемых по горизонтали</string>
+    <string name="pref_grid_ver_dimension">Количество по вертикали</string>
+    <string name="pref_grid_ver_dimension_valuetype">Количество частиц генерируемых по вертикали</string>
+    <string name="pref_area_zoom">Приближение</string>
+    <string name="pref_area_zoom_valuetype">Коэффициент приближения, между 1 и 20</string>
+    
+    <!-- Preferences: Physical area -->
+    <string name="pref_category_physical_area">Физическая область</string>
+    <string name="pref_area_min_x">Минимум по горизонтали</string>
+    <string name="pref_area_max_x">Максимум по горизонтали</string>
+    <string name="pref_area_min_y">Минимум по вертикали</string>
+    <string name="pref_area_max_y">Максимум по вертикали</string>
+    <string name="pref_area_valuetype">В ангстремах, 1 Å равен 10E-10 м или 0.1 нм</string>
+
+    <!-- Preferences: Boundary conditions -->
+    <string name="pref_category_boundary_conditions">Граничные условия</string>
+    <string name="pref_bound_gravity">Гравитационный коэффициент</string>
+    <string name="pref_bound_gravity_valuetype">Безразмерный, между 0 и 1. Коэффициент будет автоматически подогнан под используемый потенциал</string>
+    <string name="pref_bound_thermal_change">Коэффициент нагрева/охлаждения</string>
+    <string name="pref_bound_thermal_change_valuetype">В процентах, между -1.0% и 1.0%</string>
+    <string name="pref_init_temperature">Начальная температура</string>
+    <string name="pref_init_temperature_valuetype">В градусах Кельвина, °K = °C + 273.15</string>
+    <string name="pref_energy_norm">Постоянство энергии</string>
+    <string-array name="pref_energy_norm_names">
+        <item>Полная энергия</item>
+        <item>Температура</item>
+        <item>Без ограничений</item>
+    </string-array>
+    
+    <!-- Preferences: Atom parameters -->
+    <string name="pref_category_atom_parameters">Параметры частицы</string>
+    <string name="pref_potential">Тип используемого потенциала</string>
+    <string-array name="pref_potential_names">
+        <item>Потенциал Леннарда-Джонса</item>
+        <item>Потенциал Морзе</item>
+        <item>Потенциал Борна-Майера</item>
+    </string-array>
+    <string name="pref_atom_radius">Радиус частицы</string>
+    <string name="pref_atom_mass">Масса частицы</string>
+    <string name="pref_atom_mass_valuetype">В атомных единицах массы, 1 а.е.м равна 1.660538921E-27 кг</string>
+    <string name="pref_atom_skin">Изображение частицы</string>
+    <string-array name="pref_atom_skin_names">
+        <item>Серо-синий атом</item>
+        <item>Красно-голубой атом</item>
+        <item>Красно-желтый атом</item>
+        <item>Осенний лист 1</item>
+        <item>Осенний лист 2</item>
+        <item>Футбольный мяч</item>
+        <item>Теннисный мяч</item>
+        <item>Волейбольный мяч</item>
+        <item>Голубой мяч</item>
+        <item>Круги на воде</item>
+        <item>Зеленая капля</item>
+        <item>Голубая капля</item>
+        <item>6-ти атомная молекула</item>
+        <item>3-х атомная молекула</item>
+        <item>Снежинка</item>
+        <item>Неизвестная амеба</item>
+        <item>Мультяшное НЛО</item>
+        <item>Мультяшная птица</item>
+        <item>Планета Земля 1</item>
+        <item>Планета Земля 2</item>
+        <item>Красная планета</item>
+        <item>Сатурн</item>
+        <item>Вихрь</item>
+    </string-array>
+    
+    <!-- Preferences: Calculation parameters -->
+    <string name="pref_category_calc_parameters">Параметры расчета</string>
+    <string name="pref_calc_time_step">Шаг по времени</string>
+    <string name="pref_calc_time_step_valuetype">В фемтосекундах, 1 фс равна 10E-15 с. Между 0.1 и 10.</string>
+
+    <!-- Preferences: application design -->
+    <string name="pref_category_app_design">Внешний вид</string>
+    <string name="pref_system_wallpaper_title">Использовать системные обои</string>
+    <string name="pref_system_wallpaper_summary">Если включен, системные обои будут использоваться как фоновое изображение (только для живых обоев)</string>
+    
+</resources>

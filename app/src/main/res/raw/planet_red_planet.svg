@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="svg19176">
+  <defs
+     id="defs19178">
+    <filter
+       x="-0.22297297"
+       y="-0.22297297"
+       width="1.4459459"
+       height="1.4459459"
+       color-interpolation-filters="sRGB"
+       id="filter5770">
+      <feGaussianBlur
+         id="feGaussianBlur5772"
+         stdDeviation="27.340733" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3244">
+      <feGaussianBlur
+         id="feGaussianBlur3246"
+         stdDeviation="11.930502" />
+    </filter>
+    <linearGradient
+       id="linearGradient3251">
+      <stop
+         id="stop3253"
+         style="stop-color:#00112b;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3255"
+         style="stop-color:#aa4400;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="100.89381"
+       y1="330.66608"
+       x2="311.85886"
+       y2="546.5033"
+       id="linearGradient2240"
+       xlink:href="#linearGradient3251"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3670">
+      <feGaussianBlur
+         id="feGaussianBlur3672"
+         stdDeviation="5.4681466" />
+    </filter>
+    <linearGradient
+       x1="100.89381"
+       y1="330.66608"
+       x2="311.85886"
+       y2="546.5033"
+       id="linearGradient2834"
+       xlink:href="#linearGradient3251"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     transform="translate(0,-502)"
+     id="layer1">
+    <g
+       transform="matrix(0.08439497,0,0,0.08418904,-1.3983909,502.34288)"
+       id="g2827">
+      <path
+         d="m 340,445.42856 a 147.14285,147.14285 0 1 1 -294.285706,0 147.14285,147.14285 0 1 1 294.285706,0 z"
+         transform="matrix(-1.6178378,0,0,-1.621795,589.06484,1003.3938)"
+         id="path3259"
+         style="fill:#ffeeaa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.99999976;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3670);enable-background:accumulate" />
+      <path
+         d="m 340,445.42856 a 147.14285,147.14285 0 1 1 -294.285706,0 147.14285,147.14285 0 1 1 294.285706,0 z"
+         transform="matrix(-1.6178378,0,0,-1.621795,589.06484,1003.3938)"
+         id="path2968"
+         style="fill:#ffffff;fill-opacity:0.39215686;fill-rule:nonzero;stroke:none;stroke-width:3.99999976;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <path
+         d="m 340,445.42856 a 147.14285,147.14285 0 1 1 -294.285706,0 147.14285,147.14285 0 1 1 294.285706,0 z"
+         transform="matrix(-1.6178378,0,0,-1.621795,612.95832,1003.3938)"
+         id="path3198"
+         style="fill:url(#linearGradient2834);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.99999976;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3244);enable-background:accumulate" />
+      <path
+         d="m 340,445.42856 a 147.14285,147.14285 0 1 1 -294.285706,0 147.14285,147.14285 0 1 1 294.285706,0 z"
+         transform="matrix(0.6750128,0,0,-0.6766639,104.55367,492.32643)"
+         id="path5321"
+         style="fill:#241f1c;fill-opacity:0.34812287;fill-rule:nonzero;stroke:none;stroke-width:3.99999976;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5770);enable-background:accumulate" />
+      <path
+         d="m 340,445.42856 a 147.14285,147.14285 0 1 1 -294.285706,0 147.14285,147.14285 0 1 1 294.285706,0 z"
+         transform="matrix(0.50359007,0,0,-0.50482186,49.331067,567.49504)"
+         id="path5774"
+         style="fill:#241f1c;fill-opacity:0.34812287;fill-rule:nonzero;stroke:none;stroke-width:3.99999976;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter5770);enable-background:accumulate" />
+    </g>
+  </g>
+</svg>

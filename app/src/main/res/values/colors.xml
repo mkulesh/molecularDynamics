@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mmd_background_color">#ba1f69a2</color>
+    <color name="mmd_border_color">#c8ffffff</color>
+    <color name="mmd_text_color">#ffffffff</color>
+    <color name="mmd_nav_title_color">#c8000000</color>
+    <color name="mmd_nav_subtitle_color">#ba000000</color>
+    <color name="mmd_plot_axis_color">#ba000000</color>
+    <color name="mmd_plot_text_color">#baffffff</color>
+    <color name="mmd_plot_func_color">#ecf00d13</color>
+</resources>

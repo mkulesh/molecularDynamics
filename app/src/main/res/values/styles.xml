@@ -1,0 +1,158 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Application theme. -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.        -->
+    </style>
+    
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <!-- Activity theme. -->
+    <style name="MmdActionBarTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="actionBarStyle">@style/MmdActionBar</item>
+        <item name="actionDropDownStyle">@style/MmdDropDown</item>
+    </style>
+    
+	<style name="MmdActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="height">@dimen/activity_action_bar_size</item>
+    </style>
+    
+	<style name="MmdDropDown" parent="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="background">@drawable/mmd_spinner</item>
+	</style>
+			
+    <!-- Custom styles -->
+    <style name="ControlDialogBgStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="ControlDialogStrokeStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+        <item name="android:background">@drawable/mmd_panel_background</item>
+    </style>
+
+    <style name="ControlDialogTextStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:focusable">false</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:text">text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/mmd_text_color</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:shadowColor">#ba000000</item>
+    </style>
+
+    <style name="InfoTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/mmd_text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:shadowColor">#ba000000</item>
+    </style>
+
+    <style name="SurfaceSchemaTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/mmd_text_color</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:shadowColor">#ba000000</item>
+    </style>
+    
+    <style name="InfoTextStyle" parent="@style/InfoTextAppearance">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:focusable">false</item>
+        <item name="android:paddingLeft">1dp</item>
+        <item name="android:paddingRight">1dp</item>
+        <item name="android:text">test</item>
+        <item name="android:background">@drawable/mmd_panel_background</item>
+    </style>
+
+    <style name="NavigationTextStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:focusable">false</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:text">text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/mmd_nav_title_color</item>
+    </style>
+
+    <style name="NavigationSubtitleStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:focusable">false</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:text">text</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/mmd_nav_subtitle_color</item>
+    </style>
+
+    <style name="PotentialViewStyle">
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/mmd_plot_text_color</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:shadowColor">#ba000000</item>
+        <item name="com.mkulesh.mmd:axisColor">@color/mmd_plot_axis_color</item>
+        <item name="com.mkulesh.mmd:axisWidth">1dp</item>
+        <item name="com.mkulesh.mmd:axisArrowSize">10dp</item>
+        <item name="com.mkulesh.mmd:axisLabelSize">4dp</item>
+        <item name="com.mkulesh.mmd:plotLineColor">@color/mmd_plot_func_color</item>
+        <item name="com.mkulesh.mmd:plotLineWidth">3dp</item>
+        <item name="com.mkulesh.mmd:formulaWidth">0.75</item>
+        <item name="com.mkulesh.mmd:labelNumber">10</item>
+        </style>
+
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|top" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/multitouch_simpletap"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/SurfaceSchemaTextAppearance"
+            android:text="@string/conditions_change_dialog"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/multitouch_simpletap_left"
+            android:gravity="left"
+            android:textAppearance="@style/SurfaceSchemaTextAppearance"
+            android:text="@string/thermal_change_dialog" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/multitouch_pinch"
+                android:gravity="center_horizontal|top"
+                android:paddingBottom="10dp"
+                android:textAppearance="@style/SurfaceSchemaTextAppearance"
+                android:text="@string/action_zoom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/multitouch_drag"
+                android:gravity="center_horizontal|bottom"
+                android:paddingTop="10dp"
+                android:textAppearance="@style/SurfaceSchemaTextAppearance"
+                android:text="@string/action_drag" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/multitouch_simpletap_right"
+            android:gravity="right"
+            android:textAppearance="@style/SurfaceSchemaTextAppearance"
+            android:text="@string/gravity_change_dialog" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:gravity="center_horizontal|bottom" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_cancel"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/multitouch_simpletap_bottom"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/SurfaceSchemaTextAppearance"
+            android:text="@string/timestep_change_dialog" />
+
+        <Button
+    		android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_cancel" />
+    </TableRow>
+
+</TableLayout>

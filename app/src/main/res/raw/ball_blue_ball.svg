@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="svg3028">
+  <defs
+     id="defs3030">
+    <radialGradient
+       cx="-180"
+       cy="-180"
+       r="100"
+       fx="-170"
+       fy="-170"
+       id="radialGradient3005"
+       xlink:href="#rg"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       cx="0.2"
+       cy="0.2"
+       r="1"
+       fx="0.30000001"
+       fy="0.30000001"
+       id="rg">
+      <stop
+         id="stop9"
+         style="stop-color:#ffffff;stop-opacity:0.5"
+         offset="0" />
+      <stop
+         id="stop11"
+         style="stop-color:#00ffff;stop-opacity:0.5"
+         offset="0.2" />
+      <stop
+         id="stop13"
+         style="stop-color:#0000ff;stop-opacity:0.5"
+         offset="0.80000001" />
+      <stop
+         id="stop15"
+         style="stop-color:#0000ff;stop-opacity:0.5"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       cx="-180"
+       cy="-180"
+       r="100"
+       fx="-170"
+       fy="-170"
+       id="radialGradient3057"
+       xlink:href="#rg"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     transform="matrix(1,0,0,1.0434783,0,-1049.0736)"
+     id="layer1">
+    <circle
+       cx="-150"
+       cy="-150"
+       r="50"
+       transform="matrix(0.48,0,0,0.46,96,1097.3622)"
+       id="myBubble"
+       style="fill:url(#radialGradient3057)" />
+  </g>
+</svg>
