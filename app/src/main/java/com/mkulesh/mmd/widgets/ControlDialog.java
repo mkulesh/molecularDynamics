@@ -26,6 +26,7 @@ import java.text.DecimalFormat;
 import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -47,14 +48,14 @@ import com.mkulesh.mmd.utils.CompatUtils;
 public class ControlDialog extends Dialog implements OnSeekBarChangeListener, OnClickListener, OnItemClickListener
 {
 
-    private Activity context = null;
+    private AppCompatActivity context = null;
     private SeekBar progressBar = null;
     private TextView progressText = null;
     private DialogParameters par = null;
     private DialogChangeListener myListener;
     private DecimalFormat decimalFormat = null;
 
-    public ControlDialog(Activity context, DialogParameters par, DialogChangeListener listener)
+    public ControlDialog(AppCompatActivity context, DialogParameters par, DialogChangeListener listener)
     {
         super(context);
         this.context = context;

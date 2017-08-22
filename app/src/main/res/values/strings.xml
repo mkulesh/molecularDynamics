@@ -5,7 +5,10 @@
     <string name="app_name">Molecular Dynamics</string>
     <string name="wallpaper_name">Molecular Dynamics Wallpaper</string>
     <string name="wallpaper_description">Particles under the microscope</string>
-    
+
+    <!-- Drawer -->
+    <string name="drawer_open">Open navigation drawer</string>
+
     <string-array name="activity_titles">
         <item>Experiment</item>
         <item>Potential</item>
@@ -15,6 +18,11 @@
         <item>View particles</item>
         <item>View potentials</item>
         <item>View wikipedia article</item>
+    </string-array>
+    <string-array name="activity_logos">
+        <item>drawer_worksheet</item>
+        <item>drawer_function_plot</item>
+        <item>drawer_how_to_use</item>
     </string-array>
     
     <string name="button_cancel">Cancel</string>
@@ -134,6 +142,6 @@
     <!-- Preferences: application design -->
     <string name="pref_category_app_design">Application design</string>
     <string name="pref_system_wallpaper_title">Use system wallpaper</string>
-    <string name="pref_system_wallpaper_summary">If set, the system wallpaper will be used instead of build-in background image (for live wallpaper only)</string>
+    <string name="pref_system_wallpaper_summary">If set, the system wallpaper will be used instead of build-in background image</string>
     
 </resources>

@@ -8,6 +8,7 @@
         android:icon="@drawable/ic_action_play"
         android:orderInCategory="100"
         mmd:showAsAction="ifRoom"
+        android:visible="false"
         android:title="@string/action_play"/>
 
     <!-- Stop -->
@@ -16,6 +17,7 @@
         android:icon="@drawable/ic_action_pause"
         android:orderInCategory="200"
         mmd:showAsAction="ifRoom"
+        android:visible="false"
         android:title="@string/action_pause"/>
 
     <!-- Settings -->
@@ -24,7 +26,15 @@
         android:icon="@drawable/ic_action_settings"
         android:orderInCategory="300"
         mmd:showAsAction="ifRoom"
+        android:visible="false"
         android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/action_select"
+        android:icon="@drawable/ic_action_view_as_list"
+        android:orderInCategory="350"
+        mmd:showAsAction="ifRoom"
+        android:visible="false"
+        android:title="@string/pref_potential"/>
 
     <!-- Help -->
     <item
@@ -32,6 +42,7 @@
         android:icon="@drawable/ic_action_help"
         android:orderInCategory="400"
         mmd:showAsAction="ifRoom"
+        android:visible="false"
         android:title="@string/action_help"/>
     
     <!-- Exit -->
@@ -39,6 +50,7 @@
         android:id="@+id/action_exit"
         android:orderInCategory="500"
         mmd:showAsAction="never"
+        android:visible="true"
         android:title="@string/action_exit">
     </item>
 

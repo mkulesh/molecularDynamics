@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import android.graphics.RectF;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -43,7 +44,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
         DialogChangeListener
 {
 
-    private ActionBarActivity activity = null;
+    private AppCompatActivity activity = null;
     private SurfaceView surface = null;
     private Experiment exp = null;
     private ScaleGestureDetector scaleGestureDetector = null;
@@ -60,7 +61,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
 
     private Pointer pointer = new Pointer();
 
-    public SurfaceTouchListener(ActionBarActivity activity, SurfaceView surface)
+    public SurfaceTouchListener(AppCompatActivity activity, SurfaceView surface)
     {
         this.surface = surface;
         this.activity = activity;

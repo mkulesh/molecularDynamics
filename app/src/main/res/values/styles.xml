@@ -5,7 +5,8 @@
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.        -->
+            backward-compatibility can go here.
+        -->
     </style>
     
     <style name="AppTheme" parent="AppBaseTheme">
@@ -25,8 +26,42 @@
 	<style name="MmdDropDown" parent="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
         <item name="background">@drawable/mmd_spinner</item>
 	</style>
-			
+
     <!-- Custom styles -->
+    <style name="DrawerTitleStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:focusable">false</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:text">text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/activity_drawer_title_size</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/drawer_title_color</item>
+    </style>
+
+    <style name="DrawerSubtitleStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:focusable">false</item>
+        <item name="android:paddingBottom">3sp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:text">text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/activity_drawer_subtitle_size</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/drawer_subtitle_color</item>
+    </style>
+
     <style name="ControlDialogBgStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

@@ -5,7 +5,10 @@
     <string name="app_name">Молекулярная динамика</string>
     <string name="wallpaper_name">Молекулярная динамика</string>
     <string name="wallpaper_description">Микромир под микроскопом</string>
-    
+
+    <!-- Drawer -->
+    <string name="drawer_open">Открыть навигатор</string>
+
     <string-array name="activity_titles">
         <item>Эксперимент</item>
         <item>Потенциал</item>
@@ -16,7 +19,12 @@
         <item>Смена потенциала</item>
         <item>Просмотр статьи из энциклопедии</item>
     </string-array>
-    
+    <string-array name="activity_logos">
+        <item>drawer_worksheet</item>
+        <item>drawer_function_plot</item>
+        <item>drawer_how_to_use</item>
+    </string-array>
+
     <string name="button_cancel">Отмена</string>
     
     <!-- Main menu -->
@@ -134,6 +142,6 @@
     <!-- Preferences: application design -->
     <string name="pref_category_app_design">Внешний вид</string>
     <string name="pref_system_wallpaper_title">Использовать системные обои</string>
-    <string name="pref_system_wallpaper_summary">Если включен, системные обои будут использоваться как фоновое изображение (только для живых обоев)</string>
+    <string name="pref_system_wallpaper_summary">Если включен, системные обои будут использоваться как фоновое изображение</string>
     
 </resources>

@@ -23,10 +23,11 @@ package com.mkulesh.mmd;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.MenuInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -40,23 +41,22 @@ import com.mkulesh.mmd.widgets.DialogParameters;
 import com.mkulesh.mmd.widgets.DialogParameters.Type;
 import com.mkulesh.mmd.widgets.FunctionView;
 
-public class PotentialActivity extends MmdActivity implements DialogChangeListener
+public class MainFragmentPotential extends BaseFragment implements DialogChangeListener
 {
-
     private PotentialType potentialType;
     private DialogParameters potentialChangeDialog = null;
 
-    @Override
-    protected int getContentLayoutId()
+    public MainFragmentPotential()
     {
-        navigationItemIndex = 1;
-        return R.layout.activity_potential;
+        // Empty constructor required for fragment subclasses
+        super();
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
+        rootView = inflater.inflate(R.layout.fragment_potential, container, false);
+        initializeFragment(POTENTIAL_FRAGMENT_ID);
 
         // potential change
         potentialChangeDialog = new DialogParameters(DialogParameters.Type.POTENTIAL_CHANGE, true, getResources()
@@ -65,32 +65,28 @@ public class PotentialActivity extends MmdActivity implements DialogChangeListen
         potentialChangeDialog.height = ViewGroup.LayoutParams.WRAP_CONTENT;
         potentialChangeDialog.gravity = Gravity.CENTER;
 
-        setPotential(PotentialType.valueOf(PreferenceManager.getDefaultSharedPreferences(this).getString(
+        setPotential(PotentialType.valueOf(preferences.getString(
                 SettingsActivity.KEY_POTENTIAL, getResources().getString(R.string.pref_potential_default))));
+
+        return rootView;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_potential_actions, menu);
-        return true;
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.findItem(R.id.action_select).setVisible(true);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
+    public void performAction(int itemId)
     {
         // Handle item selection
-        switch (item.getItemId())
+        if (itemId == R.id.action_select)
         {
-        case R.id.action_select:
-            ControlDialog d = new ControlDialog(this, potentialChangeDialog, this);
+            ControlDialog d = new ControlDialog(activity, potentialChangeDialog, this);
             d.show();
-            break;
-        default:
-            return super.onOptionsItemSelected(item);
         }
-        return true;
     }
 
     @Override
@@ -125,22 +121,21 @@ public class PotentialActivity extends MmdActivity implements DialogChangeListen
                 2.0 * Math.abs(potential.getPotentialMin()));
 
         // value view
-        FunctionView v1 = (FunctionView) findViewById(R.id.activity_potential_value);
+        FunctionView v1 = (FunctionView) rootView.findViewById(R.id.activity_potential_value);
         v1.setPotential(potential, BasePotential.ValueType.VALUE, area);
         v1.invalidate();
 
         // derivative
-        FunctionView v2 = (FunctionView) findViewById(R.id.activity_potential_derivative);
+        FunctionView v2 = (FunctionView) rootView.findViewById(R.id.activity_potential_derivative);
         v2.setPotential(potential, BasePotential.ValueType.DERIVATIVE, area);
         v2.invalidate();
 
         // visual components
         potentialChangeDialog.selectedValue = potentialType.value();
-        ((TextView) findViewById(R.id.activity_potential_name)).setText(potential.getName());
+        ((TextView) rootView.findViewById(R.id.activity_potential_name)).setText(potential.getName());
 
         // store new value
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor prefEditor = pref.edit();
+        SharedPreferences.Editor prefEditor = preferences.edit();
         prefEditor.putString(SettingsActivity.KEY_POTENTIAL, String.valueOf(potentialType.toString()));
         prefEditor.commit();
     }

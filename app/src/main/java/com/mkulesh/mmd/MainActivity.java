@@ -21,44 +21,57 @@
 
 package com.mkulesh.mmd;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.PixelFormat;
-import android.hardware.SensorManager;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.OrientationEventListener;
-import android.view.SurfaceView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.mkulesh.mmd.model.Constants.PotentialType;
+import com.mkulesh.mmd.utils.CompatUtils;
 import com.mkulesh.mmd.utils.ViewUtils;
-import com.mkulesh.mmd.widgets.DialogParameters;
 
-public class MainActivity extends MmdActivity
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity
 {
-
-    private static final int SETTINGS_ACTIVITY_REQUEST = 1;
-
-    /**
-     * State attributes to be stored in Parcel
-     */
-    private boolean runPressed = false;
-    private Integer currentRotation = null;
-
-    /**
-     * Experiment layout
-     */
-    private Experiment exp = null;
-    private SurfaceView surface = null;
-    private SurfaceTouchListener touchListener = null;
-
-    OrientationEventListener orientationEventListener = null;
+    protected ActionBar actionBar = null;
+    private DrawerLayout mDrawerLayout = null;
+    private ListView mDrawerList = null;
+    private ActionBarDrawerToggle mDrawerToggle = null;
+    private DrawerListAdapter drawerListAdapter = null;
+    private Display display = null;
 
     /**
      * Dummy array used to avoid lint warning about unused resources
      */
-    public final static int [] isedResources = {
+    public final static int [] usedResources = {
             R.drawable.anonymous_amibe, R.drawable.atom_blue_red, R.drawable.ball_volley_ball,
             R.drawable.atom_gelb, R.drawable.autumn_leaf_01, R.drawable.autumn_leaf_02,
             R.drawable.ball_blue_ball, R.drawable.ball_soccer, R.drawable.ball_tennis,
@@ -73,188 +86,290 @@ public class MainActivity extends MmdActivity
             R.raw.multitouch_pinch, R.raw.multitouch_simpletap, R.drawable.planet_earth_01,
             R.drawable.planet_earth_02, R.drawable.planet_red_planet, R.drawable.planet_saturn,
             R.drawable.snow_flake, R.drawable.ufo_cartoon_style, R.drawable.whirlpool,
-
     };
 
-    @Override
-    protected int getContentLayoutId()
-    {
-        navigationItemIndex = 0;
-        return R.layout.activity_main;
-    }
-
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        // get rotation properties
-        currentRotation = display.getRotation();
+        PackageManager pm = getPackageManager();
+        ViewUtils.Debug(
+                this,
+                "App started, android version " + Build.VERSION.SDK_INT + ", installation source: "
+                        + pm.getInstallerPackageName(getPackageName()));
 
-        // orientation change
-        orientationEventListener = new OrientationEventListener(this, SensorManager.SENSOR_DELAY_NORMAL)
+        // action bar (v7 compatibility library)
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setShowHideAnimationEnabled(true);
+        actionBar.setBackgroundDrawable(CompatUtils.getDrawable(this, R.drawable.action_bar_background));
+        actionBar.setElevation(3);
+
+        // Action bar drawer
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.main_left_drawer);
+
+        // set a custom shadow that overlays the main content when the drawer opens
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+        // set up the drawer's list view with items and click listener
+        drawerListAdapter = new DrawerListAdapter(this);
+        mDrawerList.setAdapter(drawerListAdapter);
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+        // ActionBarDrawerToggle ties together the the proper interactions
+        // between the sliding drawer and the action bar app icon
+        mDrawerToggle = new ActionBarDrawerToggle(this, /* host Activity */
+                mDrawerLayout, /* DrawerLayout object */
+                R.drawable.ic_drawer, /* nav drawer image to replace 'Up' caret */
+                R.string.drawer_open)
         {
-            @Override
-            public void onOrientationChanged(int orientation)
+            public void onDrawerClosed(View view)
             {
-                synchronized (currentRotation)
-                {
-                    int rotation = display.getRotation();
-                    if (exp != null && Math.abs(rotation - currentRotation) == 2)
-                    {
-                        Integer previousRotation = currentRotation;
-                        currentRotation = rotation;
-                        exp.processRotationChange(previousRotation, currentRotation);
-                    }
-                }
+                supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+
+            public void onDrawerOpened(View drawerView)
+            {
+                supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
+        CompatUtils.setDrawerListener(mDrawerLayout, mDrawerToggle);
 
-        // surface preparation
-        surface = (SurfaceView) findViewById(R.id.activity_main_view);
-        surface.setZOrderOnTop(true);
-        surface.getHolder().setFormat(PixelFormat.TRANSPARENT);
-        touchListener = new SurfaceTouchListener(this, surface);
-        surface.setOnTouchListener(touchListener);
+        display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
+
+        if (savedInstanceState == null)
+        {
+            selectItem(BaseFragment.EXPERIMENT_FRAGMENT_ID);
+        }
+    }
+
+    public Display getDisplay()
+    {
+        return display;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.activity_main_actions, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        ViewUtils.Debug(this, "onResume");
-
-        // activate experiment
-        if (exp == null)
-        {
-            exp = new Experiment(this);
-        }
-
-        // restore potential since it can be changed in other activities
-        exp.setControlValue(
-                DialogParameters.Type.POTENTIAL_CHANGE,
-                0.0,
-                PotentialType.valueOf(
-                        PreferenceManager.getDefaultSharedPreferences(this).getString(SettingsActivity.KEY_POTENTIAL,
-                                getResources().getString(R.string.pref_potential_default))).value());
-
-        // restore pause state
-        exp.resumePause(true);
-        if (!runPressed)
-        {
-            exp.pause();
-        }
-
-        // setup experiment GUI
-        touchListener.setExperiment(exp);
-        Experiment.Options opt = new Experiment.Options();
-        opt.enablePause = true;
-        opt.enableInfoPanel = true;
-        opt.drawBackground = false;
-        exp.initialize(this, surface.getHolder(), opt);
-        exp.resume();
-
-        // enable orientation sensor
-        if (orientationEventListener.canDetectOrientation())
-        {
-            orientationEventListener.enable();
-        }
-    }
-
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        ViewUtils.Debug(this, "onPause");
-        orientationEventListener.disable();
-        touchListener.disable();
-        exp.stop();
-        exp.writeParameters();
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState)
-    {
-        super.onSaveInstanceState(outState);
-        ViewUtils.Debug(this, "onSaveInstanceState");
-        exp.writeToBundle(outState);
-        outState.putBoolean("activity_main_button_run", runPressed);
-        outState.putInt("activity_main_rotation", currentRotation);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle outState)
-    {
-        super.onSaveInstanceState(outState);
-        ViewUtils.Debug(this, "onRestoreInstanceState");
-        exp = outState.getParcelable(Experiment.PARCELABLE_ID);
-        runPressed = outState.getBoolean("activity_main_button_run", false);
-        Integer previousRotation = outState.getInt("activity_main_rotation", currentRotation);
-        exp.processRotationChange(previousRotation, currentRotation);
-    }
-
-    @Override
-    protected void onDestroy()
-    {
-        super.onDestroy();
-        ViewUtils.Debug(this, "onDestroy");
-        exp = null;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle item selection
-        switch (item.getItemId())
-        {
-        case R.id.action_help:
-            touchListener.showHelpDialog();
-            break;
-        case R.id.action_play:
-            if (!runPressed)
-            {
-                exp.resumePause(false);
-                runPressed = true;
-            }
-            break;
-        case R.id.action_pause:
-            if (runPressed)
-            {
-                exp.pause();
-                runPressed = false;
-            }
-            break;
-        case R.id.action_settings:
-            Intent i = new Intent(this, SettingsActivity.class);
-            startActivityForResult(i, SETTINGS_ACTIVITY_REQUEST);
-            break;
-        default:
-            return super.onOptionsItemSelected(item);
-        }
         return true;
     }
 
+    /**
+     * When using the ActionBarDrawerToggle, you must call it during onPostCreate() and onConfigurationChanged()...
+     */
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    protected void onPostCreate(Bundle savedInstanceState)
     {
-        if (requestCode == SETTINGS_ACTIVITY_REQUEST)
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        super.onConfigurationChanged(newConfig);
+        // Pass any configuration change to the drawer toggls
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem)
+    {
+        BaseFragment baseFragment = getVisibleFragment();
+
+        // The action bar home/up action should open or close the drawer.
+        // ActionBarDrawerToggle will take care of this.
+        if (mDrawerToggle.onOptionsItemSelected(menuItem))
         {
-            exp.readParameters();
+            return true;
+        }
+
+        if (baseFragment == null)
+        {
+            return true;
+        }
+        switch (menuItem.getItemId())
+        {
+            case R.id.action_play:
+            case R.id.action_pause:
+            case R.id.action_settings:
+            case R.id.action_select:
+            case R.id.action_help:
+                baseFragment.performAction(menuItem.getItemId());
+                return true;
+            case R.id.action_exit:
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(menuItem);
         }
     }
 
+    /*********************************************************
+     * Navigation drawer
+     *********************************************************/
+
+    public void setTitle(CharSequence name)
+    {
+        actionBar.setTitle(name);
+    }
+
+    public void setSubTitle(CharSequence name)
+    {
+        actionBar.setSubtitle(name);
+    }
+
+    @SuppressLint("RestrictedApi")
+    public BaseFragment getVisibleFragment()
+    {
+        FragmentManager fragmentManager = MainActivity.this.getSupportFragmentManager();
+        List<Fragment> fragments = fragmentManager.getFragments();
+        for (Fragment fragment : fragments)
+        {
+            if (fragment != null && fragment.isVisible() && (fragment instanceof BaseFragment))
+            {
+                return (BaseFragment) fragment;
+            }
+        }
+        return null;
+    }
+
+    /* The click listener for ListView in the navigation drawer */
+    private class DrawerItemClickListener implements ListView.OnItemClickListener
+    {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+        {
+            selectItem(position);
+        }
+    }
+
+    public void selectItem(int position)
+    {
+        Fragment fragment = null;
+        if (position == BaseFragment.EXPERIMENT_FRAGMENT_ID)
+        {
+            fragment = new MainFragmentExperiment();
+            Bundle args = new Bundle();
+            fragment.setArguments(args);
+        }
+        else if (position == BaseFragment.POTENTIAL_FRAGMENT_ID)
+        {
+            fragment = new MainFragmentPotential();
+            Bundle args = new Bundle();
+            fragment.setArguments(args);
+        }
+        else if (position == BaseFragment.ABOUT_METHOD_FRAGMENT_ID)
+        {
+            try
+            {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(android.net.Uri.parse(getResources().getString(R.string.wiki_about_method)));
+                startActivity(intent);
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            }
+        }
+
+        if (fragment != null)
+        {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.main_content_frame, fragment);
+            transaction.commit();
+        }
+
+        // update selected item and title, then close the drawer
+        mDrawerList.setItemChecked(position, true);
+        mDrawerLayout.closeDrawer(mDrawerList);
+    }
+
+    /**
+     * Custom drawer list adapter.
+     */
+    private final class DrawerListAdapter extends BaseAdapter
+    {
+        private LayoutInflater layoutInflater;
+        private ArrayList<Bitmap> logos = null;
+        private CharSequence[] titles = null, subtitles = null;
+
+        public DrawerListAdapter(Context context)
+        {
+            layoutInflater = LayoutInflater.from(context);
+            titles = context.getResources().getStringArray(R.array.activity_titles);
+            subtitles = context.getResources().getStringArray(R.array.activity_subtitles);
+            String[] imageNames = context.getResources().getStringArray(R.array.activity_logos);
+            logos = new ArrayList<Bitmap>(imageNames.length);
+            for (int i = 0; i < imageNames.length; i++)
+            {
+                final String imageName = "drawable/" + imageNames[i];
+                final int imageId = context.getResources().getIdentifier(imageName, null, context.getPackageName());
+                if (imageId != 0)
+                {
+                    Bitmap image = BitmapFactory.decodeResource(context.getResources(), imageId);
+                    logos.add(image);
+                }
+                else
+                {
+                    logos.add(null);
+                }
+            }
+        }
+
+        @Override
+        public int getCount()
+        {
+            return titles.length;
+        }
+
+        @Override
+        public Object getItem(int position)
+        {
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position)
+        {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View inView, ViewGroup parent)
+        {
+            View view = inView;
+            if (view == null)
+            {
+                view = layoutInflater.inflate(R.layout.activity_drawer_list_item, parent, false);
+            }
+
+            // Icon...
+            ImageView logo = (ImageView) view.findViewById(R.id.main_drawer_logo);
+            if (logos != null)
+            {
+                logo.setImageDrawable(new BitmapDrawable(getResources(), logos.get(position)));
+            }
+
+            // Title...
+            TextView title = (TextView) view.findViewById(R.id.main_drawer_title);
+            title.setText(titles[position]);
+
+            // Subtitle...
+            TextView subtitle = ((TextView) view.findViewById(R.id.main_drawer_subtitle));
+            subtitle.setText(subtitles[position]);
+            subtitle.setVisibility("".equals(subtitle.getText()) ? View.GONE : View.VISIBLE);
+
+            return view;
+        }
+    }
 }
