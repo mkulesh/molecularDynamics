@@ -2,6 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -11,39 +14,50 @@
    height="48"
    viewBox="0 0 48 48"
    id="svg2876">
+  <metadata
+     id="metadata40">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <defs
      id="defs2880">
     <pattern
-       patternUnits="userSpaceOnUse"
-       width="1"
-       height="1.73205080756"
-       patternTransform="translate(0,0) scale(10,10)"
+       inkscape:stockid="Packed circles"
        id="Packedcircles"
-       inkscape:stockid="Packed circles">
+       patternTransform="translate(0,0) scale(10,10)"
+       height="1.73205080756"
+       width="1"
+       patternUnits="userSpaceOnUse">
       <circle
-         style="fill:black;stroke:none"
+         id="circle4538"
+         r="0.5"
+         cy="0.5"
          cx="0"
-         cy="0.5"
-         r="0.5"
-         id="circle4538" />
+         style="fill:black;stroke:none" />
       <circle
-         style="fill:black;stroke:none"
+         id="circle4540"
+         r="0.5"
+         cy="0.5"
          cx="1"
-         cy="0.5"
-         r="0.5"
-         id="circle4540" />
+         style="fill:black;stroke:none" />
       <circle
-         style="fill:black;stroke:none"
-         cx="0.5"
+         id="circle4542"
+         r="0.5"
          cy="1.36602540378"
-         r="0.5"
-         id="circle4542" />
-      <circle
-         style="fill:black;stroke:none"
          cx="0.5"
-         cy="-0.366025403784"
+         style="fill:black;stroke:none" />
+      <circle
+         id="circle4544"
          r="0.5"
-         id="circle4544" />
+         cy="-0.366025403784"
+         cx="0.5"
+         style="fill:black;stroke:none" />
     </pattern>
     <linearGradient
        id="linearGradient4025">
@@ -71,8 +85,8 @@
        color-interpolation-filters="sRGB"
        id="filter3734">
       <feGaussianBlur
-         id="feGaussianBlur3736"
-         stdDeviation="0.1875" />
+         stdDeviation="0.1875"
+         id="feGaussianBlur3736" />
     </filter>
     <linearGradient
        id="linearGradient3666-7">
@@ -89,8 +103,8 @@
        color-interpolation-filters="sRGB"
        id="filter3734-2">
       <feGaussianBlur
-         id="feGaussianBlur3736-4"
-         stdDeviation="0.1875" />
+         stdDeviation="0.1875"
+         id="feGaussianBlur3736-4" />
     </filter>
     <radialGradient
        cx="102.5"
@@ -145,48 +159,59 @@
   </defs>
   <path
      d="M 12.335747,31.555515 A 23.445885,8.9449275 3.9122487 1 1 40.885368,19.246372"
+     inkscape:connector-curvature="0"
      id="path3916"
      style="fill:none;stroke:url(#Packedcircles);stroke-width:0.69999999;stroke-linecap:round;stroke-miterlimit:2.66666675;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   <path
      d="m 22.767226,10.384149 a 9.1808368,24.555386 33.057919 1 1 -3.162677,31.88363"
+     inkscape:connector-curvature="0"
      id="path4180"
      style="fill:none;stroke:url(#Packedcircles);stroke-width:0.69999999;stroke-linecap:round;stroke-miterlimit:2.66666675;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   <path
      d="M 36.587247,28.015533 A 24.550526,9.1826548 56.602076 1 1 9.0053066,13.517082"
+     inkscape:connector-curvature="0"
      id="path4139"
      style="fill:none;stroke:url(#Packedcircles);stroke-width:0.69999999;stroke-linecap:round;stroke-miterlimit:2.66666675;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   <path
      d="m 140,97.5 a 37.5,37.5 0 1 1 -0.61952,-6.78824"
+     inkscape:connector-curvature="0"
      transform="matrix(0.32232425,0,0,0.33404643,-9.2130666,-8.8064904)"
      id="path2892"
      style="fill:url(#radialGradient6921);fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter3734)" />
   <path
      d="m 20.835336,44.992858 a 3.115329,3.2089098 56.935871 1 1 0.141789,-0.04952"
+     inkscape:connector-curvature="0"
      id="path4178"
      style="fill:url(#radialGradient2924);fill-opacity:1;fill-rule:evenodd;stroke:none" />
   <path
      d="m 18.396986,43.079987 a 9.1808368,24.555386 33.057919 0 1 4.392166,-32.75066"
+     inkscape:connector-curvature="0"
      id="path4176"
      style="fill:none;stroke:url(#Packedcircles);stroke-width:0.69999999;stroke-linecap:round;stroke-miterlimit:2.66666675;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   <path
      d="m 140,97.5 a 37.5,37.5 0 1 1 -0.61952,-6.78824"
+     inkscape:connector-curvature="0"
      transform="matrix(0.32232425,0,0,0.33404643,-9.213067,-8.8064904)"
      id="path2892-2"
      style="fill:url(#radialGradient6927);fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter3734-2)" />
   <path
      d="m 42.924249,17.126335 a 3.0390729,3.0600933 46.413723 1 1 -0.10406,-0.09734"
+     inkscape:connector-curvature="0"
      id="path4007"
      style="fill:url(#radialGradient2919);fill-opacity:1;fill-rule:evenodd;stroke:none" />
   <path
      d="M 42.104336,19.891674 A 23.445885,8.9449275 3.9122487 0 1 12.279464,31.56265"
+     inkscape:connector-curvature="0"
      id="path3916-2"
      style="fill:none;stroke:url(#Packedcircles);stroke-width:0.69999999;stroke-linecap:round;stroke-miterlimit:2.66666675;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   <path
      d="m 6.1466484,13.424529 a 3.0225652,3.3073925 3.7817888 1 1 -0.00626,0.154931"
+     inkscape:connector-curvature="0"
      id="path4141"
      style="fill:url(#radialGradient2915);fill-opacity:1;fill-rule:evenodd;stroke:none" />
   <path
      d="M 8.7070149,12.057518 A 24.550526,9.1826548 56.602076 0 1 36.628759,28.056411"
+     inkscape:connector-curvature="0"
      id="path4143"
      style="fill:none;stroke:url(#Packedcircles);stroke-width:0.69999999;stroke-linecap:round;stroke-miterlimit:2.66666675;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
 </svg>

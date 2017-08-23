@@ -2,14 +2,29 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
    width="48"
    height="48"
    viewBox="0 0 48 48"
    id="svg4209">
+  <metadata
+     id="metadata28">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <defs
      id="defs4211">
     <radialGradient
@@ -60,60 +75,6 @@
        cx="333.87"
        cy="251.74001"
        r="142.5"
-       id="radialGradient2921"
-       xlink:href="#radialGradient3520"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.06230957,-0.32518269,0.44444913,0.10475652,-53.466781,298.65552)" />
-    <radialGradient
-       cx="253.21001"
-       cy="192.38"
-       r="142.5"
-       id="radialGradient2923"
-       xlink:href="#radialGradient3522"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-5.2570992e-5,-0.359765,0.39095919,-7.0276767e-5,-27.523725,291.54676)" />
-    <radialGradient
-       cx="253.21001"
-       cy="192.38"
-       r="142.5"
-       id="radialGradient2939"
-       xlink:href="#radialGradient3522"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-3.0639157e-5,-0.21166538,0.22785684,-4.1346876e-5,-25.301053,75.250363)" />
-    <radialGradient
-       cx="333.87"
-       cy="251.74001"
-       r="142.5"
-       id="radialGradient2942"
-       xlink:href="#radialGradient3520"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.03631495,-0.19131911,0.25903158,0.06163281,-40.421052,79.433678)" />
-    <filter
-       x="-0.11574639"
-       y="-0.11465874"
-       width="1.2314928"
-       height="1.2293175"
-       color-interpolation-filters="sRGB"
-       id="filter3762">
-      <feGaussianBlur
-         stdDeviation="0.4504322"
-         id="feGaussianBlur3764" />
-    </filter>
-    <filter
-       x="-0.18236606"
-       y="-0.19229718"
-       width="1.3647321"
-       height="1.3845944"
-       color-interpolation-filters="sRGB"
-       id="filter3774">
-      <feGaussianBlur
-         stdDeviation="0.40452447"
-         id="feGaussianBlur3776" />
-    </filter>
-    <radialGradient
-       cx="333.87"
-       cy="251.74001"
-       r="142.5"
        id="radialGradient3610"
        xlink:href="#radialGradient3520"
        gradientUnits="userSpaceOnUse"
@@ -132,10 +93,12 @@
      id="g3606">
     <path
        d="M 48,24.000923 A 24,22 0 0 1 4.22705e-8,24.000923 24,22 0 1 1 48,24.000923 z"
+       inkscape:connector-curvature="0"
        id="path28810"
        style="opacity:0.4;fill:url(#radialGradient3610)" />
     <path
        d="M 48,24 A 24,22 0 0 1 0,24 24,22 0 1 1 48,24 z"
+       inkscape:connector-curvature="0"
        id="path28812"
        style="fill:url(#radialGradient3612)" />
   </g>

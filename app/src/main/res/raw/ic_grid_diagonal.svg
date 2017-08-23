@@ -2,14 +2,29 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    width="48"
    height="48"
    viewBox="0 0 48 48"
    id="svg2">
+  <metadata
+     id="metadata43">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <defs
      id="defs4">
     <linearGradient
@@ -31,8 +46,8 @@
        color-interpolation-filters="sRGB"
        id="filter4030">
       <feGaussianBlur
-         stdDeviation="0.55931391"
-         id="feGaussianBlur4032" />
+         id="feGaussianBlur4032"
+         stdDeviation="0.55931391" />
     </filter>
     <filter
        x="-0.1359375"
@@ -42,8 +57,8 @@
        color-interpolation-filters="sRGB"
        id="filter4030-6">
       <feGaussianBlur
-         stdDeviation="0.55931391"
-         id="feGaussianBlur4032-0" />
+         id="feGaussianBlur4032-0"
+         stdDeviation="0.55931391" />
     </filter>
     <filter
        x="-0.1359375"
@@ -53,8 +68,8 @@
        color-interpolation-filters="sRGB"
        id="filter4030-3">
       <feGaussianBlur
-         stdDeviation="0.55931391"
-         id="feGaussianBlur4032-8" />
+         id="feGaussianBlur4032-8"
+         stdDeviation="0.55931391" />
     </filter>
     <filter
        x="-0.1359375"
@@ -64,8 +79,8 @@
        color-interpolation-filters="sRGB"
        id="filter4030-62">
       <feGaussianBlur
-         stdDeviation="0.55931391"
-         id="feGaussianBlur4032-4" />
+         id="feGaussianBlur4032-4"
+         stdDeviation="0.55931391" />
     </filter>
     <radialGradient
        cx="36.414696"
@@ -116,20 +131,9 @@
        color-interpolation-filters="sRGB"
        id="filter4030-66">
       <feGaussianBlur
-         stdDeviation="0.55931391"
-         id="feGaussianBlur4032-44" />
+         id="feGaussianBlur4032-44"
+         stdDeviation="0.55931391" />
     </filter>
-    <radialGradient
-       cx="36.414696"
-       cy="103.01939"
-       r="41.043228"
-       fx="36.414696"
-       fy="103.01939"
-       id="radialGradient4166-0"
-       xlink:href="#linearGradient362-9"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0,0.16938194,-0.13932053,0,18.637857,-2.9297126)"
-       spreadMethod="pad" />
     <linearGradient
        id="linearGradient362-9">
       <stop
@@ -162,22 +166,27 @@
      style="opacity:0.9;fill:none;stroke:#000000;stroke-width:0.98363322;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:5.90179915, 0.98363319;stroke-dashoffset:0" />
   <path
      d="M 5.5,40.8 C 40.7,5.7 40.7,5.7 40.7,5.7"
+     inkscape:connector-curvature="0"
      id="path4877"
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0" />
   <path
      d="m 42.381028,11.213819 a 4.9657129,4.9089073 44.999996 1 1 -1.316731,-9.801102 4.9657129,4.9089073 44.999996 0 1 1.316731,9.801102 z"
+     inkscape:connector-curvature="0"
      id="path3891-6-7"
      style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter4030-6)" />
   <path
      d="m 42.360362,46.600305 a 4.9657129,4.9089073 44.999996 1 1 -1.316731,-9.801102 4.9657129,4.9089073 44.999996 0 1 1.316731,9.801102 z"
+     inkscape:connector-curvature="0"
      id="path3891-6-4"
      style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter4030-3)" />
   <path
      d="M 6.960362,46.600305 A 4.9657129,4.9089073 44.999996 1 1 5.643631,36.799203 4.9657129,4.9089073 44.999996 0 1 6.960362,46.600305 z"
+     inkscape:connector-curvature="0"
      id="path3891-6-9"
      style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter4030-62)" />
   <path
      d="M 5.5,5.7 C 40.8,40.8 40.8,40.8 40.8,40.8"
+     inkscape:connector-curvature="0"
      id="path4879"
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0" />
   <g
@@ -185,34 +194,41 @@
      id="g4823-8">
     <path
        d="M 6.959926,11.200359 A 4.9657129,4.9089073 44.999996 1 1 5.643195,1.399257 4.9657129,4.9089073 44.999996 0 1 6.959926,11.200359 z"
+       inkscape:connector-curvature="0"
        id="path3891-6-8"
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter4030-66)" />
     <path
        d="M 6.1767784,10.416712 A 4.9657129,4.9089073 44.999996 1 1 4.8600473,0.6156097 4.9657129,4.9089073 44.999996 0 1 6.1767784,10.416712 z"
+       inkscape:connector-curvature="0"
        id="path3891-4"
        style="fill:url(#radialGradient4848);fill-opacity:1;fill-rule:evenodd;stroke:#222222;stroke-width:0.12521648;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   </g>
   <path
      d="m 41.577214,45.816658 a 4.9657129,4.9089073 44.999996 1 1 -1.316731,-9.801102 4.9657129,4.9089073 44.999996 0 1 1.316731,9.801102 z"
+     inkscape:connector-curvature="0"
      id="path3891-3"
      style="fill:url(#radialGradient4174);fill-opacity:1;fill-rule:evenodd;stroke:#222222;stroke-width:0.12521648;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   <path
      d="M 41.576797,10.430172 A 4.9657129,4.9089073 44.999996 1 1 40.260066,0.62906969 4.9657129,4.9089073 44.999996 0 1 41.576797,10.430172 z"
+     inkscape:connector-curvature="0"
      id="path3891-0"
      style="fill:url(#radialGradient4170);fill-opacity:1;fill-rule:evenodd;stroke:#222222;stroke-width:0.12521648;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   <g
      id="g4823">
     <path
        d="M 6.959926,11.200359 A 4.9657129,4.9089073 44.999996 1 1 5.643195,1.399257 4.9657129,4.9089073 44.999996 0 1 6.959926,11.200359 z"
+       inkscape:connector-curvature="0"
        id="path3891-6"
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter4030)" />
     <path
        d="M 6.1767784,10.416712 A 4.9657129,4.9089073 44.999996 1 1 4.8600473,0.6156097 4.9657129,4.9089073 44.999996 0 1 6.1767784,10.416712 z"
+       inkscape:connector-curvature="0"
        id="path3891"
        style="fill:url(#radialGradient4166);fill-opacity:1;fill-rule:evenodd;stroke:#222222;stroke-width:0.12521648;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
   </g>
   <path
      d="M 6.1772144,45.816658 A 4.9657129,4.9089073 44.999996 1 1 4.8604833,36.015556 4.9657129,4.9089073 44.999996 0 1 6.1772144,45.816658 z"
+     inkscape:connector-curvature="0"
      id="path3891-7"
      style="fill:url(#radialGradient4178);fill-opacity:1;fill-rule:evenodd;stroke:#222222;stroke-width:0.12521648;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
 </svg>
