@@ -196,14 +196,10 @@ public class MainActivity extends AppCompatActivity
         }
         switch (menuItem.getItemId())
         {
-            case R.id.action_play:
-            case R.id.action_pause:
             case R.id.action_settings:
-            case R.id.action_select:
             case R.id.action_help:
                 baseFragment.performAction(menuItem.getItemId());
                 return true;
-            case R.id.action_exit:
             case android.R.id.home:
                 finish();
                 return true;

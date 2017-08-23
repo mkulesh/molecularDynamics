@@ -35,6 +35,7 @@ import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.model.PhysicalArea;
 import com.mkulesh.mmd.model.Potential;
 import com.mkulesh.mmd.potentials.BasePotential;
+import com.mkulesh.mmd.utils.ViewUtils;
 import com.mkulesh.mmd.widgets.ControlDialog;
 import com.mkulesh.mmd.widgets.DialogChangeListener;
 import com.mkulesh.mmd.widgets.DialogParameters;
@@ -55,6 +56,8 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+        ViewUtils.Debug(this, "onCreateView");
+
         rootView = inflater.inflate(R.layout.fragment_potential, container, false);
         initializeFragment(POTENTIAL_FRAGMENT_ID);
 
@@ -75,14 +78,14 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
-        menu.findItem(R.id.action_select).setVisible(true);
+        menu.findItem(R.id.action_settings).setTitle(activity.getResources().getString(R.string.pref_potential));
     }
 
     @Override
     public void performAction(int itemId)
     {
         // Handle item selection
-        if (itemId == R.id.action_select)
+        if (itemId == R.id.action_settings)
         {
             ControlDialog d = new ControlDialog(activity, potentialChangeDialog, this);
             d.show();

@@ -36,8 +36,9 @@ import android.view.ViewGroup;
 import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.utils.ViewUtils;
 import com.mkulesh.mmd.widgets.DialogParameters;
+import com.mkulesh.mmd.widgets.FloatingButtonsSet;
 
-public class MainFragmentExperiment extends BaseFragment
+public class MainFragmentExperiment extends BaseFragment implements View.OnClickListener
 {
 
     private static final int SETTINGS_ACTIVITY_REQUEST = 1;
@@ -54,8 +55,8 @@ public class MainFragmentExperiment extends BaseFragment
     private Experiment exp = null;
     private SurfaceView surface = null;
     private SurfaceTouchListener touchListener = null;
-
-    OrientationEventListener orientationEventListener = null;
+    private OrientationEventListener orientationEventListener = null;
+    private FloatingButtonsSet primaryButtonsSet = null;
 
     public MainFragmentExperiment()
     {
@@ -66,6 +67,8 @@ public class MainFragmentExperiment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+        ViewUtils.Debug(this, "onCreateView, savedInstanceState = " + savedInstanceState);
+
         rootView = inflater.inflate(R.layout.fragment_experiment, container, false);
         initializeFragment(EXPERIMENT_FRAGMENT_ID);
 
@@ -91,6 +94,8 @@ public class MainFragmentExperiment extends BaseFragment
             }
         };
 
+        primaryButtonsSet = (FloatingButtonsSet) rootView.findViewById(R.id.main_flb_set_primary);
+
         // surface preparation
         surface = (SurfaceView) rootView.findViewById(R.id.experiment_view);
         //surface.setZOrderOnTop(true);
@@ -109,9 +114,7 @@ public class MainFragmentExperiment extends BaseFragment
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
-        menu.findItem(R.id.action_play).setVisible(true);
-        menu.findItem(R.id.action_pause).setVisible(true);
-        menu.findItem(R.id.action_settings).setVisible(true);
+        menu.findItem(R.id.action_settings).setTitle(activity.getResources().getString(R.string.action_settings));
         menu.findItem(R.id.action_help).setVisible(true);
     }
 
@@ -135,10 +138,13 @@ public class MainFragmentExperiment extends BaseFragment
                                 getResources().getString(R.string.pref_potential_default))).value());
 
         // restore pause state
-        exp.resumePause(true);
-        if (!runPressed)
+        if (runPressed)
         {
-            exp.pause();
+            setInOperation(true, /*resumeMode=*/ true);
+        }
+        else
+        {
+            setInOperation(false, /*resumeMode=*/ false);
         }
 
         // setup experiment GUI
@@ -177,7 +183,7 @@ public class MainFragmentExperiment extends BaseFragment
         {
             exp.writeToBundle(outState);
             outState.putBoolean("activity_main_button_run", runPressed);
-        outState.putInt("activity_main_rotation", currentRotation);
+            outState.putInt("activity_main_rotation", currentRotation);
         }
         catch (Exception e)
         {
@@ -215,26 +221,12 @@ public class MainFragmentExperiment extends BaseFragment
         // Handle item selection
         switch (itemId)
         {
-        case R.id.action_help:
-            touchListener.showHelpDialog();
-            break;
-        case R.id.action_play:
-            if (!runPressed)
-            {
-                exp.resumePause(false);
-                runPressed = true;
-            }
-            break;
-        case R.id.action_pause:
-            if (runPressed)
-            {
-                exp.pause();
-                runPressed = false;
-            }
-            break;
         case R.id.action_settings:
             Intent i = new Intent(activity, SettingsActivity.class);
             startActivityForResult(i, SETTINGS_ACTIVITY_REQUEST);
+            break;
+        case R.id.action_help:
+            touchListener.showHelpDialog();
             break;
         }
     }
@@ -248,4 +240,32 @@ public class MainFragmentExperiment extends BaseFragment
         }
     }
 
+    public void setInOperation(boolean inOperation, boolean resumeMode)
+    {
+        if (inOperation)
+        {
+            exp.resumePause(resumeMode);
+            primaryButtonsSet.activate(R.id.main_flb_action_stop, this);
+        }
+        else
+        {
+            exp.pause();
+            primaryButtonsSet.activate(R.id.main_flb_action_play, this);
+        }
+    }
+
+    @Override
+    public void onClick(View b)
+    {
+        if (b.getId() == R.id.main_flb_action_play && !runPressed)
+        {
+            setInOperation(true, /*resumeMode=*/ false);
+            runPressed = true;
+        }
+        else if (b.getId() == R.id.main_flb_action_stop && runPressed)
+        {
+            setInOperation(false, /*resumeMode=*/ false);
+            runPressed = false;
+        }
+    }
 }

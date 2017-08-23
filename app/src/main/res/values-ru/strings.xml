@@ -30,9 +30,8 @@
     <!-- Main menu -->
     <string name="action_help">Справка по управлению</string>
     <string name="action_play">Запуск</string>
-    <string name="action_pause">Остановка</string>
+    <string name="action_stop">Остановка</string>
     <string name="action_settings">Настройки</string>
-    <string name="action_exit">Выход</string>
     <string name="action_zoom">Приближение</string>
     <string name="action_drag">Перемещение</string>
     

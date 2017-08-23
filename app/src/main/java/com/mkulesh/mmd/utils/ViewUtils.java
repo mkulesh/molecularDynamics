@@ -29,13 +29,19 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.mkulesh.mmd.R;
 
 public class ViewUtils
 {
@@ -251,4 +257,29 @@ public class ViewUtils
         return bitmap;
     }
 
+    /**
+     * Procedure hows toast that contains description of the given button
+     */
+    @SuppressLint("RtlHardcoded")
+    public static boolean showButtonDescription(Context context, View button)
+    {
+        CharSequence contentDesc = button.getContentDescription();
+        if (contentDesc != null && contentDesc.length() > 0)
+        {
+            int[] pos = new int[2];
+            button.getLocationOnScreen(pos);
+
+            Toast t = Toast.makeText(context, contentDesc, Toast.LENGTH_SHORT);
+            t.setGravity(Gravity.TOP | Gravity.LEFT, 0, 0);
+            t.getView().measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+            final int x = pos[0] + button.getMeasuredWidth() / 2 - (t.getView().getMeasuredWidth() / 2);
+            final int y = pos[1] - button.getMeasuredHeight() / 2 - t.getView().getMeasuredHeight()
+                    - context.getResources().getDimensionPixelSize(R.dimen.activity_vertical_margin);
+            t.setGravity(Gravity.TOP | Gravity.LEFT, x, y);
+            t.show();
+            return true;
+        }
+        return false;
+    }
 }

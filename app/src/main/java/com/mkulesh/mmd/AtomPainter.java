@@ -95,6 +95,8 @@ public class AtomPainter implements Runnable
     private static final int maxLastDurations = 10;
     private ArrayList<Long> lastDurations = new ArrayList<Long>();
 
+    private int zoomPanelOffset = 0;
+
     /**
      * Default constructor
      */
@@ -114,6 +116,7 @@ public class AtomPainter implements Runnable
     {
         infoPanel = new InfoPanel(context);
         zoomPanel = new ZoomPanel();
+        zoomPanelOffset = context.getResources().getDimensionPixelOffset(R.dimen.activity_flb_margin);
     }
 
     /**
@@ -268,8 +271,8 @@ public class AtomPainter implements Runnable
 
             if (zoomPanel != null)
             {
-                float hm = context.getResources().getDimension(R.dimen.activity_horizontal_margin);
-                float vm = context.getResources().getDimension(R.dimen.activity_vertical_margin);
+                float hm = context.getResources().getDimension(R.dimen.activity_horizontal_margin) + zoomPanelOffset;
+                float vm = context.getResources().getDimension(R.dimen.activity_vertical_margin) + zoomPanelOffset;
                 int width = c.getWidth() / 10;
                 int height = c.getHeight() / 10;
                 zoomPanel.setRect((int) hm, c.getHeight() - (int) vm - height, (int) hm + width, c.getHeight()
