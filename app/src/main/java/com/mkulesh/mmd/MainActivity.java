@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity
     private ActionBarDrawerToggle mDrawerToggle = null;
     private DrawerListAdapter drawerListAdapter = null;
     private Display display = null;
+    private Experiment experiment = null;
 
     /**
      * Dummy array used to avoid lint warning about unused resources
@@ -140,6 +141,10 @@ public class MainActivity extends AppCompatActivity
         CompatUtils.setDrawerListener(mDrawerLayout, mDrawerToggle);
 
         display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
+        if (experiment == null)
+        {
+            experiment = new Experiment(this);
+        }
 
         if (savedInstanceState == null)
         {
@@ -150,6 +155,16 @@ public class MainActivity extends AppCompatActivity
     public Display getDisplay()
     {
         return display;
+    }
+
+    public Experiment getExperiment()
+    {
+        return experiment;
+    }
+
+    public void setExperiment(Experiment experiment)
+    {
+        this.experiment = experiment;
     }
 
     @Override

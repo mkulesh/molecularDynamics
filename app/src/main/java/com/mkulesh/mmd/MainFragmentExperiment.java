@@ -52,7 +52,6 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
     /**
      * Experiment layout
      */
-    private Experiment exp = null;
     private SurfaceView surface = null;
     private SurfaceTouchListener touchListener = null;
     private OrientationEventListener orientationEventListener = null;
@@ -84,6 +83,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
                 synchronized (currentRotation)
                 {
                     int rotation = activity.getDisplay().getRotation();
+                    final Experiment exp = activity.getExperiment();
                     if (exp != null && Math.abs(rotation - currentRotation) == 2)
                     {
                         Integer previousRotation = currentRotation;
@@ -124,11 +124,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
         super.onResume();
         ViewUtils.Debug(this, "onResume");
 
-        // activate experiment
-        if (exp == null)
-        {
-            exp = new Experiment(activity);
-        }
+        final Experiment exp = activity.getExperiment();
 
         // restore potential since it can be changed in other activities
         exp.setControlValue(
@@ -170,8 +166,8 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
         ViewUtils.Debug(this, "onPause");
         orientationEventListener.disable();
         touchListener.disable();
-        exp.stop();
-        exp.writeParameters();
+        activity.getExperiment().stop();
+        activity.getExperiment().writeParameters();
     }
 
     @Override
@@ -181,7 +177,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
         ViewUtils.Debug(this, "onSaveInstanceState");
         try
         {
-            exp.writeToBundle(outState);
+            activity.getExperiment().writeToBundle(outState);
             outState.putBoolean("activity_main_button_run", runPressed);
             outState.putInt("activity_main_rotation", currentRotation);
         }
@@ -191,28 +187,21 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
         }
     }
 
-    public void onRestoreInstanceState(Bundle outState)
+    public void onRestoreInstanceState(Bundle inState)
     {
         ViewUtils.Debug(this, "onRestoreInstanceState");
         try
         {
-            exp = outState.getParcelable(Experiment.PARCELABLE_ID);
-            runPressed = outState.getBoolean("activity_main_button_run", false);
-            Integer previousRotation = outState.getInt("activity_main_rotation", currentRotation);
+            Experiment exp = inState.getParcelable(Experiment.PARCELABLE_ID);
+            activity.setExperiment(exp);
+            runPressed = inState.getBoolean("activity_main_button_run", false);
+            Integer previousRotation = inState.getInt("activity_main_rotation", currentRotation);
             exp.processRotationChange(previousRotation, currentRotation);
         }
         catch (Exception e)
         {
             ViewUtils.Debug(this, "cannot restore state: " + e.getLocalizedMessage());
         }
-    }
-
-    @Override
-    public void onDestroy()
-    {
-        super.onDestroy();
-        ViewUtils.Debug(this, "onDestroy");
-        exp = null;
     }
 
     @Override
@@ -236,7 +225,8 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
     {
         if (requestCode == SETTINGS_ACTIVITY_REQUEST)
         {
-            exp.readParameters();
+            activity.getExperiment().readParameters();
+            activity.getExperiment().updateBackgroundMode(true);
         }
     }
 
@@ -244,12 +234,12 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
     {
         if (inOperation)
         {
-            exp.resumePause(resumeMode);
+            activity.getExperiment().resumePause(resumeMode);
             primaryButtonsSet.activate(R.id.main_flb_action_stop, this);
         }
         else
         {
-            exp.pause();
+            activity.getExperiment().pause();
             primaryButtonsSet.activate(R.id.main_flb_action_play, this);
         }
     }

@@ -213,6 +213,7 @@ public class AtomSet implements Parcelable
      */
     public void fillGridCoordinates(int max_x, int max_y, boolean isDiag)
     {
+        ViewUtils.Debug(this, "creating new atoms grid");
         atoms.clear();
         for (int x = 0; x < max_x; x++)
         {

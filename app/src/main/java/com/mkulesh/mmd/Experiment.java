@@ -127,7 +127,12 @@ public class Experiment implements Runnable, Parcelable
         {
             painter.enableInfoPanel();
         }
-        if (opt.drawBackground)
+        updateBackgroundMode(opt.drawBackground);
+    }
+
+    public void updateBackgroundMode(boolean drawBackground)
+    {
+        if (painter != null && drawBackground)
         {
             painter.setBackgroundMode();
         }
@@ -239,10 +244,6 @@ public class Experiment implements Runnable, Parcelable
             try
             {
                 atomSet.readParameters(context);
-                if (painter.backgroudMode != AtomPainter.BackgroudMode.NONE)
-                {
-                    painter.setBackgroundMode();
-                }
             }
             catch (Exception ex)
             {
@@ -381,7 +382,9 @@ public class Experiment implements Runnable, Parcelable
             {
                 if (intValue >= 0 && intValue < PotentialType.values().length)
                 {
-                    atomSet.potential.setType(PotentialType.values()[intValue]);
+                    final PotentialType p = PotentialType.values()[intValue];
+                    ViewUtils.Debug(this, "changed potential to: " + p.toString());
+                    atomSet.potential.setType(p);
                 }
                 break;
             }
