@@ -23,7 +23,6 @@ package com.mkulesh.mmd.widgets;
 
 import java.text.DecimalFormat;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +34,6 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SeekBar;
@@ -109,9 +107,9 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
     {
         setContentView(R.layout.control_dialog_buttons);
         ((TextView) findViewById(R.id.control_dialog_title)).setText(par.title);
-        ((ImageButton) findViewById(R.id.button_norm_fullenergy)).setOnClickListener(this);
-        ((ImageButton) findViewById(R.id.button_norm_temperature)).setOnClickListener(this);
-        ((ImageButton) findViewById(R.id.button_norm_none)).setOnClickListener(this);
+        findViewById(R.id.button_norm_fullenergy).setOnClickListener(this);
+        findViewById(R.id.button_norm_temperature).setOnClickListener(this);
+        findViewById(R.id.button_norm_none).setOnClickListener(this);
     }
 
     private void createSeekBarInterface()
@@ -127,6 +125,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
             int progress = (int) (100 * (par.selectedValue - par.min) / (par.max - par.min));
             progressBar.setProgress(progress);
             progressBar.setOnSeekBarChangeListener(this);
+            progressBar.setThumb(CompatUtils.getDrawable(context, R.drawable.ic_seek_bar));
             layout.addView(progressBar);
         }
         progressText = (TextView) findViewById(R.id.control_dialog_seekbar_value);

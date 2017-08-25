@@ -22,18 +22,60 @@
 package com.mkulesh.mmd.widgets;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatSeekBar;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+import com.mkulesh.mmd.R;
+
+/**
+ * This is a custom vertical seek bar that works with Marshmallow operating system
+ * See http://stackoverflow.com/questions/33112277/android-6-0-marshmallow-stops-showing-vertical-seekbar-thumb
+ * <p>
+ * Code source: https://github.com/chaviw/VerticalSeekBar
+ */
 public class VerticalSeekBar extends AppCompatSeekBar
 {
-
-    private OnSeekBarChangeListener myListener;
+    private Drawable customThumb;
+    private boolean mMirrorForRtl = false;
 
     public VerticalSeekBar(Context context)
     {
         super(context);
+    }
+
+    public VerticalSeekBar(Context context, AttributeSet attrs)
+    {
+        super(context, attrs);
+        init(context, attrs, 0);
+    }
+
+    public VerticalSeekBar(Context context, AttributeSet attrs, int defStyleAttr)
+    {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs, defStyleAttr);
+    }
+
+    private void init(Context context, AttributeSet attrs, int defStyleAttr)
+    {
+        TypedArray customAttr = context.obtainStyledAttributes(attrs,
+                R.styleable.VerticalSeekBar,
+                defStyleAttr,
+                0);
+
+        Drawable customThumb = customAttr.getDrawable(R.styleable.VerticalSeekBar_customThumb);
+        setCustomThumb(customThumb);
+
+        int[] mirrorForRtlAttr = new int[]{android.R.attr.mirrorForRtl};
+        TypedArray attributes = context.obtainStyledAttributes(attrs, mirrorForRtlAttr);
+        mMirrorForRtl = attributes.getBoolean(0, false);
+
+        customAttr.recycle();
+        attributes.recycle();
     }
 
     protected void onSizeChanged(int w, int h, int oldw, int oldh)
@@ -49,19 +91,6 @@ public class VerticalSeekBar extends AppCompatSeekBar
     }
 
     @Override
-    public void setOnSeekBarChangeListener(OnSeekBarChangeListener mListener)
-    {
-        this.myListener = mListener;
-    }
-
-    protected void onDraw(Canvas c)
-    {
-        c.rotate(-90);
-        c.translate(-getHeight(), 0);
-        super.onDraw(c);
-    }
-
-    @Override
     public boolean onTouchEvent(MotionEvent event)
     {
         if (!isEnabled())
@@ -71,38 +100,85 @@ public class VerticalSeekBar extends AppCompatSeekBar
 
         switch (event.getAction())
         {
-        case MotionEvent.ACTION_DOWN:
-            if (myListener != null)
-            {
-                myListener.onStartTrackingTouch(this);
-            }
-            break;
-        case MotionEvent.ACTION_MOVE:
-            int p = getMax() - (int) (getMax() * event.getY() / getHeight());
-            if (p < 0)
-                p = 0;
-            if (p > getMax())
-                p = getMax();
-            if (p != getProgress())
-            {
-                setProgress(p);
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+            case MotionEvent.ACTION_UP:
+                setProgress(getMax() - (int) (getMax() * event.getY() / getHeight()));
                 onSizeChanged(getWidth(), getHeight(), 0, 0);
-                if (myListener != null)
-                {
-                    myListener.onProgressChanged(this, p, true);
-                }
-            }
-            break;
-        case MotionEvent.ACTION_UP:
-            if (myListener != null)
-            {
-                myListener.onStopTrackingTouch(this);
-            }
-            break;
+                break;
 
-        case MotionEvent.ACTION_CANCEL:
-            break;
+            case MotionEvent.ACTION_CANCEL:
+                break;
         }
         return true;
+    }
+
+    protected void onDraw(Canvas c)
+    {
+        c.rotate(-90);
+        c.translate(-getHeight(), 0);
+        drawThumb(c); //redrawing thumb
+
+        super.onDraw(c);
+    }
+
+    private void drawThumb(Canvas canvas)
+    {
+        Drawable customThumb = getCustomThumb();
+
+        if (customThumb != null)
+        {
+            int available = getHeight() - getPaddingTop() - getPaddingBottom();
+            final int thumbWidth = customThumb.getIntrinsicWidth();
+            available -= thumbWidth;
+            // The extra space for the thumb to move on the track
+            available += getThumbOffset() * 2;
+
+            int thumbPos = (int) (getScale() * available + 0.5f);
+
+            final int top, bottom;
+            if (getThumbOffset() == Integer.MIN_VALUE)
+            {
+                final Rect oldBounds = customThumb.getBounds();
+                top = oldBounds.top;
+                bottom = oldBounds.bottom;
+            } else
+            {
+                top = 0;
+                bottom = customThumb.getIntrinsicHeight();
+            }
+            final int left = (isLayoutRtl() && mMirrorForRtl) ? available - thumbPos : thumbPos;
+            final int right = left + thumbWidth;
+
+            Rect thumbBounds = customThumb.getBounds();
+            customThumb.setBounds(left, top, right, bottom);
+
+            canvas.save();
+            canvas.rotate(90, thumbBounds.exactCenterX(), thumbBounds.exactCenterY());
+            customThumb.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    private boolean isLayoutRtl()
+    {
+        return false;
+    }
+
+    private float getScale()
+    {
+        final int max = getMax();
+        return max > 0 ? getProgress() / (float) max : 0;
+    }
+
+    public Drawable getCustomThumb()
+    {
+        return customThumb;
+    }
+
+    public void setCustomThumb(Drawable customThumb)
+    {
+        this.customThumb = customThumb;
+        invalidate();
     }
 }

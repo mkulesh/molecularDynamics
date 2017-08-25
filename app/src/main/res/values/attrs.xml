@@ -22,5 +22,9 @@
         <!-- Location of the SVG document. -->
         <attr name="svg" format="reference|string"/>
     </declare-styleable>
-    
+
+    <declare-styleable name="VerticalSeekBar">
+        <attr name="customThumb" format="reference"/>
+    </declare-styleable>
+
 </resources>
