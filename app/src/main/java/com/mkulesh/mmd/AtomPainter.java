@@ -437,7 +437,7 @@ public class AtomPainter implements Runnable
             // set MMD background if the system wallpaper is not available
             if (orig == null)
             {
-                orig = BitmapFactory.decodeResource(context.getResources(), R.drawable.aluminium_texture_hd);
+                orig = BitmapFactory.decodeResource(context.getResources(), R.drawable.aluminium_texture);
             }
 
             if (orig.getWidth() >= width && orig.getHeight() >= height)

@@ -73,20 +73,24 @@ public class MainActivity extends AppCompatActivity
      * Dummy array used to avoid lint warning about unused resources
      */
     public final static int [] usedResources = {
+            R.raw.drawer_experiment, R.drawable.drawer_experiment,
+            R.raw.drawer_potential, R.drawable.drawer_potential,
+            R.raw.drawer_documentation, R.drawable.drawer_documentation,
+            R.raw.formula_pd_born_mayer, R.raw.formula_pd_lennard_jones, R.raw.formula_pd_morse,
+            R.raw.formula_pv_born_mayer, R.raw.formula_pv_lennard_jones, R.raw.formula_pv_morse,
+            R.raw.ic_action_settings, R.raw.ic_action_help, R.raw.ic_seek_bar, R.raw.ic_launcher,
+            R.raw.convert_file, R.raw.convert, R.raw.convert_single,
+            R.raw.ic_boundary1, R.raw.ic_boundary2, R.raw.ic_boundary3,
+            R.raw.multitouch_drag, R.raw.multitouch_pinch, R.raw.multitouch_simpletap,
             R.drawable.anonymous_amibe, R.drawable.atom_blue_red, R.drawable.ball_volley_ball,
             R.drawable.atom_gelb, R.drawable.autumn_leaf_01, R.drawable.autumn_leaf_02,
             R.drawable.ball_blue_ball, R.drawable.ball_soccer, R.drawable.ball_tennis,
-            R.drawable.ball_waves_sketch, R.drawable.bird_carton_style, R.raw.convert,
-            R.raw.convert_file, R.drawable.drop_water_blue, R.drawable.drop_water_green,
-            R.raw.formula_pd_born_mayer, R.raw.formula_pd_lennard_jones, R.raw.formula_pd_morse,
-            R.raw.formula_pv_born_mayer, R.raw.formula_pv_lennard_jones, R.raw.formula_pv_morse,
-            R.drawable.ic_boundary1, R.raw.ic_boundary1, R.drawable.ic_boundary2,
-            R.raw.ic_boundary2, R.drawable.ic_boundary3, R.raw.ic_boundary3,
-            R.drawable.ic_grid_diagonal, R.drawable.ic_grid_square, R.drawable.molecule_6atoms,
-            R.raw.ic_launcher, R.drawable.molecule_water, R.raw.multitouch_drag,
-            R.raw.multitouch_pinch, R.raw.multitouch_simpletap, R.drawable.planet_earth_01,
+            R.drawable.ball_waves_sketch, R.drawable.bird_carton_style, R.drawable.drop_water_blue,
+            R.drawable.drop_water_green, R.drawable.ic_boundary1,  R.drawable.ic_boundary2,
+            R.drawable.ic_boundary3, R.drawable.ic_grid_diagonal, R.drawable.ic_grid_square,
+            R.drawable.molecule_6atoms, R.drawable.molecule_water,  R.drawable.planet_earth_01,
             R.drawable.planet_earth_02, R.drawable.planet_red_planet, R.drawable.planet_saturn,
-            R.drawable.snow_flake, R.drawable.ufo_cartoon_style, R.drawable.whirlpool,
+            R.drawable.snow_flake, R.drawable.ufo_cartoon_style, R.drawable.whirlpool
     };
 
     @SuppressLint("RestrictedApi")

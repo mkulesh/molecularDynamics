@@ -3,7 +3,6 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">2dp</dimen>
     <dimen name="activity_vertical_margin">2dp</dimen>
-    <dimen name="activity_action_bar_size">48dp</dimen>
     <dimen name="activity_drawer_title_size">@dimen/abc_text_size_menu_material</dimen>
     <dimen name="activity_drawer_subtitle_size">@dimen/abc_text_size_caption_material</dimen>
     <dimen name="activity_flb_margin">16dp</dimen>
