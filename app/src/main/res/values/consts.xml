@@ -6,7 +6,7 @@
         <item>@raw/ic_grid_square</item>
     </array>
     <string name="pref_fill_methods_default" translatable="false">@raw/ic_grid_diagonal</string>
-    
+
     <string format="integer" name="pref_grid_hor_dimension_default" translatable="false">10</string>
     <string format="integer" name="pref_grid_ver_dimension_default" translatable="false">10</string>
     
@@ -77,6 +77,6 @@
     <string format="float" name="pref_calc_time_step_min" translatable="false">0.1</string>
     <string format="float" name="pref_calc_time_step_max" translatable="false">10.0</string>
     <string name="pref_calc_time_step_value_format" translatable="false">0.00</string>
-    <bool name="pref_system_wallpaper_default" translatable="false">true</bool>
+    <bool name="pref_system_wallpaper_default" translatable="false">false</bool>
     
 </resources>

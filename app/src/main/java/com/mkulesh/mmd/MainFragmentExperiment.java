@@ -98,7 +98,6 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
 
         // surface preparation
         surface = (SurfaceView) rootView.findViewById(R.id.experiment_view);
-        //surface.setZOrderOnTop(true);
         surface.getHolder().setFormat(PixelFormat.TRANSPARENT);
         touchListener = new SurfaceTouchListener(activity, surface);
         surface.setOnTouchListener(touchListener);

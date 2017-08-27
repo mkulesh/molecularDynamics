@@ -25,7 +25,6 @@ import java.util.ArrayList;
 
 import android.graphics.RectF;
 import android.support.v4.view.MotionEventCompat;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -59,7 +58,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
         int activeId = INVALID_ID;
     }
 
-    private Pointer pointer = new Pointer();
+    private final Pointer pointer = new Pointer();
 
     public SurfaceTouchListener(AppCompatActivity activity, SurfaceView surface)
     {
@@ -97,7 +96,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
     {
         final int action = MotionEventCompat.getActionMasked(ev);
         final int pointerIndex = MotionEventCompat.getActionIndex(ev);
-        final int pointerCount = MotionEventCompat.getPointerCount(ev);
+        final int pointerCount = ev.getPointerCount();
         if (pointerIndex != 0 || pointerCount != 1)
         {
             return true;
@@ -106,8 +105,8 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
         switch (action)
         {
         case MotionEvent.ACTION_DOWN:
-            mLastTouchX = MotionEventCompat.getX(ev, pointerIndex);
-            mLastTouchY = MotionEventCompat.getY(ev, pointerIndex);
+            mLastTouchX = ev.getX(pointerIndex);
+            mLastTouchY = ev.getY(pointerIndex);
 
             if (pointer.activeId == Pointer.INVALID_ID)
             {
@@ -116,15 +115,15 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
                     return true;
                 }
             }
-            pointer.activeId = MotionEventCompat.getPointerId(ev, 0);
+            pointer.activeId = ev.getPointerId(0);
             break;
 
         case MotionEvent.ACTION_MOVE:
             if (pointer.activeId != Pointer.INVALID_ID)
             {
 
-                final float x = MotionEventCompat.getX(ev, pointerIndex);
-                final float y = MotionEventCompat.getY(ev, pointerIndex);
+                final float x = ev.getX(pointerIndex);
+                final float y = ev.getY(pointerIndex);
 
                 // Calculate the distance moved
                 final float dx = x - mLastTouchX;

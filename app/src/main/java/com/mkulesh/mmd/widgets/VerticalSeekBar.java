@@ -41,7 +41,6 @@ import com.mkulesh.mmd.R;
 public class VerticalSeekBar extends AppCompatSeekBar
 {
     private Drawable customThumb;
-    private boolean mMirrorForRtl = false;
 
     public VerticalSeekBar(Context context)
     {
@@ -70,12 +69,7 @@ public class VerticalSeekBar extends AppCompatSeekBar
         Drawable customThumb = customAttr.getDrawable(R.styleable.VerticalSeekBar_customThumb);
         setCustomThumb(customThumb);
 
-        int[] mirrorForRtlAttr = new int[]{android.R.attr.mirrorForRtl};
-        TypedArray attributes = context.obtainStyledAttributes(attrs, mirrorForRtlAttr);
-        mMirrorForRtl = attributes.getBoolean(0, false);
-
         customAttr.recycle();
-        attributes.recycle();
     }
 
     protected void onSizeChanged(int w, int h, int oldw, int oldh)
@@ -147,7 +141,7 @@ public class VerticalSeekBar extends AppCompatSeekBar
                 top = 0;
                 bottom = customThumb.getIntrinsicHeight();
             }
-            final int left = (isLayoutRtl() && mMirrorForRtl) ? available - thumbPos : thumbPos;
+            final int left = thumbPos;
             final int right = left + thumbWidth;
 
             Rect thumbBounds = customThumb.getBounds();
@@ -158,11 +152,6 @@ public class VerticalSeekBar extends AppCompatSeekBar
             customThumb.draw(canvas);
             canvas.restore();
         }
-    }
-
-    private boolean isLayoutRtl()
-    {
-        return false;
     }
 
     private float getScale()

@@ -48,24 +48,6 @@ public class CompatUtils
     }
 
     /**
-     * Sets the text color, size, style, hint color, and highlight color from the specified TextAppearance resource.
-     * 
-     * This method was deprecated in API level 23.
-     */
-    @SuppressWarnings("deprecation")
-    public static final void setTextAppearance(Context context, TextView t, int resId)
-    {
-        if (isMarshMallowOrLater())
-        {
-            t.setTextAppearance(resId);
-        }
-        else
-        {
-            t.setTextAppearance(context, resId);
-        }
-    }
-
-    /**
      * Returns a color associated with a particular resource ID.
      * 
      * This method was deprecated in API level 23. Starting in M, the returned color will be styled for the specified
@@ -115,63 +97,9 @@ public class CompatUtils
     }
 
     /**
-     * Procedure sets the background for given view as a drawable with given resource id
-     */
-    @SuppressWarnings("deprecation")
-    public static void updateBackground(Context c, View v, int resId)
-    {
-        Drawable bg = null;
-
-        if (resId >= 0)
-        {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            {
-                bg = c.getResources().getDrawable(resId, c.getTheme());
-            }
-            else
-            {
-                bg = c.getResources().getDrawable(resId);
-            }
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
-        {
-            v.setBackground(bg);
-        }
-        else
-        {
-            v.setBackgroundDrawable(bg);
-        }
-    }
-
-    @SafeVarargs
-    public static <T> void executeAsyncTask(AsyncTask<T, ?, ?> asyncTask, T... params)
-    {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-        {
-            asyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, params);
-        }
-        else
-        {
-            asyncTask.execute(params);
-        }
-    }
-
-    public static boolean isExternalStorageEmulated()
-    {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-        {
-            return Environment.isExternalStorageEmulated();
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    /**
      * Procedure creates new dot-separated DecimalFormat
      */
+    @SuppressLint("ObsoleteSdkInt")
     public static DecimalFormat getDecimalFormat(String format)
     {
         DecimalFormat df = new DecimalFormat(format);
