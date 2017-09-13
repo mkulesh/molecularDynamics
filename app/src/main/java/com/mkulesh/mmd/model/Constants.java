@@ -66,7 +66,7 @@ public class Constants
         SUCCESS, // Calculation was successfully
         EXT_INTERRUPT, // Calculation has been interrupted by an external thread
         NAN_DETECTED // Calculation is interrupted since NaN detection
-    };
+    }
 
     /**
      * Type defining the energy normalization
@@ -87,7 +87,7 @@ public class Constants
         {
             return this.value;
         }
-    };
+    }
 
     /**
      * Type defining the boundary condition
@@ -117,6 +117,6 @@ public class Constants
         {
             return this.value;
         }
-    };
+    }
 
 }

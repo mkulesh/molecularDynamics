@@ -130,7 +130,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
                 DialogParameters.Type.POTENTIAL_CHANGE,
                 0.0,
                 PotentialType.valueOf(preferences.getString(SettingsActivity.KEY_POTENTIAL,
-                                getResources().getString(R.string.pref_potential_default))).value());
+                        getResources().getString(R.string.pref_potential_default))).value());
 
         // restore pause state
         if (runPressed)

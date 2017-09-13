@@ -66,7 +66,7 @@ public class AtomPainter implements Runnable
         NONE,
         WALLPAPER,
         MMD
-    };
+    }
 
     // drawing parameters
     public boolean drawVector = false;
@@ -226,7 +226,7 @@ public class AtomPainter implements Runnable
 
         // checks if the lockCanvas() method will be success,and if not,
         // will check this statement again
-        while (!holder.getSurface().isValid());
+        while (!holder.getSurface().isValid()) ;
 
         // Start editing pixels in this surface
         Canvas c = holder.lockCanvas();

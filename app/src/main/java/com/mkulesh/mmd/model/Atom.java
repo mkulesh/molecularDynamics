@@ -36,7 +36,7 @@ public class Atom implements Parcelable
     public enum VectorType
     {
         COORDINATE, VELOCITY, ACCELERATION
-    };
+    }
 
     /**
      * State attributes to be stored in Parcel

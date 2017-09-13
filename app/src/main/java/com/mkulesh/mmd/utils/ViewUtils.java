@@ -137,11 +137,11 @@ public class ViewUtils
     /**
      * Procedure rounds the given value to the given number of significant digits see
      * http://stackoverflow.com/questions/202302
-     * 
+     *
      * Note: The maximum double value in Java is on the order of 10^308, while the minimum value is on the order of
      * 10^-324. Therefore, you can run into trouble when applying the function roundToSignificantFigures to something
      * that's within a few powers of ten of Double.MIN_VALUE.
-     * 
+     *
      * Consequently, the variable magnitude may become Infinity, and it's all garbage from then on out. Fortunately,
      * this is not an insurmountable problem: it is only the factor magnitude that's overflowing. What really matters is
      * the product num * magnitude, and that does not overflow. One way of resolving this is by breaking up the

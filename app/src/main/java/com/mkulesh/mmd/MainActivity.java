@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity
     /**
      * Dummy array used to avoid lint warning about unused resources
      */
-    public final static int [] usedResources = {
+    public final static int[] usedResources = {
             R.raw.drawer_experiment, R.drawable.drawer_experiment,
             R.raw.drawer_potential, R.drawable.drawer_potential,
             R.raw.drawer_documentation, R.drawable.drawer_documentation,
@@ -86,9 +86,9 @@ public class MainActivity extends AppCompatActivity
             R.drawable.atom_gelb, R.drawable.autumn_leaf_01, R.drawable.autumn_leaf_02,
             R.drawable.ball_blue_ball, R.drawable.ball_soccer, R.drawable.ball_tennis,
             R.drawable.ball_waves_sketch, R.drawable.bird_carton_style, R.drawable.drop_water_blue,
-            R.drawable.drop_water_green, R.drawable.ic_boundary1,  R.drawable.ic_boundary2,
+            R.drawable.drop_water_green, R.drawable.ic_boundary1, R.drawable.ic_boundary2,
             R.drawable.ic_boundary3, R.drawable.ic_grid_diagonal, R.drawable.ic_grid_square,
-            R.drawable.molecule_6atoms, R.drawable.molecule_water,  R.drawable.planet_earth_01,
+            R.drawable.molecule_6atoms, R.drawable.molecule_water, R.drawable.planet_earth_01,
             R.drawable.planet_earth_02, R.drawable.planet_red_planet, R.drawable.planet_saturn,
             R.drawable.snow_flake, R.drawable.ufo_cartoon_style, R.drawable.whirlpool
     };
@@ -215,15 +215,15 @@ public class MainActivity extends AppCompatActivity
         }
         switch (menuItem.getItemId())
         {
-            case R.id.action_settings:
-            case R.id.action_help:
-                baseFragment.performAction(menuItem.getItemId());
-                return true;
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(menuItem);
+        case R.id.action_settings:
+        case R.id.action_help:
+            baseFragment.performAction(menuItem.getItemId());
+            return true;
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(menuItem);
         }
     }
 

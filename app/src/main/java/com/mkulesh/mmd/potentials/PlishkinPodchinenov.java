@@ -31,7 +31,7 @@ public class PlishkinPodchinenov implements BasePotential
      * Default constructor
      */
     public PlishkinPodchinenov(double Ro, double r0, double D0, double Al, double r1, double A0, double A1, double A2,
-            double A3, double A4)
+                               double A3, double A4)
     {
         super();
         this.Ro = Ro;

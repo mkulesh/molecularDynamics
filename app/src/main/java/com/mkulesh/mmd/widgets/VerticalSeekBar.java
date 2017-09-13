@@ -94,15 +94,15 @@ public class VerticalSeekBar extends AppCompatSeekBar
 
         switch (event.getAction())
         {
-            case MotionEvent.ACTION_DOWN:
-            case MotionEvent.ACTION_MOVE:
-            case MotionEvent.ACTION_UP:
-                setProgress(getMax() - (int) (getMax() * event.getY() / getHeight()));
-                onSizeChanged(getWidth(), getHeight(), 0, 0);
-                break;
+        case MotionEvent.ACTION_DOWN:
+        case MotionEvent.ACTION_MOVE:
+        case MotionEvent.ACTION_UP:
+            setProgress(getMax() - (int) (getMax() * event.getY() / getHeight()));
+            onSizeChanged(getWidth(), getHeight(), 0, 0);
+            break;
 
-            case MotionEvent.ACTION_CANCEL:
-                break;
+        case MotionEvent.ACTION_CANCEL:
+            break;
         }
         return true;
     }
@@ -136,7 +136,8 @@ public class VerticalSeekBar extends AppCompatSeekBar
                 final Rect oldBounds = customThumb.getBounds();
                 top = oldBounds.top;
                 bottom = oldBounds.bottom;
-            } else
+            }
+            else
             {
                 top = 0;
                 bottom = customThumb.getIntrinsicHeight();

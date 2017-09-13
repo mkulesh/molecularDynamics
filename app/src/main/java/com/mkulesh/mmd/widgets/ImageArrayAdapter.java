@@ -49,20 +49,15 @@ public class ImageArrayAdapter extends ArrayAdapter<CharSequence>
 
     /**
      * ImageArrayAdapter constructor.
-     * 
-     * @param context
-     *            the context.
-     * @param textViewResourceId
-     *            resource id of the text view.
-     * @param objects
-     *            to be displayed.
-     * @param imageResourceIds
-     *            resource id of the images to be displayed.
-     * @param index
-     *            index of the previous selected item.
+     *
+     * @param context            the context.
+     * @param textViewResourceId resource id of the text view.
+     * @param objects            to be displayed.
+     * @param imageResourceIds   resource id of the images to be displayed.
+     * @param index              index of the previous selected item.
      */
     public ImageArrayAdapter(Context context, int textViewResourceId, CharSequence[] objects, ArrayList<Bitmap> images,
-            int index)
+                             int index)
     {
         super(context, textViewResourceId, objects);
         this.textViewResourceId = textViewResourceId;

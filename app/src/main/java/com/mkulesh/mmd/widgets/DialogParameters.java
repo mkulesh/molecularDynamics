@@ -29,7 +29,7 @@ public class DialogParameters
     public enum Type
     {
         SURFACE_SCHEMA, GRAVITY_CHANGE, THERMAL_CHANGE, TIMESTEP_CHANGE, CONDITIONS_CHANGE, POTENTIAL_CHANGE
-    };
+    }
 
     public Type type;
     public boolean isVertical;

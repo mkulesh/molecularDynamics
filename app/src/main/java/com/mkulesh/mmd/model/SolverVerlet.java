@@ -27,7 +27,7 @@ import com.mkulesh.mmd.model.Constants.CalculationType;
 
 /**
  * This class implements Velocity Verlet integration method see: http://en.wikipedia.org/wiki/Verlet_integration
- * 
+ *
  * Note that that this algorithm assumes that acceleration only depends on position, and does not depend on velocity
  */
 public class SolverVerlet implements SolverBase

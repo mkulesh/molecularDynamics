@@ -135,7 +135,7 @@ public class MMDWallpaperService extends WallpaperService
 
         @Override
         public void onOffsetsChanged(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep,
-                int xPixelOffset, int yPixelOffset)
+                                     int xPixelOffset, int yPixelOffset)
         {
             if (exp != null)
             {

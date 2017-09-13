@@ -137,8 +137,7 @@ public class AtomSet implements Parcelable
     /**
      * Private attributes to be created internally
      */
-    private Random rand = new Random(); // used to generate random coordinates
-                                        // and velocities
+    private Random rand = new Random(); // used to generate random coordinates and velocities
     private SolverBase solver = null;
     private ArrayList<Atom> backupedAtoms = new ArrayList<Atom>();
     private ThreadContol pauseHandler = null;
@@ -460,7 +459,7 @@ public class AtomSet implements Parcelable
         double vMean = calculateAverageVelocity();
         double areaThreshold = 2.0;
         double velocityThreshold = 1e+3;
-        for (int i = 0; i < atoms.size();)
+        for (int i = 0; i < atoms.size(); )
         {
             Atom a = atoms.get(i);
             boolean isValid = true;
@@ -735,7 +734,7 @@ public class AtomSet implements Parcelable
 
         // update parameters and delete atoms that are outside of the area
         calculateParameters();
-        for (int i = 0; i < atoms.size();)
+        for (int i = 0; i < atoms.size(); )
         {
             if (!area.isInside(atoms.get(i).coordinate))
             {

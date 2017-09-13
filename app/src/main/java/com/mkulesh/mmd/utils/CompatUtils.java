@@ -49,10 +49,10 @@ public class CompatUtils
 
     /**
      * Returns a color associated with a particular resource ID.
-     * 
+     *
      * This method was deprecated in API level 23. Starting in M, the returned color will be styled for the specified
      * Context's theme.
-     * 
+     *
      * Note: Starting from Android Support Library 23, a new getColor() method has been added to ContextCompat.
      */
     @SuppressWarnings("deprecation")

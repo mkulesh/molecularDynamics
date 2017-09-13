@@ -28,7 +28,7 @@ public interface BasePotential
     public enum ValueType
     {
         VALUE, DERIVATIVE
-    };
+    }
 
     /**
      * Procedure returns the potential name

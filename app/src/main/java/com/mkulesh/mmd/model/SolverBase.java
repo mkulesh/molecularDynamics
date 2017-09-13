@@ -34,7 +34,7 @@ public interface SolverBase
 
     /**
      * Procedure calculates the next atom configuration and returns the overall calculation status
-     * 
+     *
      * It stores the coordinates and velocities for step n into given AtomSet using time step dt
      */
     public Constants.CalculationType calculateNextStep(AtomSet atomSet, double dt);
