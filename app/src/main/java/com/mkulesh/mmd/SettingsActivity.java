@@ -33,6 +33,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 
 import com.mkulesh.mmd.model.Constants.PotentialType;
@@ -50,7 +51,7 @@ import com.mkulesh.mmd.utils.CompatUtils;
  * guidelines and the <a href="http://developer.android.com/guide/topics/ui/settings.html">Settings API Guide</a> for
  * more information on developing a Settings UI.
  */
-public class SettingsActivity extends PreferenceActivity
+public class SettingsActivity extends AppCompatPreferenceActivity
 {
 
     // Initial layout
@@ -96,6 +97,17 @@ public class SettingsActivity extends PreferenceActivity
     {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.pref_general);
+
+        // Prepare action bar
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setBackgroundDrawable(CompatUtils.getDrawable(this, R.drawable.action_bar_background));
+            actionBar.setElevation(3);
+            actionBar.setTitle(R.string.action_settings);
+        }
+
         // get extra parameters
         PotentialType potentialType = PotentialType.valueOf(PreferenceManager.getDefaultSharedPreferences(this)
                 .getString(SettingsActivity.KEY_POTENTIAL, getResources().getString(R.string.pref_potential_default)));
