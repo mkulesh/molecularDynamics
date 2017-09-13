@@ -7,8 +7,9 @@ The trajectories of the particles are determined numerically. The well known Vel
 In physics, MMD is used to examine the dynamics of atomic-level phenomena that cannot be observed directly. Within the mobile devices context, it can be used as a small mobile laboratory to understand the basics of the particle physics. Furthermore it can be used to produce nice dynamical pictures that are suitable as a live wallpaper.
 ![main view](https://github.com/mkulesh/molecularDynamics/blob/master/images/main_view_hor.png)
 
-## Application features:
+<a href='https://play.google.com/store/apps/details?id=com.mkulesh.mmd&hl=en'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width=323 height=125/></a>
 
+## Application features:
 - The application can be set as a live wallpaper that visualizes the current experimental set up.
 - In the live wallpaper mode, the active “static” wallpaper can be used as a background. You can mix your favorite background picture with particles “flying” in front of it.
 - The changes made in main application will be applied to live wallpaper daemon to make the wallpaper tuning easier.
@@ -21,9 +22,6 @@ In physics, MMD is used to examine the dynamics of atomic-level phenomena that c
 - Multi-touch interface is used to zoom and drag the experimental area.
 
 Note: since the application implements a numerical integration method, it generates a significant CPU load. Therefore, the live wallpaper mode is not suitable for low-power devices.
-
-
-<a href='https://play.google.com/store/apps/details?id=com.mkulesh.mmd&hl=en'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width=323 height=125/></a>
 
 ## Languages
 * English
