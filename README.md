@@ -30,7 +30,6 @@ Note: since the application implements a numerical integration method, it genera
 * Russian
 
 ## License
-
 This software is published under the *GNU General Public License, Version 3*
 
 Copyright (C) 2014-2017 Mikhail Kulesh
