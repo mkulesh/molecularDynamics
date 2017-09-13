@@ -21,14 +21,6 @@
 
 package com.mkulesh.mmd.utils;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -42,6 +34,14 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.mkulesh.mmd.R;
+
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ViewUtils
 {

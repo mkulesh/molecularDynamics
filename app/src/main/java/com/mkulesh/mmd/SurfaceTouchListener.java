@@ -21,8 +21,6 @@
 
 package com.mkulesh.mmd;
 
-import java.util.ArrayList;
-
 import android.graphics.RectF;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +36,8 @@ import com.mkulesh.mmd.utils.ViewUtils;
 import com.mkulesh.mmd.widgets.ControlDialog;
 import com.mkulesh.mmd.widgets.DialogChangeListener;
 import com.mkulesh.mmd.widgets.DialogParameters;
+
+import java.util.ArrayList;
 
 class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureListener implements OnTouchListener,
         DialogChangeListener

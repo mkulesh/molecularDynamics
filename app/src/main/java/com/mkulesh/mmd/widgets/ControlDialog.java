@@ -21,8 +21,6 @@
 
 package com.mkulesh.mmd.widgets;
 
-import java.text.DecimalFormat;
-
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -42,6 +40,8 @@ import android.widget.TextView;
 
 import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.utils.CompatUtils;
+
+import java.text.DecimalFormat;
 
 public class ControlDialog extends Dialog implements OnSeekBarChangeListener, OnClickListener, OnItemClickListener
 {

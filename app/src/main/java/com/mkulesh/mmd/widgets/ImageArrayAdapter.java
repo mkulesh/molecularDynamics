@@ -20,22 +20,19 @@
  */
 package com.mkulesh.mmd.widgets;
 
-import java.util.ArrayList;
-
-import com.mkulesh.mmd.R;
-
 import android.app.Activity;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
+
+import com.mkulesh.mmd.R;
+
+import java.util.ArrayList;
 
 /**
  * The ImageArrayAdapter is the array adapter used for displaying an additional image to a list preference item.

@@ -21,9 +21,9 @@
 
 package com.mkulesh.mmd.model;
 
-import java.util.ArrayList;
-
 import com.mkulesh.mmd.model.Constants.CalculationType;
+
+import java.util.ArrayList;
 
 /**
  * This solver implements the Runge-Kutta integration method

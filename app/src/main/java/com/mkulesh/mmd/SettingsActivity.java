@@ -21,8 +21,6 @@
 
 package com.mkulesh.mmd;
 
-import java.text.DecimalFormat;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
@@ -41,6 +39,8 @@ import com.mkulesh.mmd.model.Potential;
 import com.mkulesh.mmd.model.Vector2D;
 import com.mkulesh.mmd.potentials.BasePotential;
 import com.mkulesh.mmd.utils.CompatUtils;
+
+import java.text.DecimalFormat;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On handset devices, settings are presented

@@ -20,8 +20,6 @@
  */
 package com.mkulesh.mmd.widgets;
 
-import java.util.ArrayList;
-
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -33,6 +31,8 @@ import android.widget.ListAdapter;
 
 import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.utils.SVGUtils;
+
+import java.util.ArrayList;
 
 /**
  * The ImageListPreference class responsible for displaying an image for each item within the list.

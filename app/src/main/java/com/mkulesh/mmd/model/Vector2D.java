@@ -21,10 +21,10 @@
 
 package com.mkulesh.mmd.model;
 
-import java.util.Random;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.Random;
 
 /**
  * Class that implements a 2D vector

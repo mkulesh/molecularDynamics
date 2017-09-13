@@ -21,10 +21,6 @@
 
 package com.mkulesh.mmd.model;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Random;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -43,6 +39,10 @@ import com.mkulesh.mmd.potentials.BasePotential;
 import com.mkulesh.mmd.utils.CompatUtils;
 import com.mkulesh.mmd.utils.ThreadContol;
 import com.mkulesh.mmd.utils.ViewUtils;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Random;
 
 /**
  * Class that implements an atom set

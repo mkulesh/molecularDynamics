@@ -21,8 +21,6 @@
 
 package com.mkulesh.mmd.widgets;
 
-import java.text.DecimalFormat;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -40,6 +38,8 @@ import com.mkulesh.mmd.model.PhysicalArea;
 import com.mkulesh.mmd.model.Vector2D;
 import com.mkulesh.mmd.potentials.BasePotential;
 import com.mkulesh.mmd.utils.CompatUtils;
+
+import java.text.DecimalFormat;
 
 public class FunctionView extends AppCompatTextView
 {

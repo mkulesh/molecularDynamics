@@ -21,11 +21,6 @@
 
 package com.mkulesh.mmd;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -51,6 +46,11 @@ import com.mkulesh.mmd.utils.CompatUtils;
 import com.mkulesh.mmd.utils.SVGUtils;
 import com.mkulesh.mmd.utils.ThreadContol;
 import com.mkulesh.mmd.utils.ViewUtils;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 /**
  * Class that implements painting thread
