@@ -79,6 +79,7 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
     {
         super.onCreateOptionsMenu(menu, inflater);
         menu.findItem(R.id.action_settings).setTitle(activity.getResources().getString(R.string.pref_potential));
+        ViewUtils.setMenuIconColor(activity, menu, R.id.action_settings);
     }
 
     @Override

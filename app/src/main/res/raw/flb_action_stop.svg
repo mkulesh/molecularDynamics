@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -26,12 +24,12 @@
   <defs
      id="defs4391" />
   <rect
-     width="48"
-     height="48"
+     width="46"
+     height="46"
      rx="0"
      ry="0"
-     x="0"
-     y="0"
+     x="1"
+     y="1"
      id="rect2994"
-     style="fill:#ffffff;fill-opacity:1;stroke:none" />
+     style="fill-opacity:1;stroke:none;stroke-width:0.95833331" />
 </svg>

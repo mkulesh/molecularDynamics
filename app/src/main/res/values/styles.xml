@@ -5,52 +5,21 @@
         <item name="selectableItemBackground">@drawable/clickable_background</item>
         <item name="selectableItemBackgroundBorderless">@drawable/clickable_background</item>
         <item name="actionBarItemBackground">@drawable/clickable_background</item>
-        <item name="actionModeBackground">@null</item>
-        <item name="colorAccent">@color/mmd_background_color</item>
+        <item name="actionModeBackground">@color/mmd_primary</item>
+        <item name="colorPrimary">@color/mmd_primary</item>
+        <item name="colorPrimaryDark">@color/mmd_primary_dark</item>
+        <item name="colorAccent">@color/mmd_accent</item>
     </style>
 
     <style name="MmdActionBarTheme" parent="AppBaseTheme">
     </style>
 
-    <style name="PreferenceScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:textColor">@color/mmd_pref_text_color</item>
+    <style name="PreferenceScreen" parent="AppBaseTheme">
+        <item name="android:textColor">@color/mmd_primary_text</item>
+        <item name="android:textColorSecondary">@color/mmd_secondary_text</item>
     </style>
 
     <!-- Custom styles -->
-    <style name="DrawerTitleStyle" parent="@android:style/TextAppearance.Small">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:inputType">none</item>
-        <item name="android:focusable">false</item>
-        <item name="android:paddingBottom">0dp</item>
-        <item name="android:paddingLeft">0dp</item>
-        <item name="android:paddingRight">0dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:text">text</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:textSize">@dimen/activity_drawer_title_size</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/drawer_title_color</item>
-    </style>
-
-    <style name="DrawerSubtitleStyle" parent="@android:style/TextAppearance.Small">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:inputType">none</item>
-        <item name="android:focusable">false</item>
-        <item name="android:paddingBottom">3sp</item>
-        <item name="android:paddingLeft">0dp</item>
-        <item name="android:paddingRight">0dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:text">text</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:textSize">@dimen/activity_drawer_subtitle_size</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/drawer_subtitle_color</item>
-    </style>
-
     <style name="ControlDialogBgStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -86,7 +55,7 @@
         <item name="android:paddingTop">2dp</item>
         <item name="android:text">text</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/mmd_text_color</item>
+        <item name="android:textColor">@color/mmd_icons</item>
         <item name="android:shadowDx">2</item>
         <item name="android:shadowDy">2</item>
         <item name="android:shadowRadius">2</item>
@@ -95,7 +64,7 @@
 
     <style name="InfoTextAppearance" parent="@android:style/TextAppearance">
         <item name="android:textSize">10sp</item>
-        <item name="android:textColor">@color/mmd_text_color</item>
+        <item name="android:textColor">@color/mmd_icons</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">normal</item>
         <item name="android:shadowDx">2</item>
@@ -106,7 +75,7 @@
 
     <style name="SurfaceSchemaTextAppearance" parent="@android:style/TextAppearance">
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/mmd_text_color</item>
+        <item name="android:textColor">@color/mmd_icons</item>
         <item name="android:textStyle">normal</item>
         <item name="android:typeface">normal</item>
         <item name="android:shadowDx">2</item>
@@ -133,16 +102,16 @@
         <item name="android:paddingRight">6dp</item>
         <item name="android:paddingTop">6dp</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/mmd_plot_text_color</item>
+        <item name="android:textColor">@color/mmd_icons</item>
         <item name="android:shadowDx">2</item>
         <item name="android:shadowDy">2</item>
         <item name="android:shadowRadius">2</item>
         <item name="android:shadowColor">#ba000000</item>
-        <item name="com.mkulesh.mmd:axisColor">@color/mmd_plot_axis_color</item>
+        <item name="com.mkulesh.mmd:axisColor">@color/mmd_primary_text</item>
         <item name="com.mkulesh.mmd:axisWidth">1dp</item>
         <item name="com.mkulesh.mmd:axisArrowSize">10dp</item>
         <item name="com.mkulesh.mmd:axisLabelSize">4dp</item>
-        <item name="com.mkulesh.mmd:plotLineColor">@color/mmd_plot_func_color</item>
+        <item name="com.mkulesh.mmd:plotLineColor">@color/mmd_accent</item>
         <item name="com.mkulesh.mmd:plotLineWidth">3dp</item>
         <item name="com.mkulesh.mmd:formulaWidth">0.75</item>
         <item name="com.mkulesh.mmd:labelNumber">10</item>

@@ -71,6 +71,10 @@ public class FloatingButtonsSet extends LinearLayout implements OnLongClickListe
                 v.setVisibility(View.VISIBLE);
                 v.setOnLongClickListener(this);
                 v.setOnClickListener(handler);
+                if (v instanceof FloatingActionButton)
+                {
+                    ViewUtils.setMenuIconColor(getContext(), (FloatingActionButton)v);
+                }
             }
             else
             {

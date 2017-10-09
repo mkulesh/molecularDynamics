@@ -645,11 +645,11 @@ public class AtomPainter implements Runnable
             set.getArea().toScreenPoint(set.getVewPort().getMax(), rect, pMax);
             viewPortRect.set(pMin.x, pMax.y, pMax.x, pMin.y);
             // fill panel
-            paint.setColor(CompatUtils.getColor(context, R.color.mmd_background_color));
+            paint.setColor(CompatUtils.getColor(context, R.color.mmd_primary_dark));
             paint.setStyle(Paint.Style.FILL);
             c.drawRect(rect, paint);
             // stroke panel
-            paint.setColor(CompatUtils.getColor(context, R.color.mmd_border_color));
+            paint.setColor(CompatUtils.getColor(context, R.color.mmd_icons));
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(2);
             c.drawRect(rect, paint);

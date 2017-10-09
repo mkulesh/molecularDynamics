@@ -27,8 +27,12 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -281,5 +285,21 @@ public class ViewUtils
             return true;
         }
         return false;
+    }
+
+    public static void setMenuIconColor(Context context, Menu menu, int actionId)
+    {
+        Drawable drawable = menu.findItem(actionId).getIcon();
+        drawable = DrawableCompat.wrap(drawable);
+        DrawableCompat.setTint(drawable, ContextCompat.getColor(context, R.color.mmd_icons));
+        menu.findItem(actionId).setIcon(drawable);
+    }
+
+    public static void setMenuIconColor(Context context, FloatingActionButton menu)
+    {
+        Drawable drawable = menu.getDrawable();
+        drawable = DrawableCompat.wrap(drawable);
+        DrawableCompat.setTint(drawable, ContextCompat.getColor(context, R.color.mmd_icons));
+        menu.setBackground(drawable);
     }
 }

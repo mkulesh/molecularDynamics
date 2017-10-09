@@ -114,7 +114,9 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
     {
         super.onCreateOptionsMenu(menu, inflater);
         menu.findItem(R.id.action_settings).setTitle(activity.getResources().getString(R.string.action_settings));
+        ViewUtils.setMenuIconColor(activity, menu, R.id.action_settings);
         menu.findItem(R.id.action_help).setVisible(true);
+        ViewUtils.setMenuIconColor(activity, menu, R.id.action_help);
     }
 
     @Override
