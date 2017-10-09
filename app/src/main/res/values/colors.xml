@@ -12,8 +12,7 @@
     <color name="mmd_background_color">#b4003dbb</color>
     <color name="mmd_border_color">#c8ffffff</color>
     <color name="mmd_text_color">#ffffffff</color>
-    <color name="mmd_nav_title_color">#c8000000</color>
-    <color name="mmd_nav_subtitle_color">#ba000000</color>
+    <color name="mmd_pref_text_color">#c8000000</color>
     <color name="mmd_plot_axis_color">#ba000000</color>
     <color name="mmd_plot_text_color">#baffffff</color>
     <color name="mmd_plot_func_color">#ecf00d13</color>

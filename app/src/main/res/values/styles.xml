@@ -1,15 +1,18 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Application theme. -->
-    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="selectableItemBackground">@drawable/clickable_background</item>
         <item name="selectableItemBackgroundBorderless">@drawable/clickable_background</item>
         <item name="actionBarItemBackground">@drawable/clickable_background</item>
         <item name="actionModeBackground">@null</item>
     </style>
 
-    <!-- Action Bar and standard navigation theme. -->
     <style name="MmdActionBarTheme" parent="AppBaseTheme">
+    </style>
+
+    <style name="PreferenceScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/mmd_pref_text_color</item>
     </style>
 
     <!-- Custom styles -->
@@ -121,37 +124,6 @@
         <item name="android:paddingRight">1dp</item>
         <item name="android:text">test</item>
         <item name="android:background">@drawable/mmd_panel_background</item>
-    </style>
-
-    <style name="NavigationTextStyle" parent="@android:style/TextAppearance.Small">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:inputType">none</item>
-        <item name="android:focusable">false</item>
-        <item name="android:paddingBottom">0dp</item>
-        <item name="android:paddingLeft">0dp</item>
-        <item name="android:paddingRight">0dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:text">text</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/mmd_nav_title_color</item>
-    </style>
-
-    <style name="NavigationSubtitleStyle" parent="@android:style/TextAppearance.Small">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center</item>
-        <item name="android:inputType">none</item>
-        <item name="android:focusable">false</item>
-        <item name="android:paddingBottom">0dp</item>
-        <item name="android:paddingLeft">6dp</item>
-        <item name="android:paddingRight">0dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:text">text</item>
-        <item name="android:textSize">11sp</item>
-        <item name="android:textStyle">italic</item>
-        <item name="android:textColor">@color/mmd_nav_subtitle_color</item>
     </style>
 
     <style name="PotentialViewStyle">

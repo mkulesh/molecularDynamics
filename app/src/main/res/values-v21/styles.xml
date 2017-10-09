@@ -6,6 +6,8 @@
         <item name="android:selectableItemBackgroundBorderless">@drawable/clickable_background</item>
         <item name="android:actionBarItemBackground">@drawable/clickable_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/clickable_background_no_padding</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
 </resources>

@@ -35,6 +35,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,7 +50,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-    protected ActionBar actionBar = null;
+    private Toolbar mToolbar = null;
     private DrawerLayout mDrawerLayout = null;
     private ActionBarDrawerToggle mDrawerToggle = null;
     private Display display = null;
@@ -92,13 +93,11 @@ public class MainActivity extends AppCompatActivity
                 "App started, android version " + Build.VERSION.SDK_INT + ", installation source: "
                         + pm.getInstallerPackageName(getPackageName()));
 
-        // action bar (v7 compatibility library)
-        actionBar = getSupportActionBar();
+        // Action bar (v7 compatibility library): use Toolbar
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setShowHideAnimationEnabled(true);
-        actionBar.setBackgroundDrawable(CompatUtils.getDrawable(this, R.drawable.action_bar_background));
-        actionBar.setElevation(3);
 
         // Action bar drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -241,10 +240,10 @@ public class MainActivity extends AppCompatActivity
     {
         menuItem.setChecked(true);
         mDrawerLayout.closeDrawers();
-        actionBar.setTitle(menuItem.getTitle());
+        mToolbar.setTitle(menuItem.getTitle());
         final String[] subtitles = getResources().getStringArray(R.array.activity_subtitles);
         final CharSequence subTitle = (menuItem.getOrder() < subtitles.length) ? subtitles[menuItem.getOrder()] : "";
-        actionBar.setSubtitle(subTitle);
+        mToolbar.setSubtitle(subTitle);
 
         Fragment fragment = null;
         switch (menuItem.getItemId())

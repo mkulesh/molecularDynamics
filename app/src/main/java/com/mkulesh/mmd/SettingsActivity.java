@@ -30,9 +30,13 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.model.Potential;
@@ -96,17 +100,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setupActionBar();
         addPreferencesFromResource(R.xml.pref_general);
-
-        // Prepare action bar
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
-        {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setBackgroundDrawable(CompatUtils.getDrawable(this, R.drawable.action_bar_background));
-            actionBar.setElevation(3);
-            actionBar.setTitle(R.string.action_settings);
-        }
 
         // get extra parameters
         PotentialType potentialType = PotentialType.valueOf(PreferenceManager.getDefaultSharedPreferences(this)
@@ -140,6 +135,27 @@ public class SettingsActivity extends AppCompatPreferenceActivity
         // in order to update their visibility
         bindPreferenceSummaryToValue(KEY_FILL_METHODS);
         areaUpdateEnabled = true;
+    }
+
+    private void setupActionBar()
+    {
+        ViewGroup rootView = (ViewGroup)findViewById(R.id.action_bar_root); //id from appcompat
+        if (rootView != null)
+        {
+            View view = getLayoutInflater().inflate(R.layout.activity_toolbar, rootView, false);
+            rootView.addView(view, 0);
+
+            Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+        }
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null)
+        {
+            // Show the Up button in the action bar.
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(R.string.action_settings);
+        }
     }
 
     /**
