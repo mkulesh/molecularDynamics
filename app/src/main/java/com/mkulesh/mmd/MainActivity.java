@@ -22,50 +22,36 @@
 package com.mkulesh.mmd;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mkulesh.mmd.utils.CompatUtils;
 import com.mkulesh.mmd.utils.ViewUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
     protected ActionBar actionBar = null;
     private DrawerLayout mDrawerLayout = null;
-    private ListView mDrawerList = null;
     private ActionBarDrawerToggle mDrawerToggle = null;
-    private DrawerListAdapter drawerListAdapter = null;
     private Display display = null;
     private Experiment experiment = null;
 
@@ -115,22 +101,27 @@ public class MainActivity extends AppCompatActivity
         actionBar.setElevation(3);
 
         // Action bar drawer
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.main_left_drawer);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        // set a custom shadow that overlays the main content when the drawer opens
-        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        // set up the drawer's list view with items and click listener
-        drawerListAdapter = new DrawerListAdapter(this);
-        mDrawerList.setAdapter(drawerListAdapter);
-        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        if (navigationView != null)
+        {
+            navigationView.setNavigationItemSelectedListener(
+                    new NavigationView.OnNavigationItemSelectedListener()
+                    {
+                        @Override
+                        public boolean onNavigationItemSelected(MenuItem menuItem)
+                        {
+                            selectNavigationItem(menuItem);
+                            return true;
+                        }
+                    });
+        }
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon
-        mDrawerToggle = new ActionBarDrawerToggle(this, /* host Activity */
-                mDrawerLayout, /* DrawerLayout object */
-                R.drawable.ic_drawer, /* nav drawer image to replace 'Up' caret */
-                R.string.drawer_open)
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                R.string.drawer_open, R.string.drawer_close)
         {
             public void onDrawerClosed(View view)
             {
@@ -152,7 +143,7 @@ public class MainActivity extends AppCompatActivity
 
         if (savedInstanceState == null)
         {
-            selectItem(BaseFragment.EXPERIMENT_FRAGMENT_ID);
+            selectNavigationItem(navigationView.getMenu().getItem(0));
         }
     }
 
@@ -231,16 +222,6 @@ public class MainActivity extends AppCompatActivity
      * Navigation drawer
      *********************************************************/
 
-    public void setTitle(CharSequence name)
-    {
-        actionBar.setTitle(name);
-    }
-
-    public void setSubTitle(CharSequence name)
-    {
-        actionBar.setSubtitle(name);
-    }
-
     @SuppressLint("RestrictedApi")
     public BaseFragment getVisibleFragment()
     {
@@ -256,32 +237,33 @@ public class MainActivity extends AppCompatActivity
         return null;
     }
 
-    /* The click listener for ListView in the navigation drawer */
-    private class DrawerItemClickListener implements ListView.OnItemClickListener
+    public void selectNavigationItem(MenuItem menuItem)
     {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-        {
-            selectItem(position);
-        }
-    }
+        menuItem.setChecked(true);
+        mDrawerLayout.closeDrawers();
+        actionBar.setTitle(menuItem.getTitle());
+        final String[] subtitles = getResources().getStringArray(R.array.activity_subtitles);
+        final CharSequence subTitle = (menuItem.getOrder() < subtitles.length) ? subtitles[menuItem.getOrder()] : "";
+        actionBar.setSubtitle(subTitle);
 
-    public void selectItem(int position)
-    {
         Fragment fragment = null;
-        if (position == BaseFragment.EXPERIMENT_FRAGMENT_ID)
+        switch (menuItem.getItemId())
+        {
+        case R.id.nav_experiment:
         {
             fragment = new MainFragmentExperiment();
             Bundle args = new Bundle();
             fragment.setArguments(args);
+            break;
         }
-        else if (position == BaseFragment.POTENTIAL_FRAGMENT_ID)
+        case R.id.nav_potential:
         {
             fragment = new MainFragmentPotential();
             Bundle args = new Bundle();
             fragment.setArguments(args);
+            break;
         }
-        else if (position == BaseFragment.ABOUT_METHOD_FRAGMENT_ID)
+        case R.id.nav_documentation:
         {
             try
             {
@@ -294,6 +276,8 @@ public class MainActivity extends AppCompatActivity
             {
                 Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
+            break;
+        }
         }
 
         if (fragment != null)
@@ -302,89 +286,6 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             transaction.replace(R.id.main_content_frame, fragment);
             transaction.commit();
-        }
-
-        // update selected item and title, then close the drawer
-        mDrawerList.setItemChecked(position, true);
-        mDrawerLayout.closeDrawer(mDrawerList);
-    }
-
-    /**
-     * Custom drawer list adapter.
-     */
-    private final class DrawerListAdapter extends BaseAdapter
-    {
-        private LayoutInflater layoutInflater;
-        private ArrayList<Bitmap> logos = null;
-        private CharSequence[] titles = null, subtitles = null;
-
-        public DrawerListAdapter(Context context)
-        {
-            layoutInflater = LayoutInflater.from(context);
-            titles = context.getResources().getStringArray(R.array.activity_titles);
-            subtitles = context.getResources().getStringArray(R.array.activity_subtitles);
-            String[] imageNames = context.getResources().getStringArray(R.array.activity_logos);
-            logos = new ArrayList<Bitmap>(imageNames.length);
-            for (int i = 0; i < imageNames.length; i++)
-            {
-                final String imageName = "drawable/" + imageNames[i];
-                final int imageId = context.getResources().getIdentifier(imageName, null, context.getPackageName());
-                if (imageId != 0)
-                {
-                    Bitmap image = BitmapFactory.decodeResource(context.getResources(), imageId);
-                    logos.add(image);
-                }
-                else
-                {
-                    logos.add(null);
-                }
-            }
-        }
-
-        @Override
-        public int getCount()
-        {
-            return titles.length;
-        }
-
-        @Override
-        public Object getItem(int position)
-        {
-            return position;
-        }
-
-        @Override
-        public long getItemId(int position)
-        {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View inView, ViewGroup parent)
-        {
-            View view = inView;
-            if (view == null)
-            {
-                view = layoutInflater.inflate(R.layout.activity_drawer_list_item, parent, false);
-            }
-
-            // Icon...
-            ImageView logo = (ImageView) view.findViewById(R.id.main_drawer_logo);
-            if (logos != null)
-            {
-                logo.setImageDrawable(new BitmapDrawable(getResources(), logos.get(position)));
-            }
-
-            // Title...
-            TextView title = (TextView) view.findViewById(R.id.main_drawer_title);
-            title.setText(titles[position]);
-
-            // Subtitle...
-            TextView subtitle = ((TextView) view.findViewById(R.id.main_drawer_subtitle));
-            subtitle.setText(subtitles[position]);
-            subtitle.setVisibility("".equals(subtitle.getText()) ? View.GONE : View.VISIBLE);
-
-            return view;
         }
     }
 }

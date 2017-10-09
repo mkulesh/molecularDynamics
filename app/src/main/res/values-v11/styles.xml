@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Action Bar and standard navigation theme. -->
-    <style name="MmdActionBarTheme" parent="@style/Theme.AppCompat.Light">
+    <style name="MmdActionBarTheme" parent="AppBaseTheme">
         <item name="android:selectableItemBackground">@drawable/clickable_background</item>
-        <item name="selectableItemBackgroundBorderless">@drawable/clickable_background</item>
-        <item name="actionBarItemBackground">@drawable/clickable_background</item>
-        <!-- "listChoiceBackgroundIndicator" has no effect on Android 4.x-->
-        <item name="actionModeBackground">@null</item>
     </style>
 
 </resources>

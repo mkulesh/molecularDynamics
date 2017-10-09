@@ -1,25 +1,15 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Application theme. -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-    </style>
-
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
-
-    <!-- Action Bar and standard navigation theme. -->
-    <style name="MmdActionBarTheme" parent="@style/Theme.AppCompat.Light">
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
         <item name="selectableItemBackground">@drawable/clickable_background</item>
         <item name="selectableItemBackgroundBorderless">@drawable/clickable_background</item>
         <item name="actionBarItemBackground">@drawable/clickable_background</item>
-        <!-- "listChoiceBackgroundIndicator" is not working on Android 2.x-->
         <item name="actionModeBackground">@null</item>
+    </style>
+
+    <!-- Action Bar and standard navigation theme. -->
+    <style name="MmdActionBarTheme" parent="AppBaseTheme">
     </style>
 
     <!-- Custom styles -->

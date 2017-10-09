@@ -50,17 +50,7 @@ abstract public class BaseFragment extends Fragment
     {
         fragmentNumber = number;
         activity = (MainActivity) getActivity();
-
         setHasOptionsMenu(true);
-
-        String[] titles = getResources().getStringArray(R.array.activity_titles);
-        CharSequence title = (fragmentNumber < titles.length) ? titles[fragmentNumber] : activity.getTitle();
-        activity.setTitle(title);
-
-        String[] subtitles = getResources().getStringArray(R.array.activity_subtitles);
-        CharSequence subTitle = (fragmentNumber < subtitles.length) ? subtitles[fragmentNumber] : "";
-        activity.setSubTitle(subTitle);
-
         preferences = PreferenceManager.getDefaultSharedPreferences(activity);
     }
 

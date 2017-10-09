@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_experiment"
+            android:orderInCategory="0"
+            android:icon="@drawable/drawer_experiment"
+            android:title="@string/drawer_experiment"/>
+        <item
+            android:id="@+id/nav_potential"
+            android:orderInCategory="1"
+            android:icon="@drawable/drawer_potential"
+            android:title="@string/drawer_potential" />
+        <item
+            android:id="@+id/nav_documentation"
+            android:orderInCategory="2"
+            android:icon="@drawable/drawer_documentation"
+            android:title="@string/drawer_documentation" />
+    </group>
+
+</menu>
