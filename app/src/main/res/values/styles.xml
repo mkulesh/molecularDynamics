@@ -6,6 +6,7 @@
         <item name="selectableItemBackgroundBorderless">@drawable/clickable_background</item>
         <item name="actionBarItemBackground">@drawable/clickable_background</item>
         <item name="actionModeBackground">@null</item>
+        <item name="colorAccent">@color/mmd_background_color</item>
     </style>
 
     <style name="MmdActionBarTheme" parent="AppBaseTheme">

@@ -2,7 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_panel_bg_color"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -16,23 +15,25 @@
     <com.mkulesh.mmd.widgets.FloatingButtonsSet
         android:id="@+id/main_flb_set_primary"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_flb_size"
-        android:layout_margin="@dimen/activity_flb_margin"
-        android:layout_alignParentBottom="true" >
+        android:layout_height="match_parent" >
 
-        <ImageButton
+        <android.support.design.widget.FloatingActionButton
             android:id="@+id/main_flb_action_play"
-            android:layout_width="@dimen/activity_flb_size"
-            android:layout_height="@dimen/activity_flb_size"
-            android:background="@drawable/flb_action_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_flb_margin"
+            android:layout_gravity="right|bottom"
+            android:src="@drawable/flb_action_play"
             android:contentDescription="@string/action_play"
             android:visibility="visible" />
 
-        <ImageButton
+        <android.support.design.widget.FloatingActionButton
             android:id="@+id/main_flb_action_stop"
-            android:layout_width="@dimen/activity_flb_size"
-            android:layout_height="@dimen/activity_flb_size"
-            android:background="@drawable/flb_action_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_flb_margin"
+            android:layout_gravity="right|bottom"
+            android:src="@drawable/flb_action_stop"
             android:contentDescription="@string/action_stop"
             android:visibility="gone" />
     </com.mkulesh.mmd.widgets.FloatingButtonsSet>

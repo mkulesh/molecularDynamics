@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="mmd_theme_color">#ffff8000</color>
-
     <color name="action_bar_bg_start_color">#ffdfdfdf</color>
     <color name="action_bar_bg_end_color">#ffb6b6b6</color>
-    <color name="main_panel_bg_color">@color/background_material_light</color>
+    <color name="drawer_bg_color">@color/background_material_light</color>
     <color name="drawer_title_color">@color/primary_text_default_material_light</color>
     <color name="drawer_subtitle_color">@color/secondary_text_default_material_light</color>
 
@@ -16,4 +14,6 @@
     <color name="mmd_plot_axis_color">#ba000000</color>
     <color name="mmd_plot_text_color">#baffffff</color>
     <color name="mmd_plot_func_color">#ecf00d13</color>
+
+    <color name="mmd_selection_color">#ffff8000</color>
 </resources>

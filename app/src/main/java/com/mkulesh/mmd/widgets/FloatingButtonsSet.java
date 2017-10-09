@@ -20,11 +20,11 @@ package com.mkulesh.mmd.widgets;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnLongClickListener;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.mkulesh.mmd.utils.ViewUtils;
@@ -54,7 +54,7 @@ public class FloatingButtonsSet extends LinearLayout implements OnLongClickListe
     @Override
     public boolean onLongClick(View b)
     {
-        if (b instanceof ImageButton)
+        if (b instanceof FloatingActionButton)
         {
             return ViewUtils.showButtonDescription(getContext(), b);
         }

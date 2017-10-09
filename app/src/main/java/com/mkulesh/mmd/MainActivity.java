@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity
             R.raw.convert_file, R.raw.convert, R.raw.convert_single,
             R.raw.ic_boundary1, R.raw.ic_boundary2, R.raw.ic_boundary3,
             R.raw.multitouch_drag, R.raw.multitouch_pinch, R.raw.multitouch_simpletap,
+            R.raw.flb_action_play, R.raw.flb_action_stop,
             R.drawable.anonymous_amibe, R.drawable.atom_blue_red, R.drawable.ball_volley_ball,
             R.drawable.atom_gelb, R.drawable.autumn_leaf_01, R.drawable.autumn_leaf_02,
             R.drawable.ball_blue_ball, R.drawable.ball_soccer, R.drawable.ball_tennis,
