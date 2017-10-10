@@ -1,7 +1,3 @@
-Molecular Dynamics
-
-Classical molecular dynamics method combined with HD live wallpaper
-
 MMD is a classical molecular dynamics code implemented as an App for Android. MMD is acronym for Method of Molecular Dynamics, which is a computer simulation of particles (atoms, molecules) motion. This simulation is done with respect to the given initial and boundary conditions and a potential that describes the particle interaction.
 
 The trajectories of the particles are determined numerically. The well known Velocity Verlet integration of Newton's equation of motions is used for a system of interacting particles. Forces between particles are defined analytically using a "pair potential function" that depends on the distance between two particles.
@@ -24,3 +20,7 @@ Application features:
 Note: since the application implements a numerical integration method, it generates a significant CPU load. Therefore, the live wallpaper mode is not suitable for low-power devices.
 
 Keywords: live wallpaper, HD wallpaper, physics, molecular dynamics, atom simulations, experiment
+
+The app is 100% open source. Please feel free to download, explore, fork or contribute to it on https://github.com/mkulesh/molecularDynamics
+
+Languages: English, Russian.
