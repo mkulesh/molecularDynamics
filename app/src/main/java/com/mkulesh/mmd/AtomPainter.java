@@ -42,7 +42,6 @@ import android.widget.TextView;
 import com.mkulesh.mmd.model.Atom;
 import com.mkulesh.mmd.model.AtomSet;
 import com.mkulesh.mmd.model.Vector2D;
-import com.mkulesh.mmd.utils.CompatUtils;
 import com.mkulesh.mmd.utils.SVGUtils;
 import com.mkulesh.mmd.utils.ThreadContol;
 import com.mkulesh.mmd.utils.ViewUtils;
@@ -645,11 +644,11 @@ public class AtomPainter implements Runnable
             set.getArea().toScreenPoint(set.getVewPort().getMax(), rect, pMax);
             viewPortRect.set(pMin.x, pMax.y, pMax.x, pMin.y);
             // fill panel
-            paint.setColor(CompatUtils.getColor(context, R.color.mmd_primary_dark));
+            paint.setColor(ViewUtils.getThemeColor(context, R.attr.colorPrimaryDark));
             paint.setStyle(Paint.Style.FILL);
             c.drawRect(rect, paint);
             // stroke panel
-            paint.setColor(CompatUtils.getColor(context, R.color.mmd_icons));
+            paint.setColor(ViewUtils.getThemeColor(context, R.attr.appInverseColor));
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(2);
             c.drawRect(rect, paint);
