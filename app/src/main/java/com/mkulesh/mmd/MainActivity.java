@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity
 {
     private Toolbar mToolbar = null;
     private DrawerLayout mDrawerLayout = null;
+    private NavigationView navigationView = null;
     private ActionBarDrawerToggle mDrawerToggle = null;
     private Display display = null;
     private Experiment experiment = null;
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity
         // Action bar drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null)
         {
             navigationView.setNavigationItemSelectedListener(
@@ -191,8 +192,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem)
     {
-        BaseFragment baseFragment = getVisibleFragment();
-
         // The action bar home/up action should open or close the drawer.
         // ActionBarDrawerToggle will take care of this.
         if (mDrawerToggle.onOptionsItemSelected(menuItem))
@@ -200,6 +199,7 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
+        BaseFragment baseFragment = getVisibleFragment();
         if (baseFragment == null)
         {
             return true;
@@ -241,12 +241,8 @@ public class MainActivity extends AppCompatActivity
     {
         menuItem.setChecked(true);
         mDrawerLayout.closeDrawers();
-        mToolbar.setTitle(menuItem.getTitle());
-        final String[] subtitles = getResources().getStringArray(R.array.activity_subtitles);
-        final CharSequence subTitle = (menuItem.getOrder() < subtitles.length) ? subtitles[menuItem.getOrder()] : "";
-        mToolbar.setSubtitle(subTitle);
 
-        Fragment fragment = null;
+        BaseFragment fragment = null;
         switch (menuItem.getItemId())
         {
         case R.id.nav_experiment:
@@ -286,6 +282,26 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             transaction.replace(R.id.main_content_frame, fragment);
             transaction.commit();
+        }
+    }
+
+    public void updateFragmentInfo(BaseFragment fragment)
+    {
+        if (fragment != null)
+        {
+            mToolbar.setTitle(fragment.getTitleId());
+            mToolbar.setSubtitle(fragment.getSubTitleId());
+            ViewUtils.Debug(this, "Toolbar title: " + mToolbar.getTitle() + "/" + mToolbar.getSubtitle());
+            final int fragmentNumber = fragment.getFragmentNumber();
+            if (fragmentNumber != BaseFragment.INVALID_FRAGMENT_ID &&
+                    fragmentNumber < navigationView.getMenu().size())
+            {
+                final MenuItem navMenu = navigationView.getMenu().getItem(fragmentNumber);
+                if (navMenu != null && !navMenu.isChecked())
+                {
+                    navMenu.setChecked(true);
+                }
+            }
         }
     }
 }

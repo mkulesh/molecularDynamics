@@ -10,13 +10,10 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="drawer_experiment">Experiment</string>
+    <string name="drawer_experiment_subtitle">View particles</string>
     <string name="drawer_potential">Potential</string>
+    <string name="drawer_potential_subtitle">View potentials</string>
     <string name="drawer_documentation">About method</string>
-    <string-array name="activity_subtitles">
-        <item>View particles</item>
-        <item>View potentials</item>
-        <item>View wikipedia article</item>
-    </string-array>
     <string name="button_cancel">Cancel</string>
     
     <!-- Main menu -->

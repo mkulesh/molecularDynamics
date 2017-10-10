@@ -124,6 +124,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
     {
         super.onResume();
         ViewUtils.Debug(this, "onResume");
+        activity.updateFragmentInfo(this);
 
         final Experiment exp = activity.getExperiment();
 
@@ -219,6 +220,18 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
             touchListener.showHelpDialog();
             break;
         }
+    }
+
+    @Override
+    public int getTitleId()
+    {
+        return R.string.drawer_experiment;
+    }
+
+    @Override
+    public int getSubTitleId()
+    {
+        return R.string.drawer_experiment_subtitle;
     }
 
     @Override

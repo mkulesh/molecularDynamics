@@ -50,7 +50,7 @@ public class ImageArrayAdapter extends ArrayAdapter<CharSequence>
      * @param context            the context.
      * @param textViewResourceId resource id of the text view.
      * @param objects            to be displayed.
-     * @param imageResourceIds   resource id of the images to be displayed.
+     * @param images             images to be displayed.
      * @param index              index of the previous selected item.
      */
     public ImageArrayAdapter(Context context, int textViewResourceId, CharSequence[] objects, ArrayList<Bitmap> images,
@@ -64,7 +64,6 @@ public class ImageArrayAdapter extends ArrayAdapter<CharSequence>
 
     public View getView(int position, View convertView, ViewGroup parent)
     {
-
         LayoutInflater inflater = ((Activity) getContext()).getLayoutInflater();
         View row = inflater.inflate(textViewResourceId, parent, false);
 

@@ -10,13 +10,10 @@
     <string name="drawer_open">Открыть навигатор</string>
     <string name="drawer_close">Закрыть навигатор</string>
     <string name="drawer_experiment">Эксперимент</string>
+    <string name="drawer_experiment_subtitle">Частицы</string>
     <string name="drawer_potential">Потенциал</string>
+    <string name="drawer_potential_subtitle">Смена потенциала</string>
     <string name="drawer_documentation">О методе</string>
-    <string-array name="activity_subtitles">
-        <item>Частицы</item>
-        <item>Смена потенциала</item>
-        <item>Просмотр статьи из энциклопедии</item>
-    </string-array>
     <string name="button_cancel">Отмена</string>
     
     <!-- Main menu -->

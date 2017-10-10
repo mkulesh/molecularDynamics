@@ -300,6 +300,6 @@ public class ViewUtils
         Drawable drawable = menu.getDrawable();
         drawable = DrawableCompat.wrap(drawable);
         DrawableCompat.setTint(drawable, ContextCompat.getColor(context, R.color.mmd_icons));
-        menu.setBackground(drawable);
+        menu.setImageDrawable(drawable);
     }
 }

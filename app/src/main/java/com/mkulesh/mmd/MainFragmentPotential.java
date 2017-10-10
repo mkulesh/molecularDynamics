@@ -83,6 +83,14 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
     }
 
     @Override
+    public void onResume()
+    {
+        super.onResume();
+        ViewUtils.Debug(this, "onResume");
+        activity.updateFragmentInfo(this);
+    }
+
+    @Override
     public void performAction(int itemId)
     {
         // Handle item selection
@@ -91,6 +99,18 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
             ControlDialog d = new ControlDialog(activity, potentialChangeDialog, this);
             d.show();
         }
+    }
+
+    @Override
+    public int getTitleId()
+    {
+        return R.string.drawer_potential;
+    }
+
+    @Override
+    public int getSubTitleId()
+    {
+        return R.string.drawer_potential_subtitle;
     }
 
     @Override

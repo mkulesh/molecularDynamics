@@ -34,7 +34,6 @@ abstract public class BaseFragment extends Fragment
     public final static int INVALID_FRAGMENT_ID = -1;
     public final static int EXPERIMENT_FRAGMENT_ID = 0;
     public final static int POTENTIAL_FRAGMENT_ID = 1;
-    public final static int ABOUT_METHOD_FRAGMENT_ID = 2;
 
     protected MainActivity activity = null;
     protected View rootView = null;
@@ -45,6 +44,13 @@ abstract public class BaseFragment extends Fragment
      * Abstract interface
      */
     abstract public void performAction(int itemId);
+    abstract public int getTitleId();
+    abstract public int getSubTitleId();
+
+    public int getFragmentNumber()
+    {
+        return fragmentNumber;
+    }
 
     protected void initializeFragment(int number)
     {

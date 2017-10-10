@@ -1,7 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:mmd="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_potential_root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/aluminium_texture"
@@ -30,8 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            mmd:domainName="@string/potential_domain_name"
-            mmd:valueName="@string/potential_value_name" />
+            app:domainName="@string/potential_domain_name"
+            app:valueName="@string/potential_value_name" />
 
         <com.mkulesh.mmd.widgets.FunctionView
             android:id="@+id/activity_potential_derivative"
@@ -39,8 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            mmd:domainName="@string/potential_domain_name"
-            mmd:valueName="@string/potential_derivative_name" />
+            app:domainName="@string/potential_domain_name"
+            app:valueName="@string/potential_derivative_name" />
     </LinearLayout>
 
 </LinearLayout>
