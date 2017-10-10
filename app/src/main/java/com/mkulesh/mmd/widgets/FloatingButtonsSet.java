@@ -73,7 +73,7 @@ public class FloatingButtonsSet extends LinearLayout implements OnLongClickListe
                 v.setOnClickListener(handler);
                 if (v instanceof FloatingActionButton)
                 {
-                    ViewUtils.setMenuIconColor(getContext(), (FloatingActionButton)v);
+                    ViewUtils.setMenuIconColor(getContext(), (FloatingActionButton) v);
                 }
             }
             else

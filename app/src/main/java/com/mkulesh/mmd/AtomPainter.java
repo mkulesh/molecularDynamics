@@ -33,6 +33,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.ViewGroup;
@@ -644,11 +645,11 @@ public class AtomPainter implements Runnable
             set.getArea().toScreenPoint(set.getVewPort().getMax(), rect, pMax);
             viewPortRect.set(pMin.x, pMax.y, pMax.x, pMin.y);
             // fill panel
-            paint.setColor(ViewUtils.getThemeColor(context, R.attr.colorPrimaryDark));
+            paint.setColor(ContextCompat.getColor(context, R.color.mmd_primary_dark));
             paint.setStyle(Paint.Style.FILL);
             c.drawRect(rect, paint);
             // stroke panel
-            paint.setColor(ViewUtils.getThemeColor(context, R.attr.appInverseColor));
+            paint.setColor(ContextCompat.getColor(context, R.color.mmd_icons));
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(2);
             c.drawRect(rect, paint);

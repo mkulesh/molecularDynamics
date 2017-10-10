@@ -23,6 +23,7 @@ package com.mkulesh.mmd.widgets;
 
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
@@ -40,7 +41,6 @@ import android.widget.TextView;
 
 import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.utils.CompatUtils;
-import com.mkulesh.mmd.utils.ViewUtils;
 
 import java.text.DecimalFormat;
 
@@ -128,8 +128,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
             progressBar.setOnSeekBarChangeListener(this);
             progressBar.setThumb(CompatUtils.getDrawable(context, R.drawable.ic_seek_bar));
             progressBar.getProgressDrawable().setColorFilter(
-                    ViewUtils.getThemeColor(context, R.attr.appInverseColor),
-                    android.graphics.PorterDuff.Mode.SRC_IN);
+                    ContextCompat.getColor(context, R.color.mmd_icons), android.graphics.PorterDuff.Mode.SRC_IN);
             layout.addView(progressBar);
         }
         progressText = (TextView) findViewById(R.id.control_dialog_seekbar_value);
@@ -182,7 +181,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
         String[] potentialNames = context.getResources().getStringArray(R.array.pref_potential_names);
         ImageArrayAdapter adapter = new ImageArrayAdapter(context, R.layout.image_list_item, potentialNames, null,
                 position);
-        adapter.setTextColor(ViewUtils.getThemeColor(context, R.attr.appInverseColor));
+        adapter.setTextColor(ContextCompat.getColor(context, R.color.mmd_icons));
         ((ListView) findViewById(R.id.control_dialog_listview)).setAdapter(adapter);
     }
 

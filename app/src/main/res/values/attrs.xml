@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="appInverseColor" format="color" />
-
     <declare-styleable name="ImageListPreference">
         <attr name="entryImages" format="reference" />
     </declare-styleable>

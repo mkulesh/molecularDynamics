@@ -44,7 +44,9 @@ abstract public class BaseFragment extends Fragment
      * Abstract interface
      */
     abstract public void performAction(int itemId);
+
     abstract public int getTitleId();
+
     abstract public int getSubTitleId();
 
     public int getFragmentNumber()
