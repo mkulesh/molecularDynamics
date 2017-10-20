@@ -14,7 +14,8 @@
             android:drawableTop="@drawable/multitouch_simpletap"
             android:gravity="center_horizontal"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
-            android:text="@string/conditions_change_dialog"/>
+            android:text="@string/conditions_change_dialog"
+            android:textColor="@color/mmd_icons"/>
     </TableRow>
 
     <TableRow
@@ -29,7 +30,8 @@
             android:drawableLeft="@drawable/multitouch_simpletap_left"
             android:gravity="left"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
-            android:text="@string/thermal_change_dialog" />
+            android:text="@string/thermal_change_dialog"
+            android:textColor="@color/mmd_icons"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,7 +47,8 @@
                 android:gravity="center_horizontal|top"
                 android:paddingBottom="10dp"
                 android:textAppearance="@style/SurfaceSchemaTextAppearance"
-                android:text="@string/action_zoom" />
+                android:text="@string/action_zoom"
+                android:textColor="@color/mmd_icons"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,7 +57,8 @@
                 android:gravity="center_horizontal|bottom"
                 android:paddingTop="10dp"
                 android:textAppearance="@style/SurfaceSchemaTextAppearance"
-                android:text="@string/action_drag" />
+                android:text="@string/action_drag"
+                android:textColor="@color/mmd_icons"/>
         </LinearLayout>
 
         <TextView
@@ -63,7 +67,8 @@
             android:drawableRight="@drawable/multitouch_simpletap_right"
             android:gravity="right"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
-            android:text="@string/gravity_change_dialog" />
+            android:text="@string/gravity_change_dialog"
+            android:textColor="@color/mmd_icons"/>
     </TableRow>
 
     <TableRow
@@ -85,7 +90,8 @@
             android:drawableBottom="@drawable/multitouch_simpletap_bottom"
             android:gravity="center_horizontal"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
-            android:text="@string/timestep_change_dialog" />
+            android:text="@string/timestep_change_dialog"
+            android:textColor="@color/mmd_icons"/>
 
         <Button
     		android:id="@+id/button_cancel"
