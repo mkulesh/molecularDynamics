@@ -15,7 +15,7 @@
             android:gravity="center_horizontal"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
             android:text="@string/conditions_change_dialog"
-            android:textColor="@color/mmd_icons"/>
+            android:textColor="?attr/colorInfoText"/>
     </TableRow>
 
     <TableRow
@@ -31,7 +31,7 @@
             android:gravity="left"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
             android:text="@string/thermal_change_dialog"
-            android:textColor="@color/mmd_icons"/>
+            android:textColor="?attr/colorInfoText"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 android:paddingBottom="10dp"
                 android:textAppearance="@style/SurfaceSchemaTextAppearance"
                 android:text="@string/action_zoom"
-                android:textColor="@color/mmd_icons"/>
+                android:textColor="?attr/colorInfoText"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                 android:paddingTop="10dp"
                 android:textAppearance="@style/SurfaceSchemaTextAppearance"
                 android:text="@string/action_drag"
-                android:textColor="@color/mmd_icons"/>
+                android:textColor="?attr/colorInfoText"/>
         </LinearLayout>
 
         <TextView
@@ -68,7 +68,7 @@
             android:gravity="right"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
             android:text="@string/gravity_change_dialog"
-            android:textColor="@color/mmd_icons"/>
+            android:textColor="?attr/colorInfoText"/>
     </TableRow>
 
     <TableRow
@@ -91,7 +91,7 @@
             android:gravity="center_horizontal"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
             android:text="@string/timestep_change_dialog"
-            android:textColor="@color/mmd_icons"/>
+            android:textColor="?attr/colorInfoText"/>
 
         <Button
     		android:id="@+id/button_cancel"

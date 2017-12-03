@@ -28,9 +28,9 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
@@ -291,7 +291,7 @@ public class ViewUtils
     {
         Drawable drawable = menu.findItem(actionId).getIcon();
         drawable = DrawableCompat.wrap(drawable);
-        DrawableCompat.setTint(drawable, ContextCompat.getColor(context, R.color.mmd_icons));
+        DrawableCompat.setTint(drawable, ViewUtils.getThemeColor(context, R.attr.colorInfoText));
         menu.findItem(actionId).setIcon(drawable);
     }
 
@@ -299,7 +299,14 @@ public class ViewUtils
     {
         Drawable drawable = menu.getDrawable();
         drawable = DrawableCompat.wrap(drawable);
-        DrawableCompat.setTint(drawable, ContextCompat.getColor(context, R.color.mmd_icons));
+        DrawableCompat.setTint(drawable, ViewUtils.getThemeColor(context, R.attr.colorInfoText));
         menu.setImageDrawable(drawable);
+    }
+
+    public static int getThemeColor (final Context context, int resId)
+    {
+        final TypedValue value = new TypedValue ();
+        context.getTheme ().resolveAttribute (resId, value, true);
+        return value.data;
     }
 }

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <attr name="colorInfoText" format="color" />
+    <attr name="colorInfoTextShadow" format="color" />
+    <attr name="panelBackground" format="reference" />
+
     <declare-styleable name="ImageListPreference">
         <attr name="entryImages" format="reference" />
     </declare-styleable>
