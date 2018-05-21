@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General settings -->
+    <string name="app_name">Molecular Dynamics</string>
+    <string name="wallpaper_name">Plano de fundo Molecular Dynamics</string>
+    <string name="wallpaper_description">Partículas sob o microscópio</string>
+
+    <!-- Drawer -->
+    <string name="drawer_open">Abra a gaveta de navegação</string>
+    <string name="drawer_close">Feche a gaveta de navegação</string>
+    <string name="drawer_experiment">Experimento</string>
+    <string name="drawer_experiment_subtitle">Ver partículas</string>
+    <string name="drawer_potential">Potencial</string>
+    <string name="drawer_potential_subtitle">Ver potenciais</string>
+    <string name="drawer_documentation">Sobre o método</string>
+    <string name="button_cancel">Cancelar</string>
+    
+    <!-- Main menu -->
+    <string name="action_help">Instruções de toque</string>
+    <string name="action_play">Jogar</string>
+    <string name="action_stop">Pausar</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_zoom">Aumentar</string>
+    <string name="action_drag">Arrastar</string>
+    
+    <!-- Experiment view -->
+    <string name="gravity_change_dialog">Gravidade\nmudar</string>
+    <string name="thermal_change_dialog">Termal\nmudar</string>
+    <string name="timestep_change_dialog">Intervalo de tempo</string>
+    <string name="conditions_change_dialog">Condições</string>
+    <string name="energy_norm_fullenergy">Energia total será constante</string>
+    <string name="energy_norm_temperature">Temperatura será constante</string>
+    <string name="energy_norm_none">Nenhuma temperatura ou restrição total de energia</string>
+    
+    <!-- Potential view -->
+    <string name="potential_activity_name">Potencial</string>
+    <string name="potential_domain_name">r, Å</string>
+    <string name="potential_value_name">f(r), eV</string>
+    <string name="potential_derivative_name">f\'(r)</string>
+    <string name="potential_select_dialog">Selecionar potencial\na ser utilizado</string>
+    
+    <!-- About method -->
+    <string name="wiki_about_method">http://en.wikipedia.org/wiki/Molecular_dynamics</string>
+    
+    <!-- Preferences: Initial layout -->
+    <string name="settings_activity_name">Configurações do experimento</string>
+    <string name="pref_category_initial_layout">Interface inicial</string>
+    <string name="pref_rebuild_title">Reconstruir interface inicial</string>
+    <string name="pref_rebuild_summary">Se definido, todas as partículas existentes serão excluídas e o novo layout será criado</string>
+    <string name="pref_fill_methods_title">Método de preenchimento</string>
+    <string-array name="pref_fill_methods_list">
+        <item>Grade diagonal</item>
+        <item>Grade cúbica</item>
+    </string-array>
+    
+    <string name="pref_grid_hor_dimension">Dimensão da grade horizontal</string>
+    <string name="pref_grid_hor_dimension_valuetype">Quantas partículas serão geradas na direção horizontal</string>
+    <string name="pref_grid_ver_dimension">Dimensão da grade vertical</string>
+    <string name="pref_grid_ver_dimension_valuetype">Quantas partículas serão geradas na direção vertical</string>
+    <string name="pref_area_zoom">Aumento da área</string>
+    <string name="pref_area_zoom_valuetype">Valor do aumento, entre 1 e 20</string>
+    
+    <!-- Preferences: Physical area -->
+    <string name="pref_category_physical_area">Área física</string>
+    <string name="pref_area_min_x">Coordenada horizontal mínima</string>
+    <string name="pref_area_max_x">Coordenada horizontal máxima</string>
+    <string name="pref_area_min_y">Coordenada vertical mínima</string>
+    <string name="pref_area_max_y">Coordenada vertical máxima</string>
+    <string name="pref_area_valuetype">Em angstrom, 1 Å é igual a 10E-10 m ou 0,1 nm</string>
+
+    <!-- Preferences: Boundary conditions -->
+    <string name="pref_category_boundary_conditions">Condições limite</string>
+    <string name="pref_bound_gravity">Coeficiente da gravidade</string>
+    <string name="pref_bound_gravity_valuetype">Sem dimensões, entre 0 e 1. Será dimensionado em relação ao potencial usado</string>
+    <string name="pref_bound_thermal_change">Coeficiente de troca térmica</string>
+    <string name="pref_bound_thermal_change_valuetype">Em porcentagem, entre -1,0% e 1,0%</string>
+    <string name="pref_init_temperature">Temperature incial</string>
+    <string name="pref_init_temperature_valuetype">Escala em Kelvin, ° K = ° C + 273,15 = (° F + 459,67) × 5/9</string>
+    <string name="pref_energy_norm">Tipo de norma de energia</string>
+    <string-array name="pref_energy_norm_names">
+        <item>Energia total</item>
+        <item>Temperatura</item>
+        <item>Nenhum</item>
+    </string-array>
+    
+    <!-- Preferences: Particle parameters -->
+    <string name="pref_category_atom_parameters">Parâmetro de partículas</string>
+    <string name="pref_potential">Tipo de potencial usado</string>
+    <string-array name="pref_potential_names">
+        <item>Potencial de Lennard-Jones</item>
+        <item>Potencial Morse</item>
+        <item>Potencial de Born-Mayer</item>
+    </string-array>
+    <string name="pref_atom_radius">Raio da partícula</string>
+    <string name="pref_atom_mass">Massa da partícula</string>
+    <string name="pref_atom_mass_valuetype">Em unidade de massa atômica, 1u é igual a 1,660538921E-27 kg</string>
+    <string name="pref_atom_skin">Imagem de partícula</string>
+    <string-array name="pref_atom_skin_names">
+        <item>Átomo azul-cinzento</item>
+        <item>Átomo azul-vermelho</item>
+        <item>Átomo vermelho-alaranjado</item>
+        <item>Folha de outono 1</item>
+        <item>Folha de outono 2</item>
+        <item>Bola de futebol</item>
+        <item>Bola de tênis</item>
+        <item>Bola de vôlei</item>
+        <item>Bola azul</item>
+        <item>Esboço de ondas</item>
+        <item>Gotículas de água verde</item>
+        <item>Gotículas de água azul</item>
+        <item>Molécula de seis átomos</item>
+        <item>Molécula de três átomos</item>
+        <item>Floco de neve</item>
+        <item>Ameba anônima</item>
+        <item>OVNI estilo cartoon</item>
+        <item>Pássaro estilo cartoon</item>
+        <item>Planeta terra 1</item>
+        <item>Planeta terra 1</item>
+        <item>Planeta vermelho</item>
+        <item>Saturno</item>
+        <item>Turbilhão</item>
+    </string-array>
+    
+    <!-- Preferences: Calculation parameters -->
+    <string name="pref_category_calc_parameters">Parâmetros de cálculo</string>
+    <string name="pref_calc_time_step">Intervalo de tempo</string>
+    <string name="pref_calc_time_step_valuetype">Em femtossegundo, 1 fs é igual a 10E-15 de um segundo. Entre 0,1 e 10.</string>
+
+    <!-- Preferences: application design -->
+    <string name="pref_category_app_design">Design da aplicação</string>
+    <string name="pref_system_wallpaper_title">Use o papel de parede do sistema</string>
+    <string name="pref_system_wallpaper_summary">Se definido, o papel de parede do sistema será usado em vez da imagem de fundo integrada</string>
+    
+</resources>
