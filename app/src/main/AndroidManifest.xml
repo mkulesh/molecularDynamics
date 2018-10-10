@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mkulesh.mmd"
-    android:installLocation="auto">
+    android:installLocation="auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedAttribute,AllowBackup">
 
     <uses-feature
         android:name="android.software.live_wallpaper"

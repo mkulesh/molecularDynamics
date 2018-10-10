@@ -422,14 +422,20 @@ public class AtomPainter implements Runnable
             // try to get system wallpaper
             if (wallpaper != null)
             {
-                Drawable bgDrawable = wallpaper.getDrawable();
-                if (bgDrawable != null)
+                try
                 {
-                    orig = Bitmap.createBitmap(bgDrawable.getIntrinsicWidth(), bgDrawable.getIntrinsicHeight(),
-                            Bitmap.Config.ARGB_8888);
-                    Canvas canvas = new Canvas(orig);
-                    bgDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-                    bgDrawable.draw(canvas);
+                    Drawable bgDrawable = wallpaper.getDrawable();
+                    if (bgDrawable != null) {
+                        orig = Bitmap.createBitmap(bgDrawable.getIntrinsicWidth(), bgDrawable.getIntrinsicHeight(),
+                                Bitmap.Config.ARGB_8888);
+                        Canvas canvas = new Canvas(orig);
+                        bgDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+                        bgDrawable.draw(canvas);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ViewUtils.Debug(this, "Cannot open wallpaper image: " + ex.getLocalizedMessage());
                 }
             }
 
