@@ -26,6 +26,7 @@ Note: since the application implements a numerical integration method, it genera
 ## Languages
 * English
 * Russian
+* Brazilian Portuguese
 
 ## License
 This software is published under the *GNU General Public License, Version 3*
