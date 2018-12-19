@@ -5,3 +5,4 @@ app/app.iml
 build/
 molecularDynamics.iml
 local.properties
+release/
