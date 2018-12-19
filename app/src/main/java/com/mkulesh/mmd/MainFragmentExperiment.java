@@ -239,8 +239,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
     {
         if (requestCode == SETTINGS_ACTIVITY_REQUEST)
         {
-            activity.getExperiment().readParameters();
-            activity.getExperiment().updateBackgroundMode(true);
+            activity.readExperiment();
         }
     }
 

@@ -97,7 +97,7 @@ public class MMDWallpaperService extends WallpaperService
             {
                 if (preferenceChanged)
                 {
-                    exp.readParameters();
+                    exp.readParameters(context);
                     exp.updateBackgroundMode(true);
                     preferenceChanged = false;
                 }

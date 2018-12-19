@@ -304,4 +304,13 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
+
+    public void readExperiment()
+    {
+        if (experiment != null)
+        {
+            experiment.readParameters(this);
+            experiment.updateBackgroundMode(true);
+        }
+    }
 }

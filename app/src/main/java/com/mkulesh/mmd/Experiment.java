@@ -109,7 +109,7 @@ public class Experiment implements Runnable, Parcelable
         super();
         this.context = context;
         ViewUtils.Debug(this, "created from scratch");
-        readParameters();
+        readParameters(context);
     }
 
     /**
@@ -236,7 +236,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure reads the atom parameters from shared preferences
      */
-    public void readParameters()
+    public void readParameters(Context context)
     {
         threadControl.pause();
         synchronized (atomSet)
@@ -247,7 +247,7 @@ public class Experiment implements Runnable, Parcelable
             }
             catch (Exception ex)
             {
-                ex.printStackTrace();
+                ViewUtils.Debug(this, "error at reading parameters: " + ex.getLocalizedMessage());
             }
         }
         threadControl.resume(false);
