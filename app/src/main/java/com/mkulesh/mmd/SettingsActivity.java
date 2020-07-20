@@ -137,13 +137,13 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 
     private void setupActionBar()
     {
-        ViewGroup rootView = (ViewGroup) findViewById(R.id.action_bar_root); //id from appcompat
+        ViewGroup rootView = findViewById(R.id.action_bar_root); //id from appcompat
         if (rootView != null)
         {
             View view = getLayoutInflater().inflate(R.layout.activity_toolbar, rootView, false);
             rootView.addView(view, 0);
 
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
         }
 
@@ -294,7 +294,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
             prefEditor.putString(key, value);
             prefEditor.commit();
             ((EditTextPreference) pref).setText(value);
-            ((EditTextPreference) pref).setSummary(value);
+            pref.setSummary(value);
         }
     }
 

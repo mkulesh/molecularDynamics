@@ -94,7 +94,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
     {
         setContentView(R.layout.surface_touch_schema);
         getWindow().setLayout(par.width, par.height);
-        ((Button) findViewById(R.id.button_cancel)).setOnClickListener(new View.OnClickListener()
+        (findViewById(R.id.button_cancel)).setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -117,7 +117,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
     {
         setContentView(R.layout.control_dialog_seekbar);
         ((TextView) findViewById(R.id.control_dialog_title)).setText(par.title);
-        LinearLayout layout = (LinearLayout) findViewById(R.id.control_dialog_seekbar_sbarea);
+        LinearLayout layout = findViewById(R.id.control_dialog_seekbar_sbarea);
         {
             progressBar = par.isVertical ? new VerticalSeekBar(context) : new SeekBar(context);
             ViewGroup.LayoutParams lp1 = new ViewGroup.LayoutParams(par.width, par.height);
@@ -132,7 +132,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
                     android.graphics.PorterDuff.Mode.SRC_IN);
             layout.addView(progressBar);
         }
-        progressText = (TextView) findViewById(R.id.control_dialog_seekbar_value);
+        progressText = findViewById(R.id.control_dialog_seekbar_value);
         progressText.setText(decimalFormat.format(par.selectedValue));
     }
 

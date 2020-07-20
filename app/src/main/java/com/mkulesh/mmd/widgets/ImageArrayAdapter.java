@@ -67,11 +67,11 @@ public class ImageArrayAdapter extends ArrayAdapter<CharSequence>
         LayoutInflater inflater = ((Activity) getContext()).getLayoutInflater();
         View row = inflater.inflate(textViewResourceId, parent, false);
 
-        CheckedTextView checkedTextView = (CheckedTextView) row.findViewById(R.id.image_list_item_checkbox);
+        CheckedTextView checkedTextView = row.findViewById(R.id.image_list_item_checkbox);
         if (images != null && images.get(position) != null)
         {
             checkedTextView.setCompoundDrawablesWithIntrinsicBounds(
-                    new BitmapDrawable(((Activity) getContext()).getResources(), images.get(position)), null, null,
+                    new BitmapDrawable((getContext()).getResources(), images.get(position)), null, null,
                     null);
         }
         checkedTextView.setText(getItem(position));

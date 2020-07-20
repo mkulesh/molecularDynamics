@@ -94,10 +94,10 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
             }
         };
 
-        primaryButtonsSet = (FloatingButtonsSet) rootView.findViewById(R.id.main_flb_set_primary);
+        primaryButtonsSet = rootView.findViewById(R.id.main_flb_set_primary);
 
         // surface preparation
-        surface = (SurfaceView) rootView.findViewById(R.id.experiment_view);
+        surface = rootView.findViewById(R.id.experiment_view);
         surface.getHolder().setFormat(PixelFormat.TRANSPARENT);
         touchListener = new SurfaceTouchListener(activity, surface);
         surface.setOnTouchListener(touchListener);

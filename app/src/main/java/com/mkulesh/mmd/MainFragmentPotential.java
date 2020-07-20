@@ -145,12 +145,12 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
                 2.0 * Math.abs(potential.getPotentialMin()));
 
         // value view
-        FunctionView v1 = (FunctionView) rootView.findViewById(R.id.activity_potential_value);
+        FunctionView v1 = rootView.findViewById(R.id.activity_potential_value);
         v1.setPotential(potential, BasePotential.ValueType.VALUE, area);
         v1.invalidate();
 
         // derivative
-        FunctionView v2 = (FunctionView) rootView.findViewById(R.id.activity_potential_derivative);
+        FunctionView v2 = rootView.findViewById(R.id.activity_potential_derivative);
         v2.setPotential(potential, BasePotential.ValueType.DERIVATIVE, area);
         v2.invalidate();
 
