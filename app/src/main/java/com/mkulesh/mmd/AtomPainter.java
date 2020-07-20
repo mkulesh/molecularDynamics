@@ -80,14 +80,14 @@ public class AtomPainter implements Runnable
     private ZoomPanel zoomPanel = null;
     private Context context = null;
     private SurfaceHolder holder = null;
-    private WallpaperOffsets wallpaperOffsets = new WallpaperOffsets();
+    private final WallpaperOffsets wallpaperOffsets = new WallpaperOffsets();
 
     // synchronization with calculation thread
     private BlockingQueue<AtomSet> waitingQueue = null, immediateQueue = null;
 
     // thread implementation
     private Thread thread = null;
-    private ThreadContol threadControl = new ThreadContol();
+    private final ThreadContol threadControl = new ThreadContol();
 
     // timing statistic and fps control
     private static final float maxFps = 25.0f;

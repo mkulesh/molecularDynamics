@@ -97,7 +97,7 @@ public class Experiment implements Runnable, Parcelable
      * Private attributes to be created internally
      */
     private Context context = null;
-    private ThreadContol threadControl = new ThreadContol();
+    private final ThreadContol threadControl = new ThreadContol();
     private AtomPainter painter = null;
     private Thread thread = null;
 
