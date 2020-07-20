@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
         setContentView(R.layout.activity_main);
 
         PackageManager pm = getPackageManager();
@@ -136,7 +137,6 @@ public class MainActivity extends AppCompatActivity
         };
         CompatUtils.setDrawerListener(mDrawerLayout, mDrawerToggle);
 
-        display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
         if (experiment == null)
         {
             experiment = new Experiment(this);
