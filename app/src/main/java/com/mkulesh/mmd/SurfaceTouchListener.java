@@ -22,8 +22,8 @@
 package com.mkulesh.mmd;
 
 import android.graphics.RectF;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.view.MotionEventCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;

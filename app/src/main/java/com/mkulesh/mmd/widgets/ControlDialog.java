@@ -23,7 +23,7 @@ package com.mkulesh.mmd.widgets;
 
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
