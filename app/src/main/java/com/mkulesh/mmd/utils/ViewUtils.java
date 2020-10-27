@@ -39,7 +39,7 @@ import com.mkulesh.mmd.R;
 
 public class ViewUtils
 {
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "EmptyMethod"})
     public static void Debug(Object o, String text)
     {
         //Log.d("mmdLogs", o.getClass().getSimpleName() + ": " + text + ".");

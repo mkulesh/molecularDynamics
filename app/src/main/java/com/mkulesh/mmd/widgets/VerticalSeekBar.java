@@ -142,11 +142,10 @@ public class VerticalSeekBar extends AppCompatSeekBar
                 top = 0;
                 bottom = customThumb.getIntrinsicHeight();
             }
-            final int left = thumbPos;
-            final int right = left + thumbWidth;
+            final int right = thumbPos + thumbWidth;
 
             Rect thumbBounds = customThumb.getBounds();
-            customThumb.setBounds(left, top, right, bottom);
+            customThumb.setBounds(thumbPos, top, right, bottom);
 
             canvas.save();
             canvas.rotate(90, thumbBounds.exactCenterX(), thumbBounds.exactCenterY());

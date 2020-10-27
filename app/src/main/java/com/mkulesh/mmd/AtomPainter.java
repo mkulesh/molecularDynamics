@@ -68,8 +68,10 @@ public class AtomPainter implements Runnable
     }
 
     // drawing parameters
+    @SuppressWarnings("FieldCanBeLocal")
     private final boolean drawVector = false;
     private final Atom.VectorType vectorType = Atom.VectorType.COORDINATE;
+    @SuppressWarnings("FieldCanBeLocal")
     private final boolean rotateAtom = true;
     private BackgroudMode backgroudMode = BackgroudMode.NONE;
 

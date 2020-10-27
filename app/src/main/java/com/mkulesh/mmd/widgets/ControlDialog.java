@@ -47,7 +47,6 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
 {
 
     private AppCompatActivity context = null;
-    private SeekBar progressBar = null;
     private TextView progressText = null;
     private DialogParameters par = null;
     private final DialogChangeListener myListener;
@@ -118,7 +117,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
         ((TextView) findViewById(R.id.control_dialog_title)).setText(par.title);
         LinearLayout layout = findViewById(R.id.control_dialog_seekbar_sbarea);
         {
-            progressBar = par.isVertical ? new VerticalSeekBar(context) : new SeekBar(context);
+            SeekBar progressBar = par.isVertical ? new VerticalSeekBar(context) : new SeekBar(context);
             ViewGroup.LayoutParams lp1 = new ViewGroup.LayoutParams(par.width, par.height);
             progressBar.setLayoutParams(lp1);
             progressBar.setMax(100);
