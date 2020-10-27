@@ -93,7 +93,6 @@ public class CompatUtils
         return df;
     }
 
-    @SuppressWarnings("deprecation")
     public static void setColorFilter(@NonNull Drawable drawable, @ColorInt int color, PorterDuff.Mode mode)
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)

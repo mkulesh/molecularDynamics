@@ -57,7 +57,6 @@ public class MMDWallpaperService extends WallpaperService
         {
             super.onCreate(surfaceHolder);
             ViewUtils.Debug(this, "Wallpaper started");
-            //noinspection ConstantConditions
             display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
             context = MMDWallpaperService.this;
             PreferenceManager.getDefaultSharedPreferences(context).registerOnSharedPreferenceChangeListener(this);

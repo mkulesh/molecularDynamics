@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //noinspection ConstantConditions
         display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
         setContentView(R.layout.activity_main);
 
