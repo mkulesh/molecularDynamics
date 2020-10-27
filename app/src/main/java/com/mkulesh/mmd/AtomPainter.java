@@ -32,7 +32,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.ViewGroup;

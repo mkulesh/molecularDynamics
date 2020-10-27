@@ -27,7 +27,7 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 
 import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.SettingsActivity;

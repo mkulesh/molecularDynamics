@@ -125,9 +125,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
             progressBar.setProgress(progress);
             progressBar.setOnSeekBarChangeListener(this);
             progressBar.setThumb(CompatUtils.getDrawable(context, R.drawable.ic_seek_bar));
-            progressBar.getProgressDrawable().setColorFilter(
-                    ViewUtils.getThemeColor(context, R.attr.colorInfoText),
-                    android.graphics.PorterDuff.Mode.SRC_IN);
+            CompatUtils.setColorFilter(progressBar.getProgressDrawable(), ViewUtils.getThemeColor(context, R.attr.colorInfoText), android.graphics.PorterDuff.Mode.SRC_IN);
             layout.addView(progressBar);
         }
         progressText = findViewById(R.id.control_dialog_seekbar_value);

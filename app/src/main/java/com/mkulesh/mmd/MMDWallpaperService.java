@@ -24,7 +24,7 @@ package com.mkulesh.mmd;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.SensorManager;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.view.Display;
 import android.view.OrientationEventListener;

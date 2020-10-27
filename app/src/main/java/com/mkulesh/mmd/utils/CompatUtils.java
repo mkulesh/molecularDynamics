@@ -23,8 +23,14 @@ package com.mkulesh.mmd.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.BlendMode;
+import android.graphics.BlendModeColorFilter;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
@@ -85,5 +91,18 @@ public class CompatUtils
         }
         df.setDecimalFormatSymbols(dfs);
         return df;
+    }
+
+    @SuppressWarnings("deprecation")
+    public static void setColorFilter(@NonNull Drawable drawable, @ColorInt int color, PorterDuff.Mode mode)
+    {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+        {
+            drawable.setColorFilter(new BlendModeColorFilter(color, BlendMode.SRC_ATOP));
+        }
+        else
+        {
+            drawable.setColorFilter(color, mode);
+        }
     }
 }

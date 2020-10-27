@@ -22,7 +22,7 @@
 package com.mkulesh.mmd;
 
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import androidx.fragment.app.Fragment;
 import android.view.View;
 

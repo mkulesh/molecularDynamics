@@ -94,8 +94,8 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
 
     private boolean onMoveEvent(MotionEvent ev)
     {
-        final int action = MotionEventCompat.getActionMasked(ev);
-        final int pointerIndex = MotionEventCompat.getActionIndex(ev);
+        final int action = ev.getActionMasked();
+        final int pointerIndex = ev.getActionIndex();
         final int pointerCount = ev.getPointerCount();
         if (pointerIndex != 0 || pointerCount != 1)
         {
