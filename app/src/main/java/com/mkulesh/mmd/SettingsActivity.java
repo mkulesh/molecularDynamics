@@ -199,7 +199,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
         {
             return false;
         }
-        double dValue = 0.0;
+        double dValue;
         try
         {
             dValue = Double.parseDouble(stringValue);

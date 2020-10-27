@@ -39,7 +39,7 @@ import java.util.ArrayList;
  */
 public class ImageListPreference extends ListPreference
 {
-    private ArrayList<Bitmap> images = null;
+    private final ArrayList<Bitmap> images;
 
     /**
      * Constructor of the ImageListPreference. Initializes the custom images.

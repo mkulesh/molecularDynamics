@@ -80,12 +80,13 @@ public class AtomPainter implements Runnable
     private final AtomPanel atomPanel = new AtomPanel();
     private InfoPanel infoPanel = null;
     private ZoomPanel zoomPanel = null;
-    private Context context = null;
-    private SurfaceHolder holder = null;
+    private final Context context;
+    private final SurfaceHolder holder;
     private final WallpaperOffsets wallpaperOffsets = new WallpaperOffsets();
 
     // synchronization with calculation thread
-    private BlockingQueue<AtomSet> waitingQueue = null, immediateQueue = null;
+    private final BlockingQueue<AtomSet> waitingQueue;
+    private final BlockingQueue<AtomSet> immediateQueue;
 
     // thread implementation
     private Thread thread = null;
@@ -606,7 +607,7 @@ public class AtomPainter implements Runnable
     {
 
         private final Paint paint = new Paint();
-        private LinearLayout layout = null;
+        private final LinearLayout layout;
 
         InfoPanel(Context context)
         {

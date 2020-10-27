@@ -39,9 +39,9 @@ import java.util.ArrayList;
  */
 class ImageArrayAdapter extends ArrayAdapter<CharSequence>
 {
-    private int textViewResourceId = 0;
-    private ArrayList<Bitmap> images = null;
-    private int index = 0;
+    private final int textViewResourceId;
+    private final ArrayList<Bitmap> images;
+    private final int index;
     private int textColor = android.graphics.Color.TRANSPARENT;
 
     /**

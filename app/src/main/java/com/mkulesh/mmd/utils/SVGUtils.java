@@ -38,7 +38,7 @@ public class SVGUtils
      */
     public static int getResourceIdFromName(String name, Context context, boolean asDrawable)
     {
-        String imageName = null;
+        String imageName;
         try
         {
             imageName = name.substring(name.indexOf('/') + 1, name.lastIndexOf('.'));
@@ -59,7 +59,7 @@ public class SVGUtils
      */
     public static Bitmap getFromResource(Resources resources, int resourceId, int width, int height, Bitmap.Config cfg)
     {
-        Bitmap img = null;
+        Bitmap img;
         try
         {
             SVG svg = SVG.getFromResource(resources, resourceId);

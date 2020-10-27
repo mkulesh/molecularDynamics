@@ -46,11 +46,11 @@ import java.text.DecimalFormat;
 public class ControlDialog extends Dialog implements OnSeekBarChangeListener, OnClickListener, OnItemClickListener
 {
 
-    private AppCompatActivity context = null;
+    private final AppCompatActivity context;
     private TextView progressText = null;
-    private DialogParameters par = null;
+    private final DialogParameters par;
     private final DialogChangeListener myListener;
-    private DecimalFormat decimalFormat = null;
+    private final DecimalFormat decimalFormat;
 
     public ControlDialog(AppCompatActivity context, DialogParameters par, DialogChangeListener listener)
     {

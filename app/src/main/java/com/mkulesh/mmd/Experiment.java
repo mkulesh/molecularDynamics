@@ -217,7 +217,7 @@ public class Experiment implements Runnable, Parcelable
                     break;
                 }
 
-                AtomSet atoms = null;
+                AtomSet atoms;
                 synchronized (atomSet)
                 {
                     atoms = atomSet.nextStep();
@@ -323,8 +323,10 @@ public class Experiment implements Runnable, Parcelable
                 break;
             case CONDITIONS_CHANGE:
                 retValue = atomSet.energyNorm.value();
+                break;
             case POTENTIAL_CHANGE:
                 retValue = atomSet.potential.getType().value();
+                break;
             }
         }
         threadControl.resume(false);
