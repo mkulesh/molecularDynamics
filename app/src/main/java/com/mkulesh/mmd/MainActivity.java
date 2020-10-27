@@ -28,6 +28,8 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        //noinspection ConstantConditions
         display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
         setContentView(R.layout.activity_main);
 
@@ -101,7 +104,10 @@ public class MainActivity extends AppCompatActivity
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         final ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         // Action bar drawer
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -113,7 +119,7 @@ public class MainActivity extends AppCompatActivity
                     new NavigationView.OnNavigationItemSelectedListener()
                     {
                         @Override
-                        public boolean onNavigationItemSelected(MenuItem menuItem)
+                        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
                         {
                             selectNavigationItem(menuItem);
                             return true;
@@ -183,7 +189,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig)
+    public void onConfigurationChanged(@NonNull Configuration newConfig)
     {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggls
@@ -191,7 +197,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem)
+    public boolean onOptionsItemSelected(@NonNull MenuItem menuItem)
     {
         // The action bar home/up action should open or close the drawer.
         // ActionBarDrawerToggle will take care of this.

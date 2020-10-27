@@ -43,7 +43,6 @@ public class Potential
         if (this.type != type)
         {
             function = null;
-            this.type = type;
         }
         this.type = type;
     }

@@ -41,7 +41,7 @@ import com.mkulesh.mmd.utils.CompatUtils;
 
 import java.text.DecimalFormat;
 
-public class FunctionView extends AppCompatTextView
+public class PotentialView extends AppCompatTextView
 {
 
     // custom attributes
@@ -66,19 +66,19 @@ public class FunctionView extends AppCompatTextView
     private float svgRatio = 0.0f;
     private static final int pointNumber = 1000;
 
-    public FunctionView(Context context)
+    public PotentialView(Context context)
     {
         super(context);
         prepare(context, null);
     }
 
-    public FunctionView(Context context, AttributeSet attrs)
+    public PotentialView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         prepare(context, attrs);
     }
 
-    public FunctionView(Context context, AttributeSet attrs, int defStyle)
+    public PotentialView(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
         prepare(context, attrs);
@@ -151,7 +151,7 @@ public class FunctionView extends AppCompatTextView
             return;
         }
 
-        rect.set(0 + getPaddingLeft(), 0 + getPaddingTop(), this.getRight() - this.getLeft() - getPaddingRight(),
+        rect.set(getPaddingLeft(), getPaddingTop(), this.getRight() - this.getLeft() - getPaddingRight(),
                 this.getBottom() - this.getTop() - getPaddingBottom());
 
         // Horizontal axe

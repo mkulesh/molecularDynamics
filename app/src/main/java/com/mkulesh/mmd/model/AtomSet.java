@@ -235,6 +235,7 @@ public class AtomSet implements Parcelable
     /**
      * Procedure fills the velocities of the atoms using normal distribution
      */
+    @SuppressWarnings("SameParameterValue")
     private void fillNormalVelocity(double velMean, double velDeviation)
     {
         if (atoms.isEmpty())
@@ -686,11 +687,11 @@ public class AtomSet implements Parcelable
         {
             int methodIndex = SettingsActivity.getListPreferenceIndex(context, SettingsActivity.KEY_FILL_METHODS,
                     R.string.pref_fill_methods_default, R.array.pref_fill_methods_values);
-            Integer nX = Integer.valueOf(pref.getString(SettingsActivity.KEY_GRID_HOR_DIMENSION,
+            int nX = Integer.valueOf(pref.getString(SettingsActivity.KEY_GRID_HOR_DIMENSION,
                     resources.getString(R.string.pref_grid_hor_dimension_default)));
-            Integer nY = Integer.valueOf(pref.getString(SettingsActivity.KEY_GRID_VER_DIMENSION,
+            int nY = Integer.valueOf(pref.getString(SettingsActivity.KEY_GRID_VER_DIMENSION,
                     resources.getString(R.string.pref_grid_ver_dimension_default)));
-            fillGridCoordinates(nX.intValue(), nY.intValue(), methodIndex == 0);
+            fillGridCoordinates(nX, nY, methodIndex == 0);
         }
 
         atomRadius = Double.parseDouble(pref.getString(SettingsActivity.KEY_ATOM_RADIUS,

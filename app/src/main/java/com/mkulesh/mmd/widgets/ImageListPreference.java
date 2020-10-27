@@ -56,9 +56,9 @@ public class ImageListPreference extends ListPreference
                 typedArray.getResourceId(typedArray.getIndexCount() - 1, -1));
 
         images = new ArrayList<>(imageNames.length);
-        for (int i = 0; i < imageNames.length; i++)
+        for (String imageName : imageNames)
         {
-            int imageId = SVGUtils.getResourceIdFromName(imageNames[i], context, true);
+            int imageId = SVGUtils.getResourceIdFromName(imageName, context, true);
             if (imageId != 0)
             {
                 Bitmap atomImg = BitmapFactory.decodeResource(context.getResources(), imageId);

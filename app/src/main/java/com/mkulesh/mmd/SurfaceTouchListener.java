@@ -91,6 +91,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
         }
     }
 
+    @SuppressWarnings("SameReturnValue")
     private boolean onMoveEvent(MotionEvent ev)
     {
         final int action = ev.getActionMasked();
@@ -180,6 +181,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
 
     private int getTitleBarHeight()
     {
+        //noinspection ConstantConditions
         return (activity.getWindow().getAttributes().y + activity.getSupportActionBar().getHeight());
     }
 

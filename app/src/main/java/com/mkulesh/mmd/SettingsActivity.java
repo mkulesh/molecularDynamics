@@ -91,7 +91,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 
     private double potentialOptDistance = 0.0;
     private DecimalFormat decimalFormat = null;
-    boolean areaUpdateEnabled = false;
+    private boolean areaUpdateEnabled = false;
 
     @SuppressWarnings("deprecation")
     @Override
@@ -343,7 +343,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
         TypedArray values = context.getResources().obtainTypedArray(valuesArrayId);
         for (int idx = 0; idx < values.length(); idx++)
         {
-            if (values.getString(idx) != null && value != null && value.equals(values.getString(idx)))
+            if (values.getString(idx) != null && value.equals(values.getString(idx)))
             {
                 retValue = idx;
                 break;

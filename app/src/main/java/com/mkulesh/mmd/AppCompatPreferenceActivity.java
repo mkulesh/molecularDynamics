@@ -15,6 +15,7 @@
  */
 package com.mkulesh.mmd;
 
+import androidx.annotation.NonNull;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
@@ -53,16 +54,17 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity
         getDelegate().onPostCreate(savedInstanceState);
     }
 
-    public ActionBar getSupportActionBar()
+    ActionBar getSupportActionBar()
     {
         return getDelegate().getSupportActionBar();
     }
 
-    public void setSupportActionBar(@Nullable Toolbar toolbar)
+    void setSupportActionBar(@Nullable Toolbar toolbar)
     {
         getDelegate().setSupportActionBar(toolbar);
     }
 
+    @NonNull
     @Override
     public MenuInflater getMenuInflater()
     {
@@ -108,7 +110,7 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig)
+    public void onConfigurationChanged(@NonNull Configuration newConfig)
     {
         super.onConfigurationChanged(newConfig);
         getDelegate().onConfigurationChanged(newConfig);

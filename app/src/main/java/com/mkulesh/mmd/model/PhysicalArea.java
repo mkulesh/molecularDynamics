@@ -26,6 +26,8 @@ import android.graphics.Rect;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+
 public class PhysicalArea implements Parcelable
 {
 
@@ -94,15 +96,6 @@ public class PhysicalArea implements Parcelable
     }
 
     /**
-     * Copy constructor
-     */
-    public PhysicalArea(PhysicalArea area)
-    {
-        super();
-        assign(area);
-    }
-
-    /**
      * Assign procedure
      */
     public void assign(PhysicalArea area)
@@ -158,6 +151,7 @@ public class PhysicalArea implements Parcelable
     /**
      * Procedure returns the string representation of this area
      */
+    @NonNull
     public String toString()
     {
         return "min [" + min.x + "," + min.y + "] max [" + max.x + "," + max.y + "] dim [" + dim.x + "," + dim.y + "]";

@@ -23,7 +23,7 @@
         android:orientation="vertical"
         android:weightSum="2" >
 
-        <com.mkulesh.mmd.widgets.FunctionView
+        <com.mkulesh.mmd.widgets.PotentialView
             android:id="@+id/activity_potential_value"
             style="@style/PotentialViewStyle"
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
             app:domainName="@string/potential_domain_name"
             app:valueName="@string/potential_value_name" />
 
-        <com.mkulesh.mmd.widgets.FunctionView
+        <com.mkulesh.mmd.widgets.PotentialView
             android:id="@+id/activity_potential_derivative"
             style="@style/PotentialViewStyle"
             android:layout_width="match_parent"

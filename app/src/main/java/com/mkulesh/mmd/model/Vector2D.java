@@ -152,7 +152,7 @@ public class Vector2D implements Parcelable
      */
     boolean isNaN()
     {
-        return (Double.isNaN(x) || Double.isNaN(y)) ? true : false;
+        return Double.isNaN(x) || Double.isNaN(y);
     }
 
     /**
@@ -256,6 +256,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure returns division of this vector to given constant p
      */
+    @SuppressWarnings("SameParameterValue")
     Vector2D division(double p)
     {
         return new Vector2D(x / p, y / p);

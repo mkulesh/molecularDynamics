@@ -21,6 +21,7 @@
 
 package com.mkulesh.mmd.widgets;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -77,6 +78,7 @@ public class VerticalSeekBar extends AppCompatSeekBar
         super.onSizeChanged(h, w, oldh, oldw);
     }
 
+    @SuppressWarnings("SuspiciousNameCombination")
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
@@ -84,6 +86,7 @@ public class VerticalSeekBar extends AppCompatSeekBar
         setMeasuredDimension(getMeasuredHeight(), getMeasuredWidth());
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {

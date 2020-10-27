@@ -62,12 +62,15 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
         decimalFormat = CompatUtils.getDecimalFormat(par.valueFormat);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        Window w = getWindow();
-        w.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        w.getAttributes().gravity = par.gravity;
-        if ((w.getAttributes().gravity & Gravity.TOP) == Gravity.TOP)
+        final Window w = getWindow();
+        if (w != null)
         {
-            w.getAttributes().y = par.top;
+            w.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            w.getAttributes().gravity = par.gravity;
+            if ((w.getAttributes().gravity & Gravity.TOP) == Gravity.TOP)
+            {
+                w.getAttributes().y = par.top;
+            }
         }
         setCanceledOnTouchOutside(true);
         if (par.type == DialogParameters.Type.SURFACE_SCHEMA)
@@ -91,7 +94,10 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
     private void createSurfaceSchemaInterface()
     {
         setContentView(R.layout.surface_touch_schema);
-        getWindow().setLayout(par.width, par.height);
+        if (getWindow() != null)
+        {
+            getWindow().setLayout(par.width, par.height);
+        }
         (findViewById(R.id.button_cancel)).setOnClickListener(new View.OnClickListener()
         {
             @Override

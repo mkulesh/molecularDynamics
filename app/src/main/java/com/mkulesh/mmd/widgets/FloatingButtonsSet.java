@@ -1,6 +1,7 @@
-/*******************************************************************************
- * microMathematics Plus - Extended visual calculator
- * *****************************************************************************
+/*
+ * **************************************************************************
+ * Molecular Dynamics - Particles under the microscope
+ * **************************************************************************
  * Copyright (C) 2014-2017 Mikhail Kulesh
  *
  * This program is free software: you can redistribute it and/or modify
@@ -15,7 +16,9 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- ******************************************************************************/
+ * **************************************************************************
+ */
+
 package com.mkulesh.mmd.widgets;
 
 import android.annotation.SuppressLint;

@@ -228,7 +228,11 @@ public class AtomPainter implements Runnable
 
         // checks if the lockCanvas() method will be success,and if not,
         // will check this statement again
-        while (!holder.getSurface().isValid()) ;
+        //noinspection StatementWithEmptyBody
+        while (!holder.getSurface().isValid())
+        {
+            // empty
+        }
 
         // Start editing pixels in this surface
         Canvas c = holder.lockCanvas();
@@ -549,7 +553,7 @@ public class AtomPainter implements Runnable
         void draw(Canvas c, AtomSet set)
         {
             if (image == null || lastRadius != set.atomRadius || !lastDim.isEqual(set.getVewPort().getDim())
-                    || lastImage != set.atomImage)
+                    || lastImage == null || !lastImage.equals(set.atomImage))
             {
                 loadImage(set, rect);
             }
@@ -580,6 +584,7 @@ public class AtomPainter implements Runnable
             }
         }
 
+        @SuppressWarnings("SameParameterValue")
         private void drawArrowHead(Canvas c, Point tip, Point tail, int size, Paint paint)
         {
             double dy = tip.y - tail.y;
@@ -613,6 +618,7 @@ public class AtomPainter implements Runnable
         {
             LayoutInflater inflater = LayoutInflater.from(context);
             final ViewGroup nullRootGroup = null;
+            //noinspection ConstantConditions
             layout = (LinearLayout) inflater.inflate(R.layout.info_panel, nullRootGroup, false);
         }
 

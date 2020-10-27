@@ -31,6 +31,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.model.PhysicalArea;
 import com.mkulesh.mmd.model.Potential;
@@ -40,7 +42,7 @@ import com.mkulesh.mmd.widgets.ControlDialog;
 import com.mkulesh.mmd.widgets.DialogChangeListener;
 import com.mkulesh.mmd.widgets.DialogParameters;
 import com.mkulesh.mmd.widgets.DialogParameters.Type;
-import com.mkulesh.mmd.widgets.FunctionView;
+import com.mkulesh.mmd.widgets.PotentialView;
 
 public class MainFragmentPotential extends BaseFragment implements DialogChangeListener
 {
@@ -75,7 +77,7 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
         menu.findItem(R.id.action_settings).setTitle(activity.getResources().getString(R.string.pref_potential));
@@ -145,12 +147,12 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
                 2.0 * Math.abs(potential.getPotentialMin()));
 
         // value view
-        FunctionView v1 = rootView.findViewById(R.id.activity_potential_value);
+        PotentialView v1 = rootView.findViewById(R.id.activity_potential_value);
         v1.setPotential(potential, BasePotential.ValueType.VALUE, area);
         v1.invalidate();
 
         // derivative
-        FunctionView v2 = rootView.findViewById(R.id.activity_potential_derivative);
+        PotentialView v2 = rootView.findViewById(R.id.activity_potential_derivative);
         v2.setPotential(potential, BasePotential.ValueType.DERIVATIVE, area);
         v2.invalidate();
 
@@ -160,7 +162,7 @@ public class MainFragmentPotential extends BaseFragment implements DialogChangeL
 
         // store new value
         SharedPreferences.Editor prefEditor = preferences.edit();
-        prefEditor.putString(SettingsActivity.KEY_POTENTIAL, String.valueOf(potentialType.toString()));
+        prefEditor.putString(SettingsActivity.KEY_POTENTIAL, potentialType.toString());
         prefEditor.commit();
     }
 }

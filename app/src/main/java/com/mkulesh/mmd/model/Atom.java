@@ -75,6 +75,7 @@ public class Atom implements Parcelable
         coordinate.readFromParcel(in);
         velocity.readFromParcel(in);
         acceleration.readFromParcel(in);
+        //noinspection ConstantConditions
         translated = Boolean.getBoolean(in.readString());
     }
 

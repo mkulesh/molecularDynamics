@@ -21,6 +21,7 @@
 
 package com.mkulesh.mmd;
 
+import androidx.annotation.NonNull;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.hardware.SensorManager;
@@ -38,6 +39,8 @@ import com.mkulesh.mmd.utils.ViewUtils;
 import com.mkulesh.mmd.widgets.DialogParameters;
 import com.mkulesh.mmd.widgets.FloatingButtonsSet;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class MainFragmentExperiment extends BaseFragment implements View.OnClickListener
 {
 
@@ -47,7 +50,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
      * State attributes to be stored in Parcel
      */
     private boolean runPressed = false;
-    private Integer currentRotation = null;
+    private final AtomicInteger currentRotation = new AtomicInteger();
 
     /**
      * Experiment layout
@@ -72,7 +75,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
         initializeFragment(EXPERIMENT_FRAGMENT_ID);
 
         // get rotation properties
-        currentRotation = activity.getDisplay().getRotation();
+        currentRotation.set(activity.getDisplay().getRotation());
 
         // orientation change
         orientationEventListener = new OrientationEventListener(activity, SensorManager.SENSOR_DELAY_NORMAL)
@@ -84,11 +87,11 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
                 {
                     int rotation = activity.getDisplay().getRotation();
                     final Experiment exp = activity.getExperiment();
-                    if (exp != null && Math.abs(rotation - currentRotation) == 2)
+                    if (exp != null && Math.abs(rotation - currentRotation.get()) == 2)
                     {
-                        Integer previousRotation = currentRotation;
-                        currentRotation = rotation;
-                        exp.processRotationChange(previousRotation, currentRotation);
+                        int previousRotation = currentRotation.get();
+                        currentRotation.set(rotation);
+                        exp.processRotationChange(previousRotation, currentRotation.get());
                     }
                 }
             }
@@ -110,7 +113,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
         menu.findItem(R.id.action_settings).setTitle(activity.getResources().getString(R.string.action_settings));
@@ -173,7 +176,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState)
+    public void onSaveInstanceState(@NonNull Bundle outState)
     {
         super.onSaveInstanceState(outState);
         ViewUtils.Debug(this, "onSaveInstanceState");
@@ -181,7 +184,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
         {
             activity.getExperiment().writeToBundle(outState);
             outState.putBoolean("activity_main_button_run", runPressed);
-            outState.putInt("activity_main_rotation", currentRotation);
+            outState.putInt("activity_main_rotation", currentRotation.get());
         }
         catch (Exception e)
         {
@@ -197,8 +200,9 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
             Experiment exp = inState.getParcelable(Experiment.PARCELABLE_ID);
             activity.setExperiment(exp);
             runPressed = inState.getBoolean("activity_main_button_run", false);
-            Integer previousRotation = inState.getInt("activity_main_rotation", currentRotation);
-            exp.processRotationChange(previousRotation, currentRotation);
+            int previousRotation = inState.getInt("activity_main_rotation", currentRotation.get());
+            //noinspection ConstantConditions
+            exp.processRotationChange(previousRotation, currentRotation.get());
         }
         catch (Exception e)
         {

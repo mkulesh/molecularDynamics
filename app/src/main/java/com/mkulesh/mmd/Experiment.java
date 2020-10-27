@@ -283,7 +283,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure performs rotation due to screen orientation change
      */
-    void processRotationChange(Integer previousRotation, Integer currentRotation)
+    void processRotationChange(int previousRotation, int currentRotation)
     {
         if (previousRotation < 0 || previousRotation == currentRotation)
         {
@@ -293,7 +293,7 @@ public class Experiment implements Runnable, Parcelable
         synchronized (atomSet)
         {
             ViewUtils.Debug(this, "detected rotation change: " + previousRotation + " -> " + currentRotation);
-            atomSet.rotate(currentRotation.intValue(), previousRotation.intValue());
+            atomSet.rotate(currentRotation, previousRotation);
             painter.put(new AtomSet(atomSet));
         }
         threadControl.resume(false);
