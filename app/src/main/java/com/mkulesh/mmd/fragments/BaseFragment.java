@@ -12,20 +12,22 @@
  * Public License along with this program.
  */
 
-package com.mkulesh.mmd;
+package com.mkulesh.mmd.fragments;
 
 import android.content.SharedPreferences;
 import android.view.View;
 
+import com.mkulesh.mmd.MainActivity;
+
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
-abstract class BaseFragment extends Fragment
+public abstract class BaseFragment extends Fragment
 {
     /**
      * Class members.
      */
-    final static int INVALID_FRAGMENT_ID = -1;
+    public final static int INVALID_FRAGMENT_ID = -1;
     final static int EXPERIMENT_FRAGMENT_ID = 0;
     final static int POTENTIAL_FRAGMENT_ID = 1;
 
@@ -43,7 +45,7 @@ abstract class BaseFragment extends Fragment
 
     abstract public int getSubTitleId();
 
-    int getFragmentNumber()
+    public int getFragmentNumber()
     {
         return fragmentNumber;
     }

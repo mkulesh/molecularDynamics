@@ -12,7 +12,7 @@
  * Public License along with this program.
  */
 
-package com.mkulesh.mmd;
+package com.mkulesh.mmd.fragments;
 
 import android.content.Intent;
 import android.graphics.PixelFormat;
@@ -26,6 +26,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.config.SettingsActivity;
 import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.utils.ViewUtils;

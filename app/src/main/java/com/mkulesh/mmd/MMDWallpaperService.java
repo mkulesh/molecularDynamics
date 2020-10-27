@@ -23,6 +23,7 @@ import android.view.OrientationEventListener;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
 
+import com.mkulesh.mmd.fragments.Experiment;
 import com.mkulesh.mmd.utils.ViewUtils;
 
 import androidx.preference.PreferenceManager;

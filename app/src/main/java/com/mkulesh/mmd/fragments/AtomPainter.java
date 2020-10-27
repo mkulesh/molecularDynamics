@@ -12,7 +12,7 @@
  * Public License along with this program.
  */
 
-package com.mkulesh.mmd;
+package com.mkulesh.mmd.fragments;
 
 import android.app.WallpaperManager;
 import android.content.Context;
@@ -31,6 +31,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.config.SettingsActivity;
 import com.mkulesh.mmd.model.Atom;
 import com.mkulesh.mmd.model.AtomSet;

@@ -12,7 +12,7 @@
  * Public License along with this program.
  */
 
-package com.mkulesh.mmd;
+package com.mkulesh.mmd.fragments;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.config.SettingsActivity;
 import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.model.PhysicalArea;

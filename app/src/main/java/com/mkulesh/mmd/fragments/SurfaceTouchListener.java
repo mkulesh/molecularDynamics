@@ -12,7 +12,7 @@
  * Public License along with this program.
  */
 
-package com.mkulesh.mmd;
+package com.mkulesh.mmd.fragments;
 
 import android.graphics.RectF;
 import android.view.Gravity;
@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 
+import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.utils.ViewUtils;
 import com.mkulesh.mmd.widgets.ControlDialog;
 import com.mkulesh.mmd.widgets.DialogChangeListener;

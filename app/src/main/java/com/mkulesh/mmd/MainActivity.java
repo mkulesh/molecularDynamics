@@ -28,6 +28,10 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.mkulesh.mmd.fragments.BaseFragment;
+import com.mkulesh.mmd.fragments.Experiment;
+import com.mkulesh.mmd.fragments.MainFragmentExperiment;
+import com.mkulesh.mmd.fragments.MainFragmentPotential;
 import com.mkulesh.mmd.utils.CompatUtils;
 import com.mkulesh.mmd.utils.ViewUtils;
 

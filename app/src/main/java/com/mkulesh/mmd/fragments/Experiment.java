@@ -12,7 +12,7 @@
  * Public License along with this program.
  */
 
-package com.mkulesh.mmd;
+package com.mkulesh.mmd.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,6 +20,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.view.SurfaceHolder;
 
+import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.model.AtomSet;
 import com.mkulesh.mmd.model.Constants.EnergyNormType;
 import com.mkulesh.mmd.model.Constants.PotentialType;
@@ -79,11 +80,11 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Options class for this experiment
      */
-    static class Options
+    public static class Options
     {
-        boolean enablePause = false;
-        boolean enableInfoPanel = false;
-        boolean drawBackground = false;
+        public boolean enablePause = false;
+        public boolean enableInfoPanel = false;
+        public boolean drawBackground = false;
     }
 
     /**
@@ -108,7 +109,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Initialization method
      */
-    void initialize(Context context, SurfaceHolder holder, Options opt)
+    public void initialize(Context context, SurfaceHolder holder, Options opt)
     {
         this.context = context;
         painter = new AtomPainter(context, holder);
@@ -123,7 +124,7 @@ public class Experiment implements Runnable, Parcelable
         updateBackgroundMode(opt.drawBackground);
     }
 
-    void updateBackgroundMode(boolean drawBackground)
+    public void updateBackgroundMode(boolean drawBackground)
     {
         if (painter != null && drawBackground)
         {
@@ -134,7 +135,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure sets a pause for calculation thread
      */
-    void pause()
+    public void pause()
     {
         threadControl.pause();
     }
@@ -142,7 +143,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure resumes a pause from calculation thread
      */
-    void resumePause(boolean resumeAll)
+    public void resumePause(boolean resumeAll)
     {
         threadControl.resume(resumeAll);
     }
@@ -150,7 +151,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure starts calculation and painting thread
      */
-    void resume()
+    public void resume()
     {
         painter.resume();
         synchronized (atomSet)
@@ -229,7 +230,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure reads the atom parameters from shared preferences
      */
-    void readParameters(Context context)
+    public void readParameters(Context context)
     {
         threadControl.pause();
         synchronized (atomSet)
@@ -276,7 +277,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure performs rotation due to screen orientation change
      */
-    void processRotationChange(int previousRotation, int currentRotation)
+    public void processRotationChange(int previousRotation, int currentRotation)
     {
         if (previousRotation < 0 || previousRotation == currentRotation)
         {
@@ -406,7 +407,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Process change of wallpaper offset if app is running as MMDWallpaperEngine
      */
-    void wallpaperOffsetsChanged(float xOffset, float yOffset)
+    public void wallpaperOffsetsChanged(float xOffset, float yOffset)
     {
         if (painter != null)
         {
