@@ -37,7 +37,7 @@ import java.text.DecimalFormatSymbols;
 @SuppressLint("NewApi")
 public class CompatUtils
 {
-    public static boolean isMarshMallowOrLater()
+    private static boolean isMarshMallowOrLater()
     {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
     }

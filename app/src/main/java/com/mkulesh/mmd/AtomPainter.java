@@ -68,10 +68,10 @@ public class AtomPainter implements Runnable
     }
 
     // drawing parameters
-    public boolean drawVector = false;
-    public Atom.VectorType vectorType = Atom.VectorType.COORDINATE;
-    public boolean rotateAtom = true;
-    public BackgroudMode backgroudMode = BackgroudMode.NONE;
+    private boolean drawVector = false;
+    private Atom.VectorType vectorType = Atom.VectorType.COORDINATE;
+    private boolean rotateAtom = true;
+    private BackgroudMode backgroudMode = BackgroudMode.NONE;
 
     // visual components
     private AtomBackground background = null;
@@ -372,9 +372,9 @@ public class AtomPainter implements Runnable
      */
     private class CustomPanel
     {
-        protected Rect rect = new Rect();
+        Rect rect = new Rect();
 
-        public void setRect(int left, int top, int right, int bottom)
+        void setRect(int left, int top, int right, int bottom)
         {
             rect.set(left, top, right, bottom);
         }
@@ -385,10 +385,10 @@ public class AtomPainter implements Runnable
      */
     private class WallpaperOffsets
     {
-        public float xOffset = 0;
-        public float yOffset = 0;
+        float xOffset = 0;
+        float yOffset = 0;
 
-        public void set(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep)
+        void set(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep)
         {
             this.xOffset = xOffset;
             this.yOffset = yOffset;
@@ -406,7 +406,7 @@ public class AtomPainter implements Runnable
         private WallpaperManager wallpaper = null;
         private Rect srcRect = new Rect(), destRect = new Rect();
 
-        public AtomBackground(Context context)
+        AtomBackground(Context context)
         {
             if (backgroudMode == BackgroudMode.WALLPAPER)
             {
@@ -456,7 +456,7 @@ public class AtomPainter implements Runnable
             }
         }
 
-        public void draw(Canvas c)
+        void draw(Canvas c)
         {
             if (bgBitmap != null)
             {
@@ -518,7 +518,7 @@ public class AtomPainter implements Runnable
         private Point p1 = new Point(), p2 = new Point();
         private Paint paint = new Paint();
 
-        public AtomPanel()
+        AtomPanel()
         {
             // empty
         }
@@ -541,7 +541,7 @@ public class AtomPainter implements Runnable
             }
         }
 
-        public void draw(Canvas c, AtomSet set)
+        void draw(Canvas c, AtomSet set)
         {
             if (image == null || lastRadius != set.atomRadius || !lastDim.isEqual(set.getVewPort().getDim())
                     || lastImage != set.atomImage)
@@ -604,14 +604,14 @@ public class AtomPainter implements Runnable
         private Paint paint = new Paint();
         private LinearLayout layout = null;
 
-        public InfoPanel(Context context)
+        InfoPanel(Context context)
         {
             LayoutInflater inflater = LayoutInflater.from(context);
             final ViewGroup nullRootGroup = null;
             layout = (LinearLayout) inflater.inflate(R.layout.info_panel, nullRootGroup, false);
         }
 
-        public void draw(Canvas c, AtomSet set, float fps)
+        void draw(Canvas c, AtomSet set, float fps)
         {
             if (layout.getChildCount() == 4)
             {
@@ -635,12 +635,12 @@ public class AtomPainter implements Runnable
         private Point pMin = new Point(), pMax = new Point();
         private Rect viewPortRect = new Rect();
 
-        public ZoomPanel()
+        ZoomPanel()
         {
             // empty
         }
 
-        public void draw(Canvas c, AtomSet set)
+        void draw(Canvas c, AtomSet set)
         {
             if (!set.getVewPort().isZoomed())
             {

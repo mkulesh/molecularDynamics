@@ -37,7 +37,7 @@ import java.util.ArrayList;
 /**
  * The ImageArrayAdapter is the array adapter used for displaying an additional image to a list preference item.
  */
-public class ImageArrayAdapter extends ArrayAdapter<CharSequence>
+class ImageArrayAdapter extends ArrayAdapter<CharSequence>
 {
     private int textViewResourceId = 0;
     private ArrayList<Bitmap> images = null;

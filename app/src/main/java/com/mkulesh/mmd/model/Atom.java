@@ -42,14 +42,14 @@ public class Atom implements Parcelable
      * State attributes to be stored in Parcel
      */
     public Vector2D coordinate = new Vector2D(); // Cartesian coordinates vector
-    public Vector2D velocity = new Vector2D(); // velocity vector
-    public Vector2D acceleration = new Vector2D(); // acceleration vector
+    Vector2D velocity = new Vector2D(); // velocity vector
+    Vector2D acceleration = new Vector2D(); // acceleration vector
     private boolean translated = false;
 
     /**
      * Parcelable interface
      */
-    public Atom(Parcel in)
+    private Atom(Parcel in)
     {
         super();
         readFromParcel(in);
@@ -70,7 +70,7 @@ public class Atom implements Parcelable
         dest.writeString(String.valueOf(translated));
     }
 
-    public void readFromParcel(Parcel in)
+    private void readFromParcel(Parcel in)
     {
         coordinate.readFromParcel(in);
         velocity.readFromParcel(in);
@@ -114,7 +114,7 @@ public class Atom implements Parcelable
     /**
      * Assign procedure
      */
-    public void assign(Atom a)
+    void assign(Atom a)
     {
         coordinate.assign(a.coordinate);
         velocity.assign(a.velocity);
@@ -142,7 +142,7 @@ public class Atom implements Parcelable
     /**
      * Procedure performs reflection of the atom from a bound within given area
      */
-    public void reflect(PhysicalArea area, double offset)
+    void reflect(PhysicalArea area, double offset)
     {
         // x - coordinate
         if (coordinate.x < area.getMin().x + offset)

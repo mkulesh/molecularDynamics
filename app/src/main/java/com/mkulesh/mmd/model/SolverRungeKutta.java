@@ -34,21 +34,21 @@ public class SolverRungeKutta implements SolverBase
     static final int maxGrade = 4;
 
     // Currently used precision grade
-    static final int usedGrade = 3;
+    private static final int usedGrade = 3;
 
     // Number of steps for each precision grade
-    static final int[] gradeSteps = { 1, 2, 3, 4 };
+    private static final int[] gradeSteps = { 1, 2, 3, 4 };
 
     // Coefficients of the method
-    static final double P1 = 1.0;
-    static final double P2 = 0.5;
-    static final double[][] A = { { 0, 0, 0, 0, }, { 0, P1, 0, 0, }, { 0, 2.0 / 3.0, 0, 0, },
+    private static final double P1 = 1.0;
+    private static final double P2 = 0.5;
+    private static final double[][] A = { { 0, 0, 0, 0, }, { 0, P1, 0, 0, }, { 0, 2.0 / 3.0, 0, 0, },
             { 0, 1.0 / 2.0, 1.0 / 2.0, 1.0, } };
-    static final double[][][] B = { { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } },
+    private static final double[][][] B = { { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } },
             { { 0, 0, 0, 0 }, { P1, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } },
             { { 0, 0, 0, 0 }, { 2.0 / 3.0, 0, 0, 0 }, { -1.0 / (4.0 * P2), 1.0 / (4.0 * P2), 0, 0 }, { 0, 0, 0, 0 } },
             { { 0, 0, 0, 0 }, { 1.0 / 2.0, 0, 0, 0 }, { 0, 1.0 / 2.0, 0, 0 }, { 0, 0, 1.0, 0 } } };
-    static final double[][] C = { { 1.0, 0, 0, 0, }, { 1.0 - 1.0 / (2.0 * P1), 1.0 / (2.0 * P1), 0, 0, },
+    private static final double[][] C = { { 1.0, 0, 0, 0, }, { 1.0 - 1.0 / (2.0 * P1), 1.0 / (2.0 * P1), 0, 0, },
             { 1.0 / 4.0 - P2, 3.0 / 4.0, P2, 0, }, { 1.0 / 6.0, 1.0 / 3.0, 1.0 / 3.0, 1.0 / 6.0, } };
 
     // Helper arrays used to store coordinates and velocities from previous step

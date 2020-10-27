@@ -47,7 +47,7 @@ public class FunctionView extends AppCompatTextView
     // custom attributes
     private int axisArrowSize, axisLabelSize = 8, labelNumber = 10;
     private String domainName, valueName;
-    float formulaWidth = 0.5f;
+    private float formulaWidth = 0.5f;
 
     // variables used for plotting
     private Context context = null;
@@ -61,7 +61,7 @@ public class FunctionView extends AppCompatTextView
     private DecimalFormat xDecimalFormat = null, yDecimalFormat = null;
     private SVG svg = null;
     private float svgRatio = 0.0f;
-    public static final int pointNumber = 1000;
+    private static final int pointNumber = 1000;
 
     public FunctionView(Context context)
     {

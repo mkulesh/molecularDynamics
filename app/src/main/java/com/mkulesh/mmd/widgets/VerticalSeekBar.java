@@ -161,12 +161,12 @@ public class VerticalSeekBar extends AppCompatSeekBar
         return max > 0 ? getProgress() / (float) max : 0;
     }
 
-    public Drawable getCustomThumb()
+    private Drawable getCustomThumb()
     {
         return customThumb;
     }
 
-    public void setCustomThumb(Drawable customThumb)
+    private void setCustomThumb(Drawable customThumb)
     {
         this.customThumb = customThumb;
         invalidate();

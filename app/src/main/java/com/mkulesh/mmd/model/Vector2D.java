@@ -40,7 +40,7 @@ public class Vector2D implements Parcelable
     /**
      * Parcelable interface
      */
-    public Vector2D(Parcel in)
+    private Vector2D(Parcel in)
     {
         super();
         readFromParcel(in);

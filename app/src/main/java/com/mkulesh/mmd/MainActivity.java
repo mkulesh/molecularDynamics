@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity
      *********************************************************/
 
     @SuppressLint("RestrictedApi")
-    public BaseFragment getVisibleFragment()
+    private BaseFragment getVisibleFragment()
     {
         FragmentManager fragmentManager = MainActivity.this.getSupportFragmentManager();
         List<Fragment> fragments = fragmentManager.getFragments();
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity
         return null;
     }
 
-    public void selectNavigationItem(MenuItem menuItem)
+    private void selectNavigationItem(MenuItem menuItem)
     {
         menuItem.setChecked(true);
         mDrawerLayout.closeDrawers();

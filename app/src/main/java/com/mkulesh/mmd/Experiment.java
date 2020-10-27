@@ -46,7 +46,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Parcelable interface
      */
-    public Experiment(Parcel in)
+    private Experiment(Parcel in)
     {
         super();
         ViewUtils.Debug(this, "created from parcel");

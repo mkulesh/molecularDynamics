@@ -24,7 +24,7 @@ package com.mkulesh.mmd.model;
 /**
  * Solver interface used to integrate equations of motion
  */
-public interface SolverBase
+interface SolverBase
 {
 
     /**

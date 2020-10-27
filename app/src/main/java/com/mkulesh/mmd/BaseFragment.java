@@ -32,13 +32,13 @@ abstract public class BaseFragment extends Fragment
      * Class members.
      */
     public final static int INVALID_FRAGMENT_ID = -1;
-    public final static int EXPERIMENT_FRAGMENT_ID = 0;
-    public final static int POTENTIAL_FRAGMENT_ID = 1;
+    final static int EXPERIMENT_FRAGMENT_ID = 0;
+    final static int POTENTIAL_FRAGMENT_ID = 1;
 
-    protected MainActivity activity = null;
-    protected View rootView = null;
-    protected int fragmentNumber = INVALID_FRAGMENT_ID;
-    protected SharedPreferences preferences = null;
+    MainActivity activity = null;
+    View rootView = null;
+    private int fragmentNumber = INVALID_FRAGMENT_ID;
+    SharedPreferences preferences = null;
 
     /**
      * Abstract interface
@@ -54,7 +54,7 @@ abstract public class BaseFragment extends Fragment
         return fragmentNumber;
     }
 
-    protected void initializeFragment(int number)
+    void initializeFragment(int number)
     {
         fragmentNumber = number;
         activity = (MainActivity) getActivity();

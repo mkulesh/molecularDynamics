@@ -53,17 +53,17 @@ public class AtomSet implements Parcelable
     /**
      * State attributes to be stored in Parcel
      */
-    protected PhysicalArea area = new PhysicalArea(); // original physical area
-    protected PhysicalArea viewPort = new PhysicalArea(); // zoomed area
-    protected ArrayList<Atom> atoms = new ArrayList<Atom>(); // atoms
+    private PhysicalArea area = new PhysicalArea(); // original physical area
+    private PhysicalArea viewPort = new PhysicalArea(); // zoomed area
+    private ArrayList<Atom> atoms = new ArrayList<Atom>(); // atoms
     public Potential potential = new Potential(); // used potential
     public double atomRadius = 1.0; // radius of the atom
-    public double atomMass = 55.847; // mass of the atom (in atomic mass unit)
+    private double atomMass = 55.847; // mass of the atom (in atomic mass unit)
     public double gravity = 0.0; // gravity constant
     public double thermalChange = 0; // thermal change coefficient (in percent [-1% ... +1%])
     public double timeStep = 5.0; // time step in femtosecond
     public EnergyNormType energyNorm = EnergyNormType.FULL_ENERGY; // how to norm energy within next step calculation
-    public BoundaryConditionType boundaryCondition = BoundaryConditionType.REFLECTION;
+    private BoundaryConditionType boundaryCondition = BoundaryConditionType.REFLECTION;
     public double ePotenz = 0.0, eKinetic = 0.0, temperature = 0.0;
     public String atomImage = "res/raw/atom_blue_red.svg";
 
@@ -210,7 +210,7 @@ public class AtomSet implements Parcelable
     /**
      * Procedure sets atom coordinate using limits of equidistance grid
      */
-    public void fillGridCoordinates(int max_x, int max_y, boolean isDiag)
+    private void fillGridCoordinates(int max_x, int max_y, boolean isDiag)
     {
         ViewUtils.Debug(this, "creating new atoms grid");
         atoms.clear();
@@ -235,7 +235,7 @@ public class AtomSet implements Parcelable
     /**
      * Procedure fills the velocities of the atoms using normal distribution
      */
-    public void fillNormalVelocity(double velMean, double velDeviation)
+    private void fillNormalVelocity(double velMean, double velDeviation)
     {
         if (atoms.isEmpty())
         {
@@ -278,7 +278,7 @@ public class AtomSet implements Parcelable
     /**
      * Procedure calculates the current kinetic energy of this atom set
      */
-    public double calculateKineticEnergy()
+    private double calculateKineticEnergy()
     {
         double res = 0.0;
         for (Atom a : atoms)
@@ -291,7 +291,7 @@ public class AtomSet implements Parcelable
     /**
      * Procedure calculates the average velocity
      */
-    public double calculateAverageVelocity()
+    private double calculateAverageVelocity()
     {
         double res = 0.0;
         for (Atom a : atoms)
@@ -304,7 +304,7 @@ public class AtomSet implements Parcelable
     /**
      * Procedure calculates the current potential energy of this atom set with respect to given potential
      */
-    public double calculatePotentialEnergy()
+    private double calculatePotentialEnergy()
     {
         double res = 0.0;
         BasePotential pFunc = potential.getFunction();
@@ -359,7 +359,7 @@ public class AtomSet implements Parcelable
     /**
      * Procedure calculates acceleration for all atoms using their coordinates and velocities.
      */
-    public Constants.CalculationType calculateAcceleration()
+    Constants.CalculationType calculateAcceleration()
     {
 
         Constants.CalculationType retValue = CalculationType.SUCCESS;

@@ -189,7 +189,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
         }
     }
 
-    public void onRestoreInstanceState(Bundle inState)
+    private void onRestoreInstanceState(Bundle inState)
     {
         ViewUtils.Debug(this, "onRestoreInstanceState");
         try
@@ -243,7 +243,7 @@ public class MainFragmentExperiment extends BaseFragment implements View.OnClick
         }
     }
 
-    public void setInOperation(boolean inOperation, boolean resumeMode)
+    private void setInOperation(boolean inOperation, boolean resumeMode)
     {
         if (inOperation)
         {

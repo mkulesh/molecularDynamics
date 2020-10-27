@@ -54,7 +54,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
 
     private class Pointer
     {
-        public static final int INVALID_ID = -1;
+        static final int INVALID_ID = -1;
         int activeId = INVALID_ID;
     }
 
@@ -179,7 +179,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
         exp.setControlValue(DialogParameters.Type.CONDITIONS_CHANGE, 0.0, buttonId);
     }
 
-    public int getTitleBarHeight()
+    private int getTitleBarHeight()
     {
         return (activity.getWindow().getAttributes().y + activity.getSupportActionBar().getHeight());
     }

@@ -29,7 +29,7 @@ import android.os.Parcelable;
 public class PhysicalArea implements Parcelable
 {
 
-    public static final double NO_ZOOM_FACTOR = 1.0;
+    private static final double NO_ZOOM_FACTOR = 1.0;
 
     /**
      * State attributes to be stored in Parcel
