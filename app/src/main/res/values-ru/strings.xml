@@ -15,7 +15,8 @@
     <string name="drawer_potential_subtitle">Смена потенциала</string>
     <string name="drawer_documentation">О методе</string>
     <string name="button_cancel">Отмена</string>
-    
+    <string name="button_ok">OK</string>
+
     <!-- Main menu -->
     <string name="action_help">Справка по управлению</string>
     <string name="action_play">Запуск</string>

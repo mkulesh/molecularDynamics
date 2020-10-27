@@ -22,7 +22,7 @@
             android:entryValues="@array/pref_fill_methods_values"
             android:key="pref_fill_methods"
             android:negativeButtonText="@string/button_cancel"
-            android:positiveButtonText="@null"
+            android:positiveButtonText="@string/button_ok"
             android:title="@string/pref_fill_methods_title"
             app:entryImages="@array/pref_fill_methods_values"/>
 
@@ -134,7 +134,7 @@
             android:entryValues="@array/pref_energy_norm_values"
             android:key="pref_energy_norm"
             android:negativeButtonText="@string/button_cancel"
-            android:positiveButtonText="@null"
+            android:positiveButtonText="@string/button_ok"
             android:title="@string/pref_energy_norm"
             app:entryImages="@array/pref_energy_norm_values" />
         </PreferenceCategory>
@@ -148,7 +148,7 @@
             android:entryValues="@array/pref_potential_values"
             android:key="pref_potential"
             android:negativeButtonText="@string/button_cancel"
-            android:positiveButtonText="@null"
+            android:positiveButtonText="@string/button_ok"
             android:title="@string/pref_potential"
             app:entryImages="@array/pref_potential_values"/>
         <EditTextPreference
@@ -176,7 +176,7 @@
             android:entryValues="@array/pref_atom_skin_values"
             android:key="pref_atom_skin"
             android:negativeButtonText="@string/button_cancel"
-            android:positiveButtonText="@null"
+            android:positiveButtonText="@string/button_ok"
             android:title="@string/pref_atom_skin"
             app:entryImages="@array/pref_atom_skin_values" />
     </PreferenceCategory>

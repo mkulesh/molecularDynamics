@@ -15,7 +15,8 @@
     <string name="drawer_potential_subtitle">View potentials</string>
     <string name="drawer_documentation">About method</string>
     <string name="button_cancel">Cancel</string>
-    
+    <string name="button_ok">OK</string>
+
     <!-- Main menu -->
     <string name="action_help">Touch instructions</string>
     <string name="action_play">Play</string>

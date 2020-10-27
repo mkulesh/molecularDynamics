@@ -15,7 +15,8 @@
     <string name="drawer_potential_subtitle">Ver potenciais</string>
     <string name="drawer_documentation">Sobre o método</string>
     <string name="button_cancel">Cancelar</string>
-    
+    <string name="button_ok">OK</string>
+
     <!-- Main menu -->
     <string name="action_help">Instruções de toque</string>
     <string name="action_play">Jogar</string>

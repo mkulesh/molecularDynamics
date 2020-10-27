@@ -38,7 +38,7 @@ import java.util.ArrayList;
 /**
  * The ImageArrayAdapter is the array adapter used for displaying an additional image to a list preference item.
  */
-class ImageArrayAdapter extends ArrayAdapter<CharSequence>
+public class ImageArrayAdapter extends ArrayAdapter<CharSequence>
 {
     private final int textViewResourceId;
     private final ArrayList<Bitmap> images;
@@ -55,8 +55,8 @@ class ImageArrayAdapter extends ArrayAdapter<CharSequence>
      * @param index              index of the previous selected item.
      */
     @SuppressWarnings("SameParameterValue")
-    ImageArrayAdapter(Context context, int textViewResourceId, CharSequence[] objects, ArrayList<Bitmap> images,
-                      int index)
+    public ImageArrayAdapter(Context context, int textViewResourceId, CharSequence[] objects,
+                             ArrayList<Bitmap> images, int index)
     {
         super(context, textViewResourceId, objects);
         this.textViewResourceId = textViewResourceId;
