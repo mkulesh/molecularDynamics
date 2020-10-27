@@ -34,6 +34,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mkulesh.mmd.config.SettingsActivity;
 import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.utils.ViewUtils;
 import com.mkulesh.mmd.widgets.DialogParameters;

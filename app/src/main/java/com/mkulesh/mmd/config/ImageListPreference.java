@@ -18,16 +18,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * **************************************************************************
  */
-package com.mkulesh.mmd.widgets;
+package com.mkulesh.mmd.config;
 
-import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.preference.ListPreference;
+import androidx.preference.ListPreference;
 import android.util.AttributeSet;
-import android.widget.ListAdapter;
 
 import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.utils.SVGUtils;
@@ -73,9 +71,8 @@ public class ImageListPreference extends ListPreference
         typedArray.recycle();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+
+    /*
     protected void onPrepareDialogBuilder(Builder builder)
     {
         int index = findIndexOfValue(getSharedPreferences().getString(getKey(), "1"));
@@ -84,4 +81,5 @@ public class ImageListPreference extends ListPreference
         builder.setAdapter(listAdapter, this);
         super.onPrepareDialogBuilder(builder);
     }
+    */
 }

@@ -98,14 +98,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
         {
             getWindow().setLayout(par.width, par.height);
         }
-        (findViewById(R.id.button_cancel)).setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                dismiss();
-            }
-        });
+        (findViewById(R.id.button_cancel)).setOnClickListener(v -> dismiss());
     }
 
     private void createButtonInterface()

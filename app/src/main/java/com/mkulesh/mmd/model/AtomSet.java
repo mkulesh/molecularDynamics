@@ -30,7 +30,7 @@ import android.os.Parcelable;
 import androidx.preference.PreferenceManager;
 
 import com.mkulesh.mmd.R;
-import com.mkulesh.mmd.SettingsActivity;
+import com.mkulesh.mmd.config.SettingsActivity;
 import com.mkulesh.mmd.model.Constants.BoundaryConditionType;
 import com.mkulesh.mmd.model.Constants.CalculationType;
 import com.mkulesh.mmd.model.Constants.EnergyNormType;

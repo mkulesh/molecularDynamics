@@ -33,6 +33,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.mkulesh.mmd.config.SettingsActivity;
 import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.model.PhysicalArea;
 import com.mkulesh.mmd.model.Potential;

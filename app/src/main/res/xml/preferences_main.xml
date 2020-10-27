@@ -1,19 +1,21 @@
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:mkulesh="http://schemas.android.com/apk/res-auto">
+	xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Preferences: Initial layout -->
-    <PreferenceCategory android:title="@string/pref_category_initial_layout" >
+    <PreferenceCategory android:title="@string/pref_category_initial_layout" app:iconSpaceReserved="false">
 
         <!-- Rebuild initial layout -->
-        <CheckBoxPreference
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
             android:defaultValue="true"
             android:key="pref_rebuild"
             android:summary="@string/pref_rebuild_summary"
             android:title="@string/pref_rebuild_title" />
 
         <!-- Fill method -->
-        <com.mkulesh.mmd.widgets.ImageListPreference
+        <com.mkulesh.mmd.config.ImageListPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_fill_methods_default"
             android:dependency="pref_rebuild"
             android:entries="@array/pref_fill_methods_list"
@@ -22,10 +24,11 @@
             android:negativeButtonText="@string/button_cancel"
             android:positiveButtonText="@null"
             android:title="@string/pref_fill_methods_title"
-            mkulesh:entryImages="@array/pref_fill_methods_values"/>
+            app:entryImages="@array/pref_fill_methods_values"/>
 
         <!-- Dimension -->
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_grid_hor_dimension_default"
             android:dependency="pref_rebuild"
             android:dialogTitle="@string/pref_grid_hor_dimension"
@@ -35,6 +38,7 @@
             android:key="pref_grid_hor_dimension"
             android:title="@string/pref_grid_hor_dimension" />
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_grid_ver_dimension_default"
             android:dependency="pref_rebuild"
             android:dialogTitle="@string/pref_grid_ver_dimension"
@@ -46,8 +50,9 @@
         </PreferenceCategory>
 
     <!-- Physical area -->
-    <PreferenceCategory android:title="@string/pref_category_physical_area" >
+    <PreferenceCategory android:title="@string/pref_category_physical_area" app:iconSpaceReserved="false">
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_area_min_x_default"
             android:dialogTitle="@string/pref_area_min_x"
             android:dialogMessage="@string/pref_area_valuetype"
@@ -56,6 +61,7 @@
             android:key="pref_area_min_x"
             android:title="@string/pref_area_min_x" />
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_area_max_x_default"
             android:dialogTitle="@string/pref_area_max_x"
             android:dialogMessage="@string/pref_area_valuetype"
@@ -64,6 +70,7 @@
             android:key="pref_area_max_x"
             android:title="@string/pref_area_max_x" />
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_area_min_y_default"
             android:dialogTitle="@string/pref_area_min_y"
             android:dialogMessage="@string/pref_area_valuetype"
@@ -72,6 +79,7 @@
             android:key="pref_area_min_y"
             android:title="@string/pref_area_min_y" />
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_area_max_y_default"
             android:dialogTitle="@string/pref_area_max_y"
             android:dialogMessage="@string/pref_area_valuetype"
@@ -80,6 +88,7 @@
             android:key="pref_area_max_y"
             android:title="@string/pref_area_max_y" />
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_area_zoom_default"
             android:dialogTitle="@string/pref_area_zoom"
             android:dialogMessage="@string/pref_area_zoom_valuetype"
@@ -90,8 +99,9 @@
     </PreferenceCategory>
 
     <!-- Boundary conditions -->
-    <PreferenceCategory android:title="@string/pref_category_boundary_conditions" >
+    <PreferenceCategory android:title="@string/pref_category_boundary_conditions" app:iconSpaceReserved="false">
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_bound_gravity_default"
             android:dialogTitle="@string/pref_bound_gravity"
             android:dialogMessage="@string/pref_bound_gravity_valuetype"
@@ -100,6 +110,7 @@
             android:key="pref_bound_gravity"
             android:title="@string/pref_bound_gravity" />
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_bound_thermal_change_default"
             android:dialogTitle="@string/pref_bound_thermal_change"
             android:dialogMessage="@string/pref_bound_thermal_change_valuetype"
@@ -108,6 +119,7 @@
             android:key="pref_bound_thermal_change"
             android:title="@string/pref_bound_thermal_change" />
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_init_temperature_default"
             android:dialogTitle="@string/pref_init_temperature"
             android:dialogMessage="@string/pref_init_temperature_valuetype"
@@ -115,7 +127,8 @@
             android:inputType="numberDecimal"
             android:key="pref_init_temperature"
             android:title="@string/pref_init_temperature" />
-        <com.mkulesh.mmd.widgets.ImageListPreference
+        <com.mkulesh.mmd.config.ImageListPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_energy_norm_default"
             android:entries="@array/pref_energy_norm_names"
             android:entryValues="@array/pref_energy_norm_values"
@@ -123,12 +136,13 @@
             android:negativeButtonText="@string/button_cancel"
             android:positiveButtonText="@null"
             android:title="@string/pref_energy_norm"
-            mkulesh:entryImages="@array/pref_energy_norm_values" />
+            app:entryImages="@array/pref_energy_norm_values" />
         </PreferenceCategory>
 
     <!-- Atom -->
-    <PreferenceCategory android:title="@string/pref_category_atom_parameters" >
-        <com.mkulesh.mmd.widgets.ImageListPreference
+    <PreferenceCategory android:title="@string/pref_category_atom_parameters" app:iconSpaceReserved="false">
+        <com.mkulesh.mmd.config.ImageListPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_potential_default"
             android:entries="@array/pref_potential_names"
             android:entryValues="@array/pref_potential_values"
@@ -136,8 +150,9 @@
             android:negativeButtonText="@string/button_cancel"
             android:positiveButtonText="@null"
             android:title="@string/pref_potential"
-            mkulesh:entryImages="@array/pref_potential_values"/>
+            app:entryImages="@array/pref_potential_values"/>
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_atom_radius_default"
             android:dialogTitle="@string/pref_atom_radius"
             android:dialogMessage="@string/pref_area_valuetype"
@@ -146,6 +161,7 @@
             android:key="pref_atom_radius"
             android:title="@string/pref_atom_radius" />
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_atom_mass_default"
             android:dialogTitle="@string/pref_atom_mass"
             android:dialogMessage="@string/pref_atom_mass_valuetype"
@@ -153,7 +169,8 @@
             android:inputType="numberDecimal"
             android:key="pref_atom_mass"
             android:title="@string/pref_atom_mass" />
-        <com.mkulesh.mmd.widgets.ImageListPreference
+        <com.mkulesh.mmd.config.ImageListPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_atom_skin_default"
             android:entries="@array/pref_atom_skin_names"
             android:entryValues="@array/pref_atom_skin_values"
@@ -161,12 +178,13 @@
             android:negativeButtonText="@string/button_cancel"
             android:positiveButtonText="@null"
             android:title="@string/pref_atom_skin"
-            mkulesh:entryImages="@array/pref_atom_skin_values" />
+            app:entryImages="@array/pref_atom_skin_values" />
     </PreferenceCategory>
     
     <!-- Calculation parameters -->
-    <PreferenceCategory android:title="@string/pref_category_calc_parameters" >
+    <PreferenceCategory android:title="@string/pref_category_calc_parameters" app:iconSpaceReserved="false">
         <EditTextPreference
+            app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_calc_time_step_default"
             android:dialogTitle="@string/pref_calc_time_step"
             android:dialogMessage="@string/pref_calc_time_step_valuetype"
@@ -177,8 +195,9 @@
     </PreferenceCategory>
     
     <!-- Application design -->
-    <PreferenceCategory android:title="@string/pref_category_app_design" >
-    <CheckBoxPreference
+    <PreferenceCategory android:title="@string/pref_category_app_design" app:iconSpaceReserved="false">
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
             android:defaultValue="@bool/pref_system_wallpaper_default"
             android:key="pref_system_wallpaper"
             android:summary="@string/pref_system_wallpaper_summary"

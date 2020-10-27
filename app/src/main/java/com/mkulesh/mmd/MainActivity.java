@@ -115,16 +115,10 @@ public class MainActivity extends AppCompatActivity
         navigationView = findViewById(R.id.nav_view);
         if (navigationView != null)
         {
-            navigationView.setNavigationItemSelectedListener(
-                    new NavigationView.OnNavigationItemSelectedListener()
-                    {
-                        @Override
-                        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
-                        {
-                            selectNavigationItem(menuItem);
-                            return true;
-                        }
-                    });
+            navigationView.setNavigationItemSelectedListener(menuItem -> {
+                selectNavigationItem(menuItem);
+                return true;
+            });
         }
 
         // ActionBarDrawerToggle ties together the the proper interactions

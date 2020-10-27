@@ -39,6 +39,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.mkulesh.mmd.config.SettingsActivity;
 import com.mkulesh.mmd.model.Atom;
 import com.mkulesh.mmd.model.AtomSet;
 import com.mkulesh.mmd.model.Vector2D;

@@ -19,7 +19,7 @@
  * **************************************************************************
  */
 
-package com.mkulesh.mmd;
+package com.mkulesh.mmd.config;
 
 import android.annotation.SuppressLint;
 
