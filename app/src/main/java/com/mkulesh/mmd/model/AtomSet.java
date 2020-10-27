@@ -70,7 +70,7 @@ public class AtomSet implements Parcelable
     /**
      * Parcelable interface
      */
-    public AtomSet(Parcel in)
+    private AtomSet(Parcel in)
     {
         super();
         readFromParcel(in);

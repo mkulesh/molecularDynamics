@@ -36,7 +36,7 @@ public class SolverVerlet implements SolverBase
     /**
      * Default constructor
      */
-    public SolverVerlet()
+    SolverVerlet()
     {
     }
 

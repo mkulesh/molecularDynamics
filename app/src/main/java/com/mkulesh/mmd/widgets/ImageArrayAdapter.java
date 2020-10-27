@@ -53,8 +53,8 @@ class ImageArrayAdapter extends ArrayAdapter<CharSequence>
      * @param images             images to be displayed.
      * @param index              index of the previous selected item.
      */
-    public ImageArrayAdapter(Context context, int textViewResourceId, CharSequence[] objects, ArrayList<Bitmap> images,
-                             int index)
+    ImageArrayAdapter(Context context, int textViewResourceId, CharSequence[] objects, ArrayList<Bitmap> images,
+                      int index)
     {
         super(context, textViewResourceId, objects);
         this.textViewResourceId = textViewResourceId;
@@ -87,7 +87,7 @@ class ImageArrayAdapter extends ArrayAdapter<CharSequence>
         return row;
     }
 
-    public void setTextColor(int color)
+    void setTextColor(int color)
     {
         textColor = color;
     }

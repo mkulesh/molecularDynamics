@@ -22,7 +22,6 @@
 package com.mkulesh.mmd;
 
 import android.graphics.RectF;
-import androidx.core.view.MotionEventCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -60,19 +59,19 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
 
     private final Pointer pointer = new Pointer();
 
-    public SurfaceTouchListener(AppCompatActivity activity, SurfaceView surface)
+    SurfaceTouchListener(AppCompatActivity activity, SurfaceView surface)
     {
         this.surface = surface;
         this.activity = activity;
         scaleGestureDetector = new ScaleGestureDetector(activity, this);
     }
 
-    public void setExperiment(Experiment exp)
+    void setExperiment(Experiment exp)
     {
         this.exp = exp;
     }
 
-    public void disable()
+    void disable()
     {
         controlDialogs.clear();
     }
@@ -282,7 +281,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
         return false;
     }
 
-    public void showHelpDialog()
+    void showHelpDialog()
     {
         showControlDialog(-200f, -200f);
     }

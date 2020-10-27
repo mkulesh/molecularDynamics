@@ -32,7 +32,7 @@ public class DialogParameters
     }
 
     public final Type type;
-    public final boolean isVertical;
+    final boolean isVertical;
     public final String title;
     public int height, width;
     public int top = -1;
@@ -71,7 +71,7 @@ public class DialogParameters
         touchRect = new RectF(par.touchRect);
     }
 
-    public static double progressToDouble(double min, double max, int progress)
+    static double progressToDouble(double min, double max, int progress)
     {
         return min + progress * (max - min) / 100;
     }

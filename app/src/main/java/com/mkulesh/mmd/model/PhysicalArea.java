@@ -42,7 +42,7 @@ public class PhysicalArea implements Parcelable
     /**
      * Parcelable interface
      */
-    public PhysicalArea(Parcel in)
+    private PhysicalArea(Parcel in)
     {
         super();
         readFromParcel(in);
@@ -150,7 +150,7 @@ public class PhysicalArea implements Parcelable
     /**
      * Procedure checks that the given vector is inside of this area
      */
-    public boolean isInside(Vector2D p)
+    boolean isInside(Vector2D p)
     {
         return (p.x >= min.x && p.x <= max.x && p.y >= min.y && p.y <= max.y);
     }
@@ -199,7 +199,7 @@ public class PhysicalArea implements Parcelable
     /**
      * Procedure returns current zoom factor
      */
-    public double getZoom()
+    double getZoom()
     {
         return zoom;
     }
@@ -207,7 +207,7 @@ public class PhysicalArea implements Parcelable
     /**
      * Procedure returns current center of this area
      */
-    public Vector2D getFocus()
+    Vector2D getFocus()
     {
         Vector2D center = max.sum(min).division(2.0);
         center.divide(dim);

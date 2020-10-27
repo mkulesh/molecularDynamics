@@ -102,7 +102,7 @@ public class AtomPainter implements Runnable
     /**
      * Default constructor
      */
-    public AtomPainter(Context context, SurfaceHolder holder)
+    AtomPainter(Context context, SurfaceHolder holder)
     {
         super();
         this.holder = holder;
@@ -114,7 +114,7 @@ public class AtomPainter implements Runnable
     /**
      * Procedure prepares info panel
      */
-    public void enableInfoPanel()
+    void enableInfoPanel()
     {
         infoPanel = new InfoPanel(context);
         zoomPanel = new ZoomPanel();
@@ -124,7 +124,7 @@ public class AtomPainter implements Runnable
     /**
      * Procedure sets the background mode
      */
-    public void setBackgroundMode()
+    void setBackgroundMode()
     {
         boolean useSystemWallpaper = PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
                 SettingsActivity.KEY_SYSTEM_WALLPAPER,
@@ -141,7 +141,7 @@ public class AtomPainter implements Runnable
     /**
      * Process change of wallpaper offset if app is running as MMDWallpaperEngine
      */
-    public void wallpaperOffsetsChanged(float xOffset, float yOffset)
+    void wallpaperOffsetsChanged(float xOffset, float yOffset)
     {
         synchronized (wallpaperOffsets)
         {
@@ -152,7 +152,7 @@ public class AtomPainter implements Runnable
     /**
      * Procedure starts painting thread
      */
-    synchronized public void resume()
+    synchronized void resume()
     {
         if (thread == null)
         {
@@ -335,7 +335,7 @@ public class AtomPainter implements Runnable
     /**
      * Procedure waits and puts given atom into drawing queue
      */
-    public void waitAndPut(AtomSet atoms)
+    void waitAndPut(AtomSet atoms)
     {
         if (atoms == null || thread == null)
         {
@@ -354,7 +354,7 @@ public class AtomPainter implements Runnable
     /**
      * Procedure puts given atom into drawing queue without waiting
      */
-    public void put(AtomSet atoms)
+    void put(AtomSet atoms)
     {
         if (atoms == null || thread == null)
         {

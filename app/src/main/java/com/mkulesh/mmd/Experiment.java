@@ -40,7 +40,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * State attributes to be stored in Parcel
      */
-    public static final String PARCELABLE_ID = "Experiment";
+    static final String PARCELABLE_ID = "Experiment";
     private AtomSet atomSet = new AtomSet(); // set of the atoms, must be always handled as synchronized
 
     /**
@@ -86,7 +86,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Options class for this experiment
      */
-    public static class Options
+    static class Options
     {
         boolean enablePause = false;
         boolean enableInfoPanel = false;
@@ -115,7 +115,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Initialization method
      */
-    public void initialize(Context context, SurfaceHolder holder, Options opt)
+    void initialize(Context context, SurfaceHolder holder, Options opt)
     {
         this.context = context;
         painter = new AtomPainter(context, holder);
@@ -130,7 +130,7 @@ public class Experiment implements Runnable, Parcelable
         updateBackgroundMode(opt.drawBackground);
     }
 
-    public void updateBackgroundMode(boolean drawBackground)
+    void updateBackgroundMode(boolean drawBackground)
     {
         if (painter != null && drawBackground)
         {
@@ -141,7 +141,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure sets a pause for calculation thread
      */
-    public void pause()
+    void pause()
     {
         threadControl.pause();
     }
@@ -149,7 +149,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure resumes a pause from calculation thread
      */
-    public void resumePause(boolean resumeAll)
+    void resumePause(boolean resumeAll)
     {
         threadControl.resume(resumeAll);
     }
@@ -157,7 +157,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure starts calculation and painting thread
      */
-    public void resume()
+    void resume()
     {
         painter.resume();
         synchronized (atomSet)
@@ -236,7 +236,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure reads the atom parameters from shared preferences
      */
-    public void readParameters(Context context)
+    void readParameters(Context context)
     {
         threadControl.pause();
         synchronized (atomSet)
@@ -256,7 +256,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure writes the atom parameters into shared preferences
      */
-    public void writeParameters()
+    void writeParameters()
     {
         threadControl.pause();
         synchronized (atomSet)
@@ -269,7 +269,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure writes current experiment to the state
      */
-    public void writeToBundle(Bundle outState)
+    void writeToBundle(Bundle outState)
     {
         threadControl.pause();
         synchronized (atomSet)
@@ -283,7 +283,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure performs rotation due to screen orientation change
      */
-    public void processRotationChange(Integer previousRotation, Integer currentRotation)
+    void processRotationChange(Integer previousRotation, Integer currentRotation)
     {
         if (previousRotation < 0 || previousRotation == currentRotation)
         {
@@ -302,7 +302,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure returns current control value
      */
-    public double getControlValue(DialogParameters.Type type)
+    double getControlValue(DialogParameters.Type type)
     {
         double retValue = 0.0;
         threadControl.pause();
@@ -336,7 +336,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure sets current control value for given type
      */
-    public void setControlValue(DialogParameters.Type type, double doubleValue, int intValue)
+    void setControlValue(DialogParameters.Type type, double doubleValue, int intValue)
     {
         threadControl.pause();
         synchronized (atomSet)
@@ -398,7 +398,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Procedure sets new scaling parameters
      */
-    public void setScaling(double scaleFactor, double dx, double dy)
+    void setScaling(double scaleFactor, double dx, double dy)
     {
         double maxScale = Double.parseDouble(context.getResources().getString(R.string.pref_area_zoom_max));
         threadControl.pause();
@@ -413,7 +413,7 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Process change of wallpaper offset if app is running as MMDWallpaperEngine
      */
-    public void wallpaperOffsetsChanged(float xOffset, float yOffset)
+    void wallpaperOffsetsChanged(float xOffset, float yOffset)
     {
         if (painter != null)
         {

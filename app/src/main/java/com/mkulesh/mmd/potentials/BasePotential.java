@@ -25,7 +25,7 @@ import android.content.Context;
 
 public interface BasePotential
 {
-    public enum ValueType
+    enum ValueType
     {
         VALUE, DERIVATIVE
     }
@@ -33,36 +33,36 @@ public interface BasePotential
     /**
      * Procedure returns the potential name
      */
-    public String getName();
+    String getName();
 
     /**
      * Procedure returns the potential threshold
      */
-    public double getThreshold();
+    double getThreshold();
 
     /**
      * Procedure returns the x-coordinate of the potential well, or the optimal distance between two atoms where no load
      * is present
      */
-    public double getOptDistance();
+    double getOptDistance();
 
     /**
      * Procedure returns the minimum value of the potential
      */
-    public double getPotentialMin();
+    double getPotentialMin();
 
     /**
      * Procedure returns the potential value
      */
-    public double getValue(double r);
+    double getValue(double r);
 
     /**
      * Procedure returns resource id for the potential formula
      */
-    public int getFormulaResourceId(Context context, ValueType type);
+    int getFormulaResourceId(Context context, ValueType type);
 
     /**
      * Procedure returns the value of potential derivative
      */
-    public double getDerivative(double r);
-};
+    double getDerivative(double r);
+}

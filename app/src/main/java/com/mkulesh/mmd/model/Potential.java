@@ -67,7 +67,7 @@ public class Potential
     /**
      * Procedure returns actual potential function
      */
-    public BasePotential getFunction()
+    BasePotential getFunction()
     {
         if (function == null)
         {

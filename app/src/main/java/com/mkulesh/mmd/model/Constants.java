@@ -30,22 +30,22 @@ public class Constants
     /**
      * The electron volt unit
      */
-    public static final double EV = 1.602176565e-19;
+    static final double EV = 1.602176565e-19;
 
     /**
      * Coefficient used to obtain dimensionless equation of motions:
      */
-    public static final double AK = 1.036427e-28;
+    static final double AK = 1.036427e-28;
 
     /**
      * The Boltzmann constant kB [J/K]
      */
-    public static final double kB = 1.3806488e-23;
+    static final double kB = 1.3806488e-23;
 
     /**
      * The femtosecond
      */
-    public static final double FSec = 1.0e-15;
+    static final double FSec = 1.0e-15;
 
     /**
      * Output value used by different calculation methods
@@ -67,7 +67,7 @@ public class Constants
         NONE(2);
         private final int value;
 
-        private EnergyNormType(int v)
+        EnergyNormType(int v)
         {
             this.value = v;
         }
@@ -97,7 +97,7 @@ public class Constants
         BORN_MAYER(2);
         private final int value;
 
-        private PotentialType(int v)
+        PotentialType(int v)
         {
             this.value = v;
         }

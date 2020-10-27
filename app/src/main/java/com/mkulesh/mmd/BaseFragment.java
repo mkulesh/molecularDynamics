@@ -31,7 +31,7 @@ abstract class BaseFragment extends Fragment
     /**
      * Class members.
      */
-    public final static int INVALID_FRAGMENT_ID = -1;
+    final static int INVALID_FRAGMENT_ID = -1;
     final static int EXPERIMENT_FRAGMENT_ID = 0;
     final static int POTENTIAL_FRAGMENT_ID = 1;
 
@@ -49,7 +49,7 @@ abstract class BaseFragment extends Fragment
 
     abstract public int getSubTitleId();
 
-    public int getFragmentNumber()
+    int getFragmentNumber()
     {
         return fragmentNumber;
     }

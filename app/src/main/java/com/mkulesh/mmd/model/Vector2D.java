@@ -57,7 +57,7 @@ public class Vector2D implements Parcelable
         dest.writeDouble(y);
     }
 
-    public void readFromParcel(Parcel in)
+    void readFromParcel(Parcel in)
     {
         x = in.readDouble();
         y = in.readDouble();
@@ -87,7 +87,7 @@ public class Vector2D implements Parcelable
     /**
      * Copy constructor
      */
-    public Vector2D(Vector2D p)
+    Vector2D(Vector2D p)
     {
         super();
         assign(p);
@@ -124,7 +124,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure sets all data to zero
      */
-    public void erase()
+    void erase()
     {
         x = 0.0;
         y = 0.0;
@@ -141,7 +141,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure sets NaN value to this vector
      */
-    public void invalidate()
+    void invalidate()
     {
         x = Double.NaN;
         y = Double.NaN;
@@ -150,7 +150,7 @@ public class Vector2D implements Parcelable
     /**
      * Checks whether this vector has a NaN value
      */
-    public boolean isNaN()
+    boolean isNaN()
     {
         return (Double.isNaN(x) || Double.isNaN(y)) ? true : false;
     }
@@ -158,7 +158,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure calculates vector modulus
      */
-    public double mod()
+    double mod()
     {
         return Math.sqrt(x * x + y * y);
     }
@@ -179,7 +179,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure calculates vector power of two
      */
-    public double pow2()
+    double pow2()
     {
         return x * x + y * y;
     }
@@ -187,7 +187,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure calculates distance between this point and given point p
      */
-    public double distance(Vector2D p)
+    double distance(Vector2D p)
     {
         return Math.sqrt((x - p.x) * (x - p.x) + (y - p.y) * (y - p.y));
     }
@@ -212,7 +212,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure subtracts given vector p from this vector
      */
-    public void substract(Vector2D p)
+    void substract(Vector2D p)
     {
         x -= p.x;
         y -= p.y;
@@ -221,7 +221,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure multiplies this vector with given constant p
      */
-    public void multiply(double p)
+    void multiply(double p)
     {
         x *= p;
         y *= p;
@@ -238,7 +238,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure divides this vector by given constant p
      */
-    public void divide(double p)
+    void divide(double p)
     {
         x /= p;
         y /= p;
@@ -247,7 +247,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure divides this vector by given vector p component-wise
      */
-    public void divide(Vector2D p)
+    void divide(Vector2D p)
     {
         x /= p.x;
         y /= p.y;
@@ -256,7 +256,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure returns division of this vector to given constant p
      */
-    public Vector2D division(double p)
+    Vector2D division(double p)
     {
         return new Vector2D(x / p, y / p);
     }
@@ -264,7 +264,7 @@ public class Vector2D implements Parcelable
     /**
      * Procedure rotates the vector based on two rotation parameters
      */
-    public void rotate(int previousRotation, int currentRotation)
+    void rotate(int previousRotation, int currentRotation)
     {
         int r = previousRotation - currentRotation;
         double d = (r > 0) ? -1.0 : 1.0;
