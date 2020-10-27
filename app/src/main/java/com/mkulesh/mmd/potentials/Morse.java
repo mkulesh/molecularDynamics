@@ -49,7 +49,9 @@ public class Morse implements BasePotential
     // W 1.335 1.200 1.894
     // Au 0.560 1.637 1.922
 
-    private double eps = 0.2703, alpha = 1.1646, sig = 3.253; // Al
+    private final double eps = 0.2703;
+    private final double alpha = 1.1646;
+    private final double sig = 3.253; // Al
 
     /**
      * Default constructor

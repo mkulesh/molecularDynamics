@@ -33,7 +33,8 @@ public class LennardJones implements BasePotential
     // Ar 1.04E-02 3.40
     // Kr 1.4E-02 3.65
     // Xe 1.997E-02 3.98
-    private double eps = 0.01997, sig = 3.98; // Xe
+    private final double eps = 0.01997;
+    private final double sig = 3.98; // Xe
 
     /**
      * Default constructor

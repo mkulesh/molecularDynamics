@@ -159,7 +159,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
     /**
      * Custom change listener
      */
-    private Preference.OnPreferenceChangeListener changeListener = new Preference.OnPreferenceChangeListener()
+    private final Preference.OnPreferenceChangeListener changeListener = new Preference.OnPreferenceChangeListener()
     {
         @Override
         public boolean onPreferenceChange(Preference preference, Object value)

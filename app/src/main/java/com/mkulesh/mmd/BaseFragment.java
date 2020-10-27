@@ -26,7 +26,7 @@ import android.preference.PreferenceManager;
 import androidx.fragment.app.Fragment;
 import android.view.View;
 
-abstract public class BaseFragment extends Fragment
+abstract class BaseFragment extends Fragment
 {
     /**
      * Class members.

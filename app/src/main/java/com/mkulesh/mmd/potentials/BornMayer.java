@@ -27,7 +27,9 @@ import com.mkulesh.mmd.utils.SVGUtils;
 
 public class BornMayer implements BasePotential
 {
-    private double eps = 0.1, rho = 10.34, sig = 2.5;
+    private final double eps = 0.1;
+    private final double rho = 10.34;
+    private final double sig = 2.5;
 
     /**
      * Default constructor

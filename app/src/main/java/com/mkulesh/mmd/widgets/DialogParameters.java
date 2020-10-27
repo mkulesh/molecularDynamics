@@ -31,9 +31,9 @@ public class DialogParameters
         SURFACE_SCHEMA, GRAVITY_CHANGE, THERMAL_CHANGE, TIMESTEP_CHANGE, CONDITIONS_CHANGE, POTENTIAL_CHANGE
     }
 
-    public Type type;
-    public boolean isVertical;
-    public String title;
+    public final Type type;
+    public final boolean isVertical;
+    public final String title;
     public int height, width;
     public int top = -1;
     public int gravity;

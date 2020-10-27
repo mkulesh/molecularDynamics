@@ -68,14 +68,14 @@ public class AtomPainter implements Runnable
     }
 
     // drawing parameters
-    private boolean drawVector = false;
-    private Atom.VectorType vectorType = Atom.VectorType.COORDINATE;
-    private boolean rotateAtom = true;
+    private final boolean drawVector = false;
+    private final Atom.VectorType vectorType = Atom.VectorType.COORDINATE;
+    private final boolean rotateAtom = true;
     private BackgroudMode backgroudMode = BackgroudMode.NONE;
 
     // visual components
     private AtomBackground background = null;
-    private AtomPanel atomPanel = new AtomPanel();
+    private final AtomPanel atomPanel = new AtomPanel();
     private InfoPanel infoPanel = null;
     private ZoomPanel zoomPanel = null;
     private Context context = null;
@@ -92,7 +92,7 @@ public class AtomPainter implements Runnable
     // timing statistic and fps control
     private static final float maxFps = 25.0f;
     private static final int maxLastDurations = 10;
-    private ArrayList<Long> lastDurations = new ArrayList<Long>();
+    private final ArrayList<Long> lastDurations = new ArrayList<Long>();
 
     private int zoomPanelOffset = 0;
 
@@ -372,7 +372,7 @@ public class AtomPainter implements Runnable
      */
     private class CustomPanel
     {
-        Rect rect = new Rect();
+        final Rect rect = new Rect();
 
         void setRect(int left, int top, int right, int bottom)
         {
@@ -401,10 +401,11 @@ public class AtomPainter implements Runnable
     private class AtomBackground extends CustomPanel
     {
         private int canvasWidth = -1, canvasHeight = -1;
-        private Paint paint = new Paint();
+        private final Paint paint = new Paint();
         private Bitmap bgBitmap = null;
         private WallpaperManager wallpaper = null;
-        private Rect srcRect = new Rect(), destRect = new Rect();
+        private final Rect srcRect = new Rect();
+        private final Rect destRect = new Rect();
 
         AtomBackground(Context context)
         {
@@ -511,12 +512,13 @@ public class AtomPainter implements Runnable
     {
 
         private double lastRadius = 0.0;
-        private Vector2D lastDim = new Vector2D();
+        private final Vector2D lastDim = new Vector2D();
         private String lastImage = "";
         private Bitmap image = null;
-        private Matrix matrix = new Matrix();
-        private Point p1 = new Point(), p2 = new Point();
-        private Paint paint = new Paint();
+        private final Matrix matrix = new Matrix();
+        private final Point p1 = new Point();
+        private final Point p2 = new Point();
+        private final Paint paint = new Paint();
 
         AtomPanel()
         {
@@ -601,7 +603,7 @@ public class AtomPainter implements Runnable
     private class InfoPanel extends CustomPanel
     {
 
-        private Paint paint = new Paint();
+        private final Paint paint = new Paint();
         private LinearLayout layout = null;
 
         InfoPanel(Context context)
@@ -631,9 +633,10 @@ public class AtomPainter implements Runnable
     private class ZoomPanel extends CustomPanel
     {
 
-        private Paint paint = new Paint();
-        private Point pMin = new Point(), pMax = new Point();
-        private Rect viewPortRect = new Rect();
+        private final Paint paint = new Paint();
+        private final Point pMin = new Point();
+        private final Point pMax = new Point();
+        private final Rect viewPortRect = new Rect();
 
         ZoomPanel()
         {

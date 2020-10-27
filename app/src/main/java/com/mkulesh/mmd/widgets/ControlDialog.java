@@ -50,7 +50,7 @@ public class ControlDialog extends Dialog implements OnSeekBarChangeListener, On
     private SeekBar progressBar = null;
     private TextView progressText = null;
     private DialogParameters par = null;
-    private DialogChangeListener myListener;
+    private final DialogChangeListener myListener;
     private DecimalFormat decimalFormat = null;
 
     public ControlDialog(AppCompatActivity context, DialogParameters par, DialogChangeListener listener)
