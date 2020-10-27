@@ -95,7 +95,7 @@ public class AtomPainter implements Runnable
     // timing statistic and fps control
     private static final float maxFps = 25.0f;
     private static final int maxLastDurations = 10;
-    private final ArrayList<Long> lastDurations = new ArrayList<Long>();
+    private final ArrayList<Long> lastDurations = new ArrayList<>();
 
     private int zoomPanelOffset = 0;
 
@@ -107,8 +107,8 @@ public class AtomPainter implements Runnable
         super();
         this.holder = holder;
         this.context = context;
-        waitingQueue = new ArrayBlockingQueue<AtomSet>(1, true);
-        immediateQueue = new ArrayBlockingQueue<AtomSet>(100, true);
+        waitingQueue = new ArrayBlockingQueue<>(1, true);
+        immediateQueue = new ArrayBlockingQueue<>(100, true);
     }
 
     /**

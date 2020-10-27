@@ -55,7 +55,7 @@ public class ImageListPreference extends ListPreference
         String[] imageNames = context.getResources().getStringArray(
                 typedArray.getResourceId(typedArray.getIndexCount() - 1, -1));
 
-        images = new ArrayList<Bitmap>(imageNames.length);
+        images = new ArrayList<>(imageNames.length);
         for (int i = 0; i < imageNames.length; i++)
         {
             int imageId = SVGUtils.getResourceIdFromName(imageNames[i], context, true);

@@ -55,7 +55,7 @@ public class AtomSet implements Parcelable
      */
     private PhysicalArea area = new PhysicalArea(); // original physical area
     private PhysicalArea viewPort = new PhysicalArea(); // zoomed area
-    private final ArrayList<Atom> atoms = new ArrayList<Atom>(); // atoms
+    private final ArrayList<Atom> atoms = new ArrayList<>(); // atoms
     public final Potential potential = new Potential(); // used potential
     public double atomRadius = 1.0; // radius of the atom
     private double atomMass = 55.847; // mass of the atom (in atomic mass unit)
@@ -139,7 +139,7 @@ public class AtomSet implements Parcelable
      */
     private final Random rand = new Random(); // used to generate random coordinates and velocities
     private SolverBase solver = null;
-    private final ArrayList<Atom> backupedAtoms = new ArrayList<Atom>();
+    private final ArrayList<Atom> backupedAtoms = new ArrayList<>();
     private ThreadContol pauseHandler = null;
     private long calculationTime = 0;
 

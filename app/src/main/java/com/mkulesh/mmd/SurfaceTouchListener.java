@@ -47,7 +47,7 @@ class SurfaceTouchListener extends ScaleGestureDetector.SimpleOnScaleGestureList
     private final SurfaceView surface;
     private Experiment exp = null;
     private final ScaleGestureDetector scaleGestureDetector;
-    private final ArrayList<DialogParameters> controlDialogs = new ArrayList<DialogParameters>(4);
+    private final ArrayList<DialogParameters> controlDialogs = new ArrayList<>(4);
 
     // The ‘active pointer’ is the one currently moving our object.
     private float mLastTouchX = -1, mLastTouchY = -1;
