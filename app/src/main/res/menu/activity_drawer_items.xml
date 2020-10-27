@@ -7,7 +7,7 @@
             android:id="@+id/nav_experiment"
             android:orderInCategory="0"
             android:icon="@drawable/drawer_experiment"
-            android:title="@string/drawer_experiment"/>
+            android:title="@string/drawer_experiment" />
         <item
             android:id="@+id/nav_potential"
             android:orderInCategory="1"

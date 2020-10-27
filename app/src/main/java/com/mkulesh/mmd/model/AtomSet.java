@@ -27,7 +27,6 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.os.Parcelable;
-import androidx.preference.PreferenceManager;
 
 import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.config.SettingsActivity;
@@ -43,6 +42,8 @@ import com.mkulesh.mmd.utils.ViewUtils;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
+
+import androidx.preference.PreferenceManager;
 
 /**
  * Class that implements an atom set

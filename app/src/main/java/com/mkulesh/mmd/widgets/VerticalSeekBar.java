@@ -27,11 +27,12 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import androidx.appcompat.widget.AppCompatSeekBar;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import com.mkulesh.mmd.R;
+
+import androidx.appcompat.widget.AppCompatSeekBar;
 
 /**
  * This is a custom vertical seek bar that works with Marshmallow operating system

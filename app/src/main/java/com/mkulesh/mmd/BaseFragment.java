@@ -22,9 +22,10 @@
 package com.mkulesh.mmd;
 
 import android.content.SharedPreferences;
-import androidx.preference.PreferenceManager;
-import androidx.fragment.app.Fragment;
 import android.view.View;
+
+import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 abstract class BaseFragment extends Fragment
 {

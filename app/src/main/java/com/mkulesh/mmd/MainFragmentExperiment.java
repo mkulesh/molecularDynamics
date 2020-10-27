@@ -21,7 +21,6 @@
 
 package com.mkulesh.mmd;
 
-import androidx.annotation.NonNull;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.hardware.SensorManager;
@@ -41,6 +40,8 @@ import com.mkulesh.mmd.widgets.DialogParameters;
 import com.mkulesh.mmd.widgets.FloatingButtonsSet;
 
 import java.util.concurrent.atomic.AtomicInteger;
+
+import androidx.annotation.NonNull;
 
 public class MainFragmentExperiment extends BaseFragment implements View.OnClickListener
 {

@@ -31,8 +31,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-
 import com.mkulesh.mmd.config.SettingsActivity;
 import com.mkulesh.mmd.model.Constants.PotentialType;
 import com.mkulesh.mmd.model.PhysicalArea;
@@ -44,6 +42,8 @@ import com.mkulesh.mmd.widgets.DialogChangeListener;
 import com.mkulesh.mmd.widgets.DialogParameters;
 import com.mkulesh.mmd.widgets.DialogParameters.Type;
 import com.mkulesh.mmd.widgets.PotentialView;
+
+import androidx.annotation.NonNull;
 
 public class MainFragmentPotential extends BaseFragment implements DialogChangeListener
 {

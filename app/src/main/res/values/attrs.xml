@@ -8,7 +8,7 @@
     <declare-styleable name="ImageListPreference">
         <attr name="entryImages" format="reference" />
     </declare-styleable>
-    
+
     <declare-styleable name="PotentialView">
         <attr name="domainName" format="string" />
         <attr name="valueName" format="string" />
@@ -25,12 +25,12 @@
     <!-- AndroidSVG library -->
     <declare-styleable name="SVGImageView">
         <!-- Location of the SVG document. -->
-        <attr name="svg" format="reference|string"/>
-        <attr name="css" format="string"/>
+        <attr name="svg" format="reference|string" />
+        <attr name="css" format="string" />
     </declare-styleable>
 
     <declare-styleable name="VerticalSeekBar">
-        <attr name="customThumb" format="reference"/>
+        <attr name="customThumb" format="reference" />
     </declare-styleable>
 
 </resources>

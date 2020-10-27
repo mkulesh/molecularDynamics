@@ -32,7 +32,6 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import androidx.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.ViewGroup;
@@ -51,6 +50,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+
+import androidx.preference.PreferenceManager;
 
 /**
  * Class that implements painting thread
@@ -434,7 +435,8 @@ public class AtomPainter implements Runnable
                 try
                 {
                     Drawable bgDrawable = wallpaper.getDrawable();
-                    if (bgDrawable != null) {
+                    if (bgDrawable != null)
+                    {
                         orig = Bitmap.createBitmap(bgDrawable.getIntrinsicWidth(), bgDrawable.getIntrinsicHeight(),
                                 Bitmap.Config.ARGB_8888);
                         Canvas canvas = new Canvas(orig);

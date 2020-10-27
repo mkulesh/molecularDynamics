@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ControlDialogBgStyle" >
+    style="@style/ControlDialogBgStyle">
 
-    <LinearLayout style="@style/ControlDialogStrokeStyle" >
+    <LinearLayout style="@style/ControlDialogStrokeStyle">
 
         <TextView
             android:id="@+id/control_dialog_title"
@@ -12,7 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/button_norm_fullenergy"
@@ -34,8 +34,8 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/energy_norm_none"
                 android:src="@drawable/ic_norm_none" />
-            
-            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

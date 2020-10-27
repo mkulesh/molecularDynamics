@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:mmd="http://schemas.android.com/apk/res-auto">
+    xmlns:mmd="http://schemas.android.com/apk/res-auto">
 
     <!-- Settings -->
     <item
@@ -9,7 +9,7 @@
         android:orderInCategory="300"
         mmd:showAsAction="ifRoom"
         android:visible="true"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_settings" />
 
     <!-- Help -->
     <item
@@ -18,6 +18,6 @@
         android:orderInCategory="400"
         mmd:showAsAction="ifRoom"
         android:visible="false"
-        android:title="@string/action_help"/>
+        android:title="@string/action_help" />
 
 </menu>

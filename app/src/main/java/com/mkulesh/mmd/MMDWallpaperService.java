@@ -24,7 +24,6 @@ package com.mkulesh.mmd;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.SensorManager;
-import androidx.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.view.Display;
 import android.view.OrientationEventListener;
@@ -32,6 +31,8 @@ import android.view.SurfaceHolder;
 import android.view.WindowManager;
 
 import com.mkulesh.mmd.utils.ViewUtils;
+
+import androidx.preference.PreferenceManager;
 
 public class MMDWallpaperService extends WallpaperService
 {

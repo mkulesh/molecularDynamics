@@ -23,7 +23,6 @@ package com.mkulesh.mmd.widgets;
 
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,6 +41,8 @@ import com.mkulesh.mmd.utils.CompatUtils;
 import com.mkulesh.mmd.utils.ViewUtils;
 
 import java.text.DecimalFormat;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ControlDialog extends Dialog implements OnSeekBarChangeListener, OnClickListener, OnItemClickListener
 {

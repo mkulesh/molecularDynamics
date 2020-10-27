@@ -15,11 +15,9 @@
         <item name="actionModeBackground">?attr/colorPrimary</item>
     </style>
 
-    <style name="MmdActionBarTheme" parent="AppBaseTheme">
-    </style>
+    <style name="MmdActionBarTheme" parent="AppBaseTheme"></style>
 
-    <style name="PreferenceScreen" parent="AppBaseTheme">
-    </style>
+    <style name="PreferenceScreen" parent="AppBaseTheme"></style>
 
     <!-- Custom styles -->
     <style name="ControlDialogBgStyle">
@@ -85,7 +83,7 @@
         <item name="android:shadowRadius">2</item>
         <item name="android:shadowColor">?attr/colorInfoTextShadow</item>
     </style>
-    
+
     <style name="InfoTextStyle" parent="@style/InfoTextAppearance">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -117,6 +115,6 @@
         <item name="com.mkulesh.mmd:plotLineWidth">3dp</item>
         <item name="com.mkulesh.mmd:formulaWidth">0.75</item>
         <item name="com.mkulesh.mmd:labelNumber">10</item>
-        </style>
+    </style>
 
 </resources>

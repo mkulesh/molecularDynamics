@@ -24,7 +24,7 @@
     <string name="action_settings">Configurações</string>
     <string name="action_zoom">Aumentar</string>
     <string name="action_drag">Arrastar</string>
-    
+
     <!-- Experiment view -->
     <string name="gravity_change_dialog">Gravidade\nmudar</string>
     <string name="thermal_change_dialog">Termal\nmudar</string>
@@ -33,17 +33,17 @@
     <string name="energy_norm_fullenergy">Energia total será constante</string>
     <string name="energy_norm_temperature">Temperatura será constante</string>
     <string name="energy_norm_none">Nenhuma temperatura ou restrição total de energia</string>
-    
+
     <!-- Potential view -->
     <string name="potential_activity_name">Potencial</string>
     <string name="potential_domain_name">r, Å</string>
     <string name="potential_value_name">f(r), eV</string>
     <string name="potential_derivative_name">f\'(r)</string>
     <string name="potential_select_dialog">Selecionar potencial\na ser utilizado</string>
-    
+
     <!-- About method -->
     <string name="wiki_about_method">http://en.wikipedia.org/wiki/Molecular_dynamics</string>
-    
+
     <!-- Preferences: Initial layout -->
     <string name="settings_activity_name">Configurações do experimento</string>
     <string name="pref_category_initial_layout">Interface inicial</string>
@@ -54,14 +54,14 @@
         <item>Grade diagonal</item>
         <item>Grade cúbica</item>
     </string-array>
-    
+
     <string name="pref_grid_hor_dimension">Dimensão da grade horizontal</string>
     <string name="pref_grid_hor_dimension_valuetype">Quantas partículas serão geradas na direção horizontal</string>
     <string name="pref_grid_ver_dimension">Dimensão da grade vertical</string>
     <string name="pref_grid_ver_dimension_valuetype">Quantas partículas serão geradas na direção vertical</string>
     <string name="pref_area_zoom">Aumento da área</string>
     <string name="pref_area_zoom_valuetype">Valor do aumento, entre 1 e 20</string>
-    
+
     <!-- Preferences: Physical area -->
     <string name="pref_category_physical_area">Área física</string>
     <string name="pref_area_min_x">Coordenada horizontal mínima</string>
@@ -84,7 +84,7 @@
         <item>Temperatura</item>
         <item>Nenhum</item>
     </string-array>
-    
+
     <!-- Preferences: Particle parameters -->
     <string name="pref_category_atom_parameters">Parâmetro de partículas</string>
     <string name="pref_potential">Tipo de potencial usado</string>
@@ -122,7 +122,7 @@
         <item>Saturno</item>
         <item>Turbilhão</item>
     </string-array>
-    
+
     <!-- Preferences: Calculation parameters -->
     <string name="pref_category_calc_parameters">Parâmetros de cálculo</string>
     <string name="pref_calc_time_step">Intervalo de tempo</string>
@@ -132,5 +132,5 @@
     <string name="pref_category_app_design">Design da aplicação</string>
     <string name="pref_system_wallpaper_title">Use o papel de parede do sistema</string>
     <string name="pref_system_wallpaper_summary">Se definido, o papel de parede do sistema será usado em vez da imagem de fundo integrada</string>
-    
+
 </resources>

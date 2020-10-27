@@ -24,7 +24,7 @@
     <string name="action_settings">Настройки</string>
     <string name="action_zoom">Приближение</string>
     <string name="action_drag">Перемещение</string>
-    
+
     <!-- Experiment view -->
     <string name="gravity_change_dialog">Изменение\nгравитации</string>
     <string name="thermal_change_dialog">Изменение\nтемпературы</string>
@@ -33,17 +33,17 @@
     <string name="energy_norm_fullenergy">Постоянство полной энергии</string>
     <string name="energy_norm_temperature">Постоянство температуры</string>
     <string name="energy_norm_none">Нет ограничений на энергию</string>
-    
+
     <!-- Potential view -->
     <string name="potential_activity_name">Потенциал</string>
     <string name="potential_domain_name">r, Å</string>
     <string name="potential_value_name">f(r), eV</string>
     <string name="potential_derivative_name">f\'(r)</string>
     <string name="potential_select_dialog">Выбор потенциала</string>
-    
+
     <!-- About method -->
     <string name="wiki_about_method">http://dic.academic.ru/dic.nsf/enc_physics/3947</string>
-    
+
     <!-- Preferences: Initial layout -->
     <string name="settings_activity_name">Настройки</string>
     <string name="pref_category_initial_layout">Начальная конфигурация</string>
@@ -54,14 +54,14 @@
         <item>Диагональная сетка</item>
         <item>Прямоугольная сетка</item>
     </string-array>
-    
+
     <string name="pref_grid_hor_dimension">Количество по горизонтали</string>
     <string name="pref_grid_hor_dimension_valuetype">Количество частиц генерируемых по горизонтали</string>
     <string name="pref_grid_ver_dimension">Количество по вертикали</string>
     <string name="pref_grid_ver_dimension_valuetype">Количество частиц генерируемых по вертикали</string>
     <string name="pref_area_zoom">Приближение</string>
     <string name="pref_area_zoom_valuetype">Коэффициент приближения, между 1 и 20</string>
-    
+
     <!-- Preferences: Physical area -->
     <string name="pref_category_physical_area">Физическая область</string>
     <string name="pref_area_min_x">Минимум по горизонтали</string>
@@ -84,7 +84,7 @@
         <item>Температура</item>
         <item>Без ограничений</item>
     </string-array>
-    
+
     <!-- Preferences: Atom parameters -->
     <string name="pref_category_atom_parameters">Параметры частицы</string>
     <string name="pref_potential">Тип используемого потенциала</string>
@@ -122,7 +122,7 @@
         <item>Сатурн</item>
         <item>Вихрь</item>
     </string-array>
-    
+
     <!-- Preferences: Calculation parameters -->
     <string name="pref_category_calc_parameters">Параметры расчета</string>
     <string name="pref_calc_time_step">Шаг по времени</string>
@@ -132,5 +132,5 @@
     <string name="pref_category_app_design">Внешний вид</string>
     <string name="pref_system_wallpaper_title">Использовать системные обои</string>
     <string name="pref_system_wallpaper_summary">Если включен, системные обои будут использоваться как фоновое изображение</string>
-    
+
 </resources>

@@ -29,11 +29,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
 
-import androidx.annotation.NonNull;
-
 import com.mkulesh.mmd.R;
 
 import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
 
 /**
  * The ImageArrayAdapter is the array adapter used for displaying an additional image to a list preference item.

@@ -27,19 +27,20 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import androidx.core.graphics.drawable.DrawableCompat;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mkulesh.mmd.R;
+
+import androidx.core.graphics.drawable.DrawableCompat;
 
 public class ViewUtils
 {
-    @SuppressWarnings({"unused", "EmptyMethod"})
+    @SuppressWarnings({ "unused", "EmptyMethod" })
     public static void Debug(Object o, String text)
     {
         //Log.d("mmdLogs", o.getClass().getSimpleName() + ": " + text + ".");
@@ -123,10 +124,10 @@ public class ViewUtils
         menu.setImageDrawable(drawable);
     }
 
-    public static int getThemeColor (final Context context, int resId)
+    public static int getThemeColor(final Context context, int resId)
     {
-        final TypedValue value = new TypedValue ();
-        context.getTheme ().resolveAttribute (resId, value, true);
+        final TypedValue value = new TypedValue();
+        context.getTheme().resolveAttribute(resId, value, true);
         return value.data;
     }
 }

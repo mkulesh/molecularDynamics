@@ -9,13 +9,12 @@
         android:id="@+id/experiment_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true" >
-    </SurfaceView>
+        android:layout_alignParentTop="true" />
 
     <com.mkulesh.mmd.widgets.FloatingButtonsSet
         android:id="@+id/main_flb_set_primary"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/main_flb_action_play"

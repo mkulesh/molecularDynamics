@@ -25,12 +25,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import androidx.preference.EditTextPreference;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceManager;
-import androidx.preference.PreferenceScreen;
 
 import com.mkulesh.mmd.R;
 import com.mkulesh.mmd.model.Constants.PotentialType;
@@ -41,6 +35,13 @@ import com.mkulesh.mmd.utils.CompatUtils;
 import com.mkulesh.mmd.utils.ViewUtils;
 
 import java.text.DecimalFormat;
+
+import androidx.preference.EditTextPreference;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
+import androidx.preference.PreferenceScreen;
 
 public class SettingsActivity extends AppCompatPreferenceActivity
 {
@@ -145,7 +146,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
             String stringValue = value.toString();
 
             ViewUtils.Debug(
-                    this,"Pref: " + preference.getKey() + ", val = " +  stringValue);
+                    this, "Pref: " + preference.getKey() + ", val = " + stringValue);
             if (preference instanceof ListPreference)
             {
                 // For list preferences, look up the correct display value in

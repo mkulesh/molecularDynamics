@@ -1,9 +1,10 @@
-<PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Preferences: Initial layout -->
-    <PreferenceCategory android:title="@string/pref_category_initial_layout" app:iconSpaceReserved="false">
+    <PreferenceCategory
+        android:title="@string/pref_category_initial_layout"
+        app:iconSpaceReserved="false">
 
         <!-- Rebuild initial layout -->
         <SwitchPreferenceCompat
@@ -24,7 +25,7 @@
             android:negativeButtonText="@string/button_cancel"
             android:positiveButtonText="@string/button_ok"
             android:title="@string/pref_fill_methods_title"
-            app:entryImages="@array/pref_fill_methods_values"/>
+            app:entryImages="@array/pref_fill_methods_values" />
 
         <!-- Dimension -->
         <EditTextPreference
@@ -47,10 +48,12 @@
             android:inputType="numberDecimal"
             android:key="pref_grid_ver_dimension"
             android:title="@string/pref_grid_ver_dimension" />
-        </PreferenceCategory>
+    </PreferenceCategory>
 
     <!-- Physical area -->
-    <PreferenceCategory android:title="@string/pref_category_physical_area" app:iconSpaceReserved="false">
+    <PreferenceCategory
+        android:title="@string/pref_category_physical_area"
+        app:iconSpaceReserved="false">
         <EditTextPreference
             app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_area_min_x_default"
@@ -99,7 +102,9 @@
     </PreferenceCategory>
 
     <!-- Boundary conditions -->
-    <PreferenceCategory android:title="@string/pref_category_boundary_conditions" app:iconSpaceReserved="false">
+    <PreferenceCategory
+        android:title="@string/pref_category_boundary_conditions"
+        app:iconSpaceReserved="false">
         <EditTextPreference
             app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_bound_gravity_default"
@@ -137,10 +142,12 @@
             android:positiveButtonText="@string/button_ok"
             android:title="@string/pref_energy_norm"
             app:entryImages="@array/pref_energy_norm_values" />
-        </PreferenceCategory>
+    </PreferenceCategory>
 
     <!-- Atom -->
-    <PreferenceCategory android:title="@string/pref_category_atom_parameters" app:iconSpaceReserved="false">
+    <PreferenceCategory
+        android:title="@string/pref_category_atom_parameters"
+        app:iconSpaceReserved="false">
         <com.mkulesh.mmd.config.ImageListPreference
             app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_potential_default"
@@ -150,7 +157,7 @@
             android:negativeButtonText="@string/button_cancel"
             android:positiveButtonText="@string/button_ok"
             android:title="@string/pref_potential"
-            app:entryImages="@array/pref_potential_values"/>
+            app:entryImages="@array/pref_potential_values" />
         <EditTextPreference
             app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_atom_radius_default"
@@ -180,9 +187,11 @@
             android:title="@string/pref_atom_skin"
             app:entryImages="@array/pref_atom_skin_values" />
     </PreferenceCategory>
-    
+
     <!-- Calculation parameters -->
-    <PreferenceCategory android:title="@string/pref_category_calc_parameters" app:iconSpaceReserved="false">
+    <PreferenceCategory
+        android:title="@string/pref_category_calc_parameters"
+        app:iconSpaceReserved="false">
         <EditTextPreference
             app:iconSpaceReserved="false"
             android:defaultValue="@string/pref_calc_time_step_default"
@@ -193,9 +202,11 @@
             android:key="pref_calc_time_step"
             android:title="@string/pref_calc_time_step" />
     </PreferenceCategory>
-    
+
     <!-- Application design -->
-    <PreferenceCategory android:title="@string/pref_category_app_design" app:iconSpaceReserved="false">
+    <PreferenceCategory
+        android:title="@string/pref_category_app_design"
+        app:iconSpaceReserved="false">
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             android:defaultValue="@bool/pref_system_wallpaper_default"
@@ -203,5 +214,5 @@
             android:summary="@string/pref_system_wallpaper_summary"
             android:title="@string/pref_system_wallpaper_title" />
     </PreferenceCategory>
-    
+
 </PreferenceScreen>

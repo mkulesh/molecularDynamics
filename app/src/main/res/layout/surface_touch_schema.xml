@@ -6,7 +6,7 @@
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal|top" >
+        android:gravity="center_horizontal|top">
 
         <TextView
             android:layout_width="wrap_content"
@@ -15,14 +15,14 @@
             android:gravity="center_horizontal"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
             android:text="@string/conditions_change_dialog"
-            android:textColor="?attr/colorInfoText"/>
+            android:textColor="?attr/colorInfoText" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:gravity="center_vertical" >
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,14 +31,14 @@
             android:gravity="left"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
             android:text="@string/thermal_change_dialog"
-            android:textColor="?attr/colorInfoText"/>
+            android:textColor="?attr/colorInfoText" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                 android:paddingBottom="10dp"
                 android:textAppearance="@style/SurfaceSchemaTextAppearance"
                 android:text="@string/action_zoom"
-                android:textColor="?attr/colorInfoText"/>
+                android:textColor="?attr/colorInfoText" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                 android:paddingTop="10dp"
                 android:textAppearance="@style/SurfaceSchemaTextAppearance"
                 android:text="@string/action_drag"
-                android:textColor="?attr/colorInfoText"/>
+                android:textColor="?attr/colorInfoText" />
         </LinearLayout>
 
         <TextView
@@ -68,14 +68,14 @@
             android:gravity="right"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
             android:text="@string/gravity_change_dialog"
-            android:textColor="?attr/colorInfoText"/>
+            android:textColor="?attr/colorInfoText" />
     </TableRow>
 
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:baselineAligned="false"
-        android:gravity="center_horizontal|bottom" >
+        android:gravity="center_horizontal|bottom">
 
         <Button
             android:layout_width="wrap_content"
@@ -91,10 +91,10 @@
             android:gravity="center_horizontal"
             android:textAppearance="@style/SurfaceSchemaTextAppearance"
             android:text="@string/timestep_change_dialog"
-            android:textColor="?attr/colorInfoText"/>
+            android:textColor="?attr/colorInfoText" />
 
         <Button
-    		android:id="@+id/button_cancel"
+            android:id="@+id/button_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_cancel" />

@@ -24,7 +24,7 @@
     <string name="action_settings">Settings</string>
     <string name="action_zoom">Zoom</string>
     <string name="action_drag">Drag</string>
-    
+
     <!-- Experiment view -->
     <string name="gravity_change_dialog">Gravity\nchange</string>
     <string name="thermal_change_dialog">Thermal\nchange</string>
@@ -33,17 +33,17 @@
     <string name="energy_norm_fullenergy">Full energy will be constant</string>
     <string name="energy_norm_temperature">Temperature will be constant</string>
     <string name="energy_norm_none">No temperature or full energy constraint</string>
-    
+
     <!-- Potential view -->
     <string name="potential_activity_name">Potential</string>
     <string name="potential_domain_name">r, Å</string>
     <string name="potential_value_name">f(r), eV</string>
     <string name="potential_derivative_name">f\'(r)</string>
     <string name="potential_select_dialog">Select potential\nto be used</string>
-    
+
     <!-- About method -->
     <string name="wiki_about_method">http://en.wikipedia.org/wiki/Molecular_dynamics</string>
-    
+
     <!-- Preferences: Initial layout -->
     <string name="settings_activity_name">Experiment settings</string>
     <string name="pref_category_initial_layout">Initial layout</string>
@@ -54,14 +54,14 @@
         <item>Diagonal Grid</item>
         <item>Square Grid</item>
     </string-array>
-    
+
     <string name="pref_grid_hor_dimension">Horizontal grid dimension</string>
     <string name="pref_grid_hor_dimension_valuetype">How many particles will be generated in horizontal direction</string>
     <string name="pref_grid_ver_dimension">Vertical grid dimension</string>
     <string name="pref_grid_ver_dimension_valuetype">How many particles will be generated in vertical direction</string>
     <string name="pref_area_zoom">Area zoom</string>
     <string name="pref_area_zoom_valuetype">Zoom value, between 1 and 20</string>
-    
+
     <!-- Preferences: Physical area -->
     <string name="pref_category_physical_area">Physical area</string>
     <string name="pref_area_min_x">Minimal horizontal coordinate</string>
@@ -84,7 +84,7 @@
         <item>Temperature</item>
         <item>None</item>
     </string-array>
-    
+
     <!-- Preferences: Particle parameters -->
     <string name="pref_category_atom_parameters">Particle parameters</string>
     <string name="pref_potential">Type of used potential</string>
@@ -122,7 +122,7 @@
         <item>Saturn</item>
         <item>Whirlpool</item>
     </string-array>
-    
+
     <!-- Preferences: Calculation parameters -->
     <string name="pref_category_calc_parameters">Calculation parameters</string>
     <string name="pref_calc_time_step">Time step</string>
@@ -132,5 +132,5 @@
     <string name="pref_category_app_design">Application design</string>
     <string name="pref_system_wallpaper_title">Use system wallpaper</string>
     <string name="pref_system_wallpaper_summary">If set, the system wallpaper will be used instead of build-in background image</string>
-    
+
 </resources>

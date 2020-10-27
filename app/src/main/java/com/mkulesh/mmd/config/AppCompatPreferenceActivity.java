@@ -27,12 +27,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mkulesh.mmd.R;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceManager;
-
-import com.mkulesh.mmd.R;
 
 public abstract class AppCompatPreferenceActivity extends AppCompatActivity
 {
@@ -74,9 +74,9 @@ public abstract class AppCompatPreferenceActivity extends AppCompatActivity
         //noinspection SwitchStatementWithTooFewBranches
         switch (item.getItemId())
         {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
+        case android.R.id.home:
+            onBackPressed();
+            return true;
         }
         return (super.onOptionsItemSelected(item));
     }
