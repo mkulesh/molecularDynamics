@@ -23,6 +23,7 @@ package com.mkulesh.mmd.potentials;
 
 import android.content.Context;
 
+@SuppressWarnings("unused")
 public class PlishkinPodchinenov implements BasePotential
 {
     private double Ro, r0, D0, Al, r1, A0, A1, A2, A3, A4;

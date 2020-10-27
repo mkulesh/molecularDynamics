@@ -27,17 +27,6 @@ package com.mkulesh.mmd.model;
  */
 public class Constants
 {
-
-    /**
-     * Atomic mass unit
-     */
-    public static final double AEM = 1.66053892e-27;
-
-    /**
-     * The angstrom unit
-     */
-    public static final double Angstrom = 1.0e-10;
-
     /**
      * The electron volt unit
      */

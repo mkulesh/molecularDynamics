@@ -133,14 +133,6 @@ public class Vector2D implements Parcelable
     }
 
     /**
-     * Checks whether this point has zero coordinates
-     */
-    public boolean isZero()
-    {
-        return (x == 0.0 && y == 0.0);
-    }
-
-    /**
      * Checks whether this point is equal to the given point
      */
     public boolean isEqual(Vector2D p)
@@ -229,29 +221,12 @@ public class Vector2D implements Parcelable
     }
 
     /**
-     * Procedure returns difference of this vector with given vector p
-     */
-    public Vector2D diff(Vector2D p)
-    {
-        return new Vector2D(x - p.x, y - p.y);
-    }
-
-    /**
      * Procedure multiplies this vector with given constant p
      */
     public void multiply(double p)
     {
         x *= p;
         y *= p;
-    }
-
-    /**
-     * Procedure multiplies this vector with given vector p component-wise
-     */
-    public void multiply(Vector2D p)
-    {
-        x *= p.x;
-        y *= p.y;
     }
 
     /**
@@ -301,14 +276,5 @@ public class Vector2D implements Parcelable
             x = d * y;
             y = -1.0 * d * xprev;
         }
-    }
-
-    /**
-     * Procedure fills vector coordinate with random values using given random generator
-     */
-    public void fillRandom(Random rand)
-    {
-        x = rand.nextFloat();
-        y = rand.nextFloat();
     }
 }

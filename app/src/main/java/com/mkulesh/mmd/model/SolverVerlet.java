@@ -41,12 +41,6 @@ public class SolverVerlet implements SolverBase
     }
 
     @Override
-    public String getName()
-    {
-        return "Velocity Verlet";
-    }
-
-    @Override
     public Constants.CalculationType calculateNextStep(AtomSet atomSet, double dt)
     {
 

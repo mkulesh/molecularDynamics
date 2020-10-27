@@ -28,11 +28,9 @@ import java.util.ArrayList;
 /**
  * This solver implements the Runge-Kutta integration method
  */
+@SuppressWarnings("unused")
 public class SolverRungeKutta implements SolverBase
 {
-    // Number of available precision grades of Runge-Kutta method
-    static final int maxGrade = 4;
-
     // Currently used precision grade
     private static final int usedGrade = 3;
 
@@ -58,12 +56,6 @@ public class SolverRungeKutta implements SolverBase
     private Vector2D[][] K, P;
 
     private int lastAtomNumber = 0;
-
-    @Override
-    public String getName()
-    {
-        return "Runge-Kutta of grad " + usedGrade;
-    }
 
     /**
      * Initialization method

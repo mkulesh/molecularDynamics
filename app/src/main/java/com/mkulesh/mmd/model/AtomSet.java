@@ -263,19 +263,6 @@ public class AtomSet implements Parcelable
     }
 
     /**
-     * Procedure calculates the current impulse of this atom set
-     */
-    public Vector2D calculateImpulse()
-    {
-        Vector2D res = new Vector2D(0.0, 0.0);
-        for (Atom a : atoms)
-        {
-            res.add(a.velocity);
-        }
-        return res.prod(atomMass);
-    }
-
-    /**
      * Procedure calculates the current kinetic energy of this atom set
      */
     private double calculateKineticEnergy()

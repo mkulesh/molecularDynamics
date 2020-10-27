@@ -23,6 +23,7 @@ package com.mkulesh.mmd.potentials;
 
 import android.content.Context;
 
+@SuppressWarnings("unused")
 public class Johnson implements BasePotential
 {
     /**

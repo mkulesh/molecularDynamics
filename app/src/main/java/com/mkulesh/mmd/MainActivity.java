@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity
     /**
      * Dummy array used to avoid lint warning about unused resources
      */
+    @SuppressWarnings("unused")
     public final static int[] usedResources = {
             R.raw.drawer_experiment, R.drawable.drawer_experiment,
             R.raw.drawer_potential, R.drawable.drawer_potential,

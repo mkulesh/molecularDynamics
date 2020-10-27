@@ -411,13 +411,13 @@ public class Experiment implements Runnable, Parcelable
     /**
      * Process change of wallpaper offset if app is running as MMDWallpaperEngine
      */
-    public void wallpaperOffsetsChanged(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep)
+    public void wallpaperOffsetsChanged(float xOffset, float yOffset)
     {
         if (painter != null)
         {
             synchronized (painter)
             {
-                painter.wallpaperOffsetsChanged(xOffset, yOffset, xOffsetStep, yOffsetStep);
+                painter.wallpaperOffsetsChanged(xOffset, yOffset);
             }
         }
     }

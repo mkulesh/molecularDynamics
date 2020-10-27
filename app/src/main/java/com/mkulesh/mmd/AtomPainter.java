@@ -138,11 +138,11 @@ public class AtomPainter implements Runnable
     /**
      * Process change of wallpaper offset if app is running as MMDWallpaperEngine
      */
-    public void wallpaperOffsetsChanged(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep)
+    public void wallpaperOffsetsChanged(float xOffset, float yOffset)
     {
         synchronized (wallpaperOffsets)
         {
-            wallpaperOffsets.set(xOffset, yOffset, xOffsetStep, yOffsetStep);
+            wallpaperOffsets.set(xOffset, yOffset);
         }
     }
 
@@ -388,7 +388,7 @@ public class AtomPainter implements Runnable
         float xOffset = 0;
         float yOffset = 0;
 
-        void set(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep)
+        void set(float xOffset, float yOffset)
         {
             this.xOffset = xOffset;
             this.yOffset = yOffset;

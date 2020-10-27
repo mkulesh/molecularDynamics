@@ -139,7 +139,7 @@ public class MMDWallpaperService extends WallpaperService
         {
             if (exp != null)
             {
-                exp.wallpaperOffsetsChanged(xOffset, yOffset, xOffsetStep, yOffsetStep);
+                exp.wallpaperOffsetsChanged(xOffset, yOffset);
             }
             super.onOffsetsChanged(xOffset, yOffset, xOffsetStep, yOffsetStep, xPixelOffset, yPixelOffset);
         }
