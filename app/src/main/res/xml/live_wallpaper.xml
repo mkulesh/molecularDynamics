@@ -16,5 +16,5 @@
 <wallpaper xmlns:android="http://schemas.android.com/apk/res/android"
     android:thumbnail="@drawable/wallpaper_preview"
     android:description="@string/wallpaper_description"
-    android:settingsActivity="com.mkulesh.mmd.WallpaperSettingsActivity" />
+    android:settingsActivity="com.mkulesh.mmd.config.WallpaperSettingsActivity" />
   
