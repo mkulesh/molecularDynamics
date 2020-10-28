@@ -161,12 +161,17 @@ public class AtomSet implements Parcelable
         atomRadius = set.atomRadius;
         atomMass = set.atomMass;
         gravity = set.gravity;
+        thermalChange = set.thermalChange;
+        timeStep = set.timeStep;
+        energyNorm = set.energyNorm;
+        boundaryCondition = set.boundaryCondition;
         ePotenz = set.ePotenz;
         eKinetic = set.eKinetic;
         temperature = set.temperature;
         atomImage = set.atomImage;
         pauseHandler = set.pauseHandler;
         calculationTime = set.calculationTime;
+        solver = null;
     }
 
     /**

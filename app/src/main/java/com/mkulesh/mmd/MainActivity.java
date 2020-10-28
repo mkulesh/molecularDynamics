@@ -14,7 +14,6 @@
 
 package com.mkulesh.mmd;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -82,7 +81,6 @@ public class MainActivity extends AppCompatActivity
             R.drawable.snow_flake, R.drawable.ufo_cartoon_style, R.drawable.whirlpool
     };
 
-    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -219,7 +217,6 @@ public class MainActivity extends AppCompatActivity
      * Navigation drawer
      *********************************************************/
 
-    @SuppressLint("RestrictedApi")
     private BaseFragment getVisibleFragment()
     {
         FragmentManager fragmentManager = MainActivity.this.getSupportFragmentManager();

@@ -14,7 +14,6 @@
 
 package com.mkulesh.mmd.widgets;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -40,7 +39,6 @@ public class FloatingButtonsSet extends LinearLayout implements OnLongClickListe
         prepare();
     }
 
-    @SuppressLint("RtlHardcoded")
     private void prepare()
     {
         setOrientation(HORIZONTAL);

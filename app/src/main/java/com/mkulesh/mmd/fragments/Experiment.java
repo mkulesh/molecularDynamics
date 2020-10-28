@@ -35,7 +35,7 @@ public class Experiment implements Runnable, Parcelable
      * State attributes to be stored in Parcel
      */
     static final String PARCELABLE_ID = "Experiment";
-    private AtomSet atomSet = new AtomSet(); // set of the atoms, must be always handled as synchronized
+    private final AtomSet atomSet; // set of the atoms, must be always handled as synchronized
 
     /**
      * Parcelable interface
@@ -44,7 +44,7 @@ public class Experiment implements Runnable, Parcelable
     {
         super();
         ViewUtils.Debug(this, "created from parcel");
-        readFromParcel(in);
+        atomSet = in.readParcelable(AtomSet.class.getClassLoader());
     }
 
     @Override
@@ -57,11 +57,6 @@ public class Experiment implements Runnable, Parcelable
     public void writeToParcel(Parcel dest, int flags)
     {
         dest.writeParcelable(atomSet, flags);
-    }
-
-    private void readFromParcel(Parcel in)
-    {
-        atomSet = in.readParcelable(AtomSet.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<Experiment> CREATOR = new Parcelable.Creator<Experiment>()
@@ -103,6 +98,7 @@ public class Experiment implements Runnable, Parcelable
         super();
         this.context = context;
         ViewUtils.Debug(this, "created from scratch");
+        atomSet = new AtomSet();
         readParameters(context);
     }
 

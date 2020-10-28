@@ -14,9 +14,6 @@
 
 package com.mkulesh.mmd.config;
 
-import android.annotation.SuppressLint;
-
-@SuppressLint("ExportedPreferenceActivity")
 public class WallpaperSettingsActivity extends SettingsActivity
 {
 

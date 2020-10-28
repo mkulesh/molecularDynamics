@@ -14,7 +14,6 @@
 
 package com.mkulesh.mmd.utils;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -78,7 +77,6 @@ public class ViewUtils
     /**
      * Procedure hows toast that contains description of the given button
      */
-    @SuppressLint("RtlHardcoded")
     public static boolean showButtonDescription(Context context, View button)
     {
         CharSequence contentDesc = button.getContentDescription();
