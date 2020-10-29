@@ -19,8 +19,6 @@ Application features:
 
 Note: since the application implements a numerical integration method, it generates a significant CPU load. Therefore, the live wallpaper mode is not suitable for low-power devices.
 
-Keywords: live wallpaper, HD wallpaper, physics, molecular dynamics, atom simulations, experiment
-
 The app is 100% open source. Please feel free to download, explore, fork or contribute to it on https://github.com/mkulesh/molecularDynamics
 
 Languages: English, Russian.
